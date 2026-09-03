@@ -1,43 +1,315 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-GB">
 <head>
-    <title>SSZ Tracker</title>
-    <style>
-        body{
-            font-family:Segoe UI,Arial,sans-serif;
-            background:#0b1420;
-            color:white;
-            text-align:center;
-            padding-top:100px;
-        }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07111d">
+  <title>Specsavers Aviation Operations Dashboard</title>
 
-        h1{
-            color:#25e37c;
-        }
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIINfQ3ynqJKIQkMZkMZpG40dZB+R8dF3Hc=" crossorigin="">
 
-        .box{
-            width:500px;
-            margin:auto;
-            border:1px solid #25e37c;
-            padding:20px;
-            border-radius:10px;
-        }
-    </style>
+  <style>
+    :root {
+      --bg:#07111d; --panel:#0d1b2a; --panel2:#102438; --line:#20384f;
+      --text:#eaf3fb; --muted:#8fa7bd; --green:#25e37c; --blue:#38bdf8;
+      --amber:#f9c74f; --orange:#f8961e; --red:#f94144; --purple:#c77dff;
+      --shadow:0 14px 38px rgba(0,0,0,.28);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:linear-gradient(145deg,#050c14,#0a1725 55%,#07111d);color:var(--text);font-family:Segoe UI,Arial,sans-serif}
+    header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 24px;border-bottom:1px solid var(--line);background:rgba(7,17,29,.94);position:sticky;top:0;z-index:1000;backdrop-filter:blur(10px)}
+    h1{font-size:clamp(20px,2.4vw,32px);margin:0;letter-spacing:.02em}
+    .subtitle{color:var(--muted);font-size:13px;margin-top:4px}
+    .header-status{display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:flex-end}
+    .status-pill{display:flex;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--line);padding:8px 12px;border-radius:999px;color:var(--muted);font-size:13px}
+    .dot{width:9px;height:9px;border-radius:50%;background:var(--muted);box-shadow:0 0 10px currentColor}.dot.ok{background:var(--green)}.dot.warn{background:var(--amber)}.dot.bad{background:var(--red)}
+    main{padding:18px;max-width:1800px;margin:auto}
+    .summary{display:grid;grid-template-columns:repeat(4,minmax(160px,1fr));gap:14px;margin-bottom:14px}
+    .metric,.panel{background:linear-gradient(180deg,rgba(16,36,56,.96),rgba(10,25,40,.96));border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
+    .metric{padding:16px}.metric-label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}.metric-value{font-size:30px;font-weight:700;margin-top:5px}.metric-note{font-size:12px;color:var(--muted);margin-top:3px}
+    .main-grid{display:grid;grid-template-columns:minmax(0,2.15fr) minmax(330px,.85fr);gap:14px;margin-bottom:14px}
+    .panel-head{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-bottom:1px solid var(--line)}
+    .panel-head h2{font-size:15px;margin:0;text-transform:uppercase;letter-spacing:.1em}.panel-body{padding:14px}
+    #map{height:500px;border-radius:0 0 14px 14px;background:#08131f}
+    .leaflet-container{font-family:Segoe UI,Arial,sans-serif}.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:#0d1b2a;color:var(--text)}
+    .flight-list{display:grid;gap:10px;max-height:500px;overflow:auto}
+    .flight-card{border:1px solid var(--line);border-left:4px solid var(--green);background:rgba(7,17,29,.68);border-radius:10px;padding:12px;cursor:pointer}
+    .flight-card.ground{border-left-color:var(--muted)}
+    .flight-top{display:flex;justify-content:space-between;gap:12px}.callsign{font-size:20px;font-weight:700;color:var(--green)}.registration{color:var(--muted);font-size:12px;margin-top:2px}.route{font-weight:600;text-align:right}.flight-data{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}.data-box{background:#091624;border-radius:8px;padding:8px}.data-label{color:var(--muted);font-size:10px;text-transform:uppercase}.data-value{font-size:14px;margin-top:2px}
+    .empty{padding:34px 14px;text-align:center;color:var(--muted)}.empty strong{display:block;color:var(--text);font-size:18px;margin-bottom:6px}
+    .weather-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .airport-title{display:flex;align-items:center;justify-content:space-between;gap:12px}.airport-code{font-size:22px;font-weight:750}.airport-name{font-size:12px;color:var(--muted)}
+    .category{display:inline-flex;align-items:center;justify-content:center;min-width:58px;padding:6px 9px;border:1px solid currentColor;border-radius:7px;font-weight:700;background:#08131f}.VFR{color:var(--green)}.MVFR{color:var(--blue)}.IFR{color:var(--red)}.LIFR{color:var(--purple)}.UNKNOWN{color:var(--muted)}
+    .metar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}.wx-cell{background:#091624;border:1px solid #152b40;border-radius:8px;padding:9px;min-height:62px}.wx-key{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}.wx-value{font-size:16px;font-weight:650;margin-top:5px;word-break:break-word}
+    .raw{font-family:Consolas,monospace;font-size:11px;line-height:1.45;color:#b8cde0;background:#07111d;border:1px solid #162d43;padding:9px;border-radius:8px;overflow-wrap:anywhere}
+    .taf-title{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin:14px 0 8px}.taf-list{display:grid;gap:8px}.taf-period{display:grid;grid-template-columns:78px 62px 1fr;gap:8px;align-items:center;background:#091624;border:1px solid #152b40;border-radius:9px;padding:9px}.taf-time{font-weight:700}.taf-category{font-size:11px;text-align:center;padding:4px;border:1px solid currentColor;border-radius:5px}.taf-detail{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3px 10px;font-size:12px}.taf-detail span:nth-child(odd){color:var(--muted)}
+    .wind-low{color:var(--green)}.wind-mid{color:var(--amber)}.wind-high{color:var(--orange)}.wind-severe{color:var(--red)}
+    .weather-error{color:var(--amber);padding:16px;border:1px dashed #725f25;border-radius:8px;background:rgba(249,199,79,.06)}
+    footer{color:var(--muted);font-size:11px;padding:18px 4px 4px;text-align:center}
+    @media(max-width:1100px){.summary{grid-template-columns:repeat(2,1fr)}.main-grid{grid-template-columns:1fr}.weather-grid{grid-template-columns:1fr 1fr}.flight-list{max-height:none}}
+    @media(max-width:700px){header{align-items:flex-start;flex-direction:column}.header-status{justify-content:flex-start}.summary,.weather-grid{grid-template-columns:1fr}.main-grid{display:block}.main-grid>.panel{margin-bottom:14px}#map{height:420px}.metar-grid{grid-template-columns:repeat(2,1fr)}.taf-period{grid-template-columns:70px 55px 1fr}.taf-detail{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
+<header>
+  <div>
+    <h1>Specsavers Aviation Operations Dashboard</h1>
+    <div class="subtitle">Fleet tracking and aviation weather for GCI, SOU and EMA</div>
+  </div>
+  <div class="header-status">
+    <div class="status-pill"><span id="feedDot" class="dot"></span><span id="feedStatus">Loading feeds…</span></div>
+    <div class="status-pill">Local time&nbsp;<strong id="clock">--:--:--</strong></div>
+  </div>
+</header>
 
-<div class="box">
-    <h1>SSZ Aircraft Tracker</h1>
+<main>
+  <section class="summary">
+    <div class="metric"><div class="metric-label">Active aircraft</div><div id="activeCount" class="metric-value">0</div><div class="metric-note">Visible in latest OpenSky feed</div></div>
+    <div class="metric"><div class="metric-label">Airborne</div><div id="airborneCount" class="metric-value">0</div><div class="metric-note">M-SPEC, M-SPEL, M-SPEX or SSZ*</div></div>
+    <div class="metric"><div class="metric-label">Feed age</div><div id="feedAge" class="metric-value">--</div><div class="metric-note">Aircraft feed generated UTC</div></div>
+    <div class="metric"><div class="metric-label">Weather airports</div><div class="metric-value">3</div><div class="metric-note">EGJB · EGHI · EGNX</div></div>
+  </section>
 
-    <p>Dashboard deployment successful.</p>
+  <section class="main-grid">
+    <article class="panel">
+      <div class="panel-head"><h2>Live Fleet Map</h2><span id="mapUpdated" class="subtitle">Awaiting feed</span></div>
+      <div id="map"></div>
+    </article>
 
-    <p id="time"></p>
-</div>
+    <article class="panel">
+      <div class="panel-head"><h2>Active Flights</h2><span id="flightCountText" class="subtitle">0 contacts</span></div>
+      <div class="panel-body"><div id="flightList" class="flight-list"></div></div>
+    </article>
+  </section>
 
+  <section>
+    <div class="panel-head" style="border:0;padding:12px 2px"><h2>METAR and TAF Overview</h2><span id="weatherUpdated" class="subtitle">Awaiting weather feed</span></div>
+    <div id="weatherGrid" class="weather-grid"></div>
+  </section>
+
+  <footer>
+    Operational awareness only. Verify weather, flight planning and operational decisions against approved aviation sources.
+  </footer>
+</main>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
-document.getElementById("time").innerHTML =
-    "Loaded at " + new Date().toLocaleString();
-</script>
+  const AIRPORTS = {
+    EGJB:{label:'GCI',name:'Guernsey',lat:49.434956,lon:-2.601969},
+    EGHI:{label:'SOU',name:'Southampton',lat:50.950261,lon:-1.356803},
+    EGNX:{label:'EMA',name:'East Midlands',lat:52.831111,lon:-1.328056}
+  };
 
+  const ROUTES = {
+    SSZ1:'GCI → SOU', SSZ2:'SOU → GCI'
+    // Add further known flight-number routes here, for example:
+    // SSZ3:'GCI → EMA', SSZ4:'EMA → GCI'
+  };
+
+  const map = L.map('map',{zoomControl:true}).setView([51.0,-1.8],6);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+    maxZoom:18, attribution:'© OpenStreetMap contributors'
+  }).addTo(map);
+
+  Object.entries(AIRPORTS).forEach(([icao,a]) => {
+    L.circleMarker([a.lat,a.lon],{radius:6,color:'#38bdf8',fillColor:'#07111d',fillOpacity:1,weight:2})
+      .addTo(map).bindTooltip(`${a.label} · ${icao}`,{permanent:true,direction:'top',offset:[0,-5]});
+  });
+
+  const aircraftLayer = L.layerGroup().addTo(map);
+  let aircraftMarkers = new Map();
+
+  function esc(value){
+    return String(value ?? '').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+  }
+  function display(value,fallback='--'){return value===null||value===undefined||value===''?fallback:value}
+  function formatTime(value){
+    if(!value) return '--';
+    const d = typeof value === 'number' ? new Date(value*1000) : new Date(value);
+    return isNaN(d) ? '--' : d.toLocaleString('en-GB',{timeZone:'Europe/Guernsey',day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});
+  }
+  function ageText(value){
+    if(!value) return '--';
+    const seconds=Math.max(0,Math.round((Date.now()-new Date(value).getTime())/1000));
+    if(seconds<60) return `${seconds}s`;
+    if(seconds<3600) return `${Math.floor(seconds/60)}m`;
+    return `${Math.floor(seconds/3600)}h ${Math.floor((seconds%3600)/60)}m`;
+  }
+  function routeFor(callsign){return ROUTES[(callsign||'').trim().toUpperCase()] || 'Route not configured'}
+  function aircraftIcon(track=0,onGround=false){
+    const colour=onGround?'#8fa7bd':'#25e37c';
+    return L.divIcon({className:'',iconSize:[34,34],iconAnchor:[17,17],html:`<div style="width:34px;height:34px;display:flex;align-items:center;justify-content:center;transform:rotate(${Number(track)||0}deg);color:${colour};font-size:25px;text-shadow:0 0 8px #000">▲</div>`});
+  }
+
+  async function loadAircraft(){
+    const response=await fetch(`ssz.json?ts=${Date.now()}`,{cache:'no-store'});
+    if(!response.ok) throw new Error(`Aircraft feed returned HTTP ${response.status}`);
+    const data=await response.json();
+    const aircraft=Array.isArray(data.aircraft)?data.aircraft:[];
+
+    document.getElementById('activeCount').textContent=aircraft.length;
+    document.getElementById('airborneCount').textContent=aircraft.filter(a=>!a.onGround).length;
+    document.getElementById('feedAge').textContent=ageText(data.generatedUtc);
+    document.getElementById('flightCountText').textContent=`${aircraft.length} contact${aircraft.length===1?'':'s'}`;
+    document.getElementById('mapUpdated').textContent=`Updated ${formatTime(data.generatedUtc)} local`;
+
+    aircraftLayer.clearLayers();
+    aircraftMarkers.clear();
+    const list=document.getElementById('flightList');
+    list.innerHTML='';
+
+    if(!aircraft.length){
+      list.innerHTML='<div class="empty"><strong>No active Specsavers Aviation flights detected</strong>The fleet will appear automatically when OpenSky reports a matching aircraft.</div>';
+      return data;
+    }
+
+    const bounds=[];
+    aircraft.forEach(a=>{
+      const callsign=(a.callsign||'').trim() || 'No callsign';
+      const registration=a.registration || a.icao24 || 'Unknown aircraft';
+      const positionValid=Number.isFinite(Number(a.latitude))&&Number.isFinite(Number(a.longitude));
+      const altitude=a.onGround?'GND':(a.altitudeFeet!=null?`FL${String(Math.round(a.altitudeFeet/100)).padStart(3,'0')}`:'--');
+      const speed=a.speedKnots!=null?`${Math.round(a.speedKnots)} kt`:'--';
+      const heading=a.track!=null?`${Math.round(a.track)}°`:'--';
+
+      const card=document.createElement('div');
+      card.className=`flight-card ${a.onGround?'ground':''}`;
+      card.innerHTML=`
+        <div class="flight-top">
+          <div><div class="callsign">${esc(callsign)}</div><div class="registration">${esc(registration)} · ${esc(a.aircraftType||'')}</div></div>
+          <div class="route">${esc(routeFor(callsign))}</div>
+        </div>
+        <div class="flight-data">
+          <div class="data-box"><div class="data-label">Level</div><div class="data-value">${esc(altitude)}</div></div>
+          <div class="data-box"><div class="data-label">Speed</div><div class="data-value">${esc(speed)}</div></div>
+          <div class="data-box"><div class="data-label">Track</div><div class="data-value">${esc(heading)}</div></div>
+        </div>`;
+      list.appendChild(card);
+
+      if(positionValid){
+        const marker=L.marker([a.latitude,a.longitude],{icon:aircraftIcon(a.track,a.onGround)}).addTo(aircraftLayer);
+        marker.bindPopup(`<strong>${esc(callsign)}</strong><br>${esc(registration)}<br>${esc(routeFor(callsign))}<br>${esc(altitude)} · ${esc(speed)} · ${esc(heading)}`);
+        aircraftMarkers.set(a.icao24,marker);
+        bounds.push([a.latitude,a.longitude]);
+        card.onclick=()=>{map.flyTo([a.latitude,a.longitude],9);marker.openPopup()};
+      }
+    });
+    if(bounds.length) map.fitBounds(bounds,{padding:[60,60],maxZoom:8});
+    return data;
+  }
+
+  function categoryClass(category){
+    const c=String(category||'UNKNOWN').toUpperCase();
+    return ['VFR','MVFR','IFR','LIFR'].includes(c)?c:'UNKNOWN';
+  }
+  function windText(obj){
+    if(!obj) return '--';
+    if(obj.windText) return obj.windText;
+    const dir=obj.windDirection ?? obj.wdir;
+    const speed=obj.windSpeedKt ?? obj.windSpeed ?? obj.wspd;
+    const gust=obj.windGustKt ?? obj.windGust ?? obj.wgst;
+    if(speed==null) return '--';
+    const dirText=(dir===null||dir===undefined||String(dir).toUpperCase()==='VRB')?'VRB':String(Math.round(Number(dir))).padStart(3,'0');
+    return `${dirText}/${Math.round(Number(speed))}${gust?`G${Math.round(Number(gust))}`:''} kt`;
+  }
+  function windClass(obj){
+    const speed=Number(obj?.windGustKt ?? obj?.windGust ?? obj?.wgst ?? obj?.windSpeedKt ?? obj?.windSpeed ?? obj?.wspd ?? 0);
+    if(speed<15) return 'wind-low'; if(speed<25) return 'wind-mid'; if(speed<35) return 'wind-high'; return 'wind-severe';
+  }
+  function visibilityText(obj){return obj?.visibilityText ?? obj?.visibility ?? obj?.vis ?? '--'}
+  function ceilingText(obj){
+    const value=obj?.ceilingFt ?? obj?.ceiling ?? null;
+    return value==null?'--':`${Math.round(Number(value))} ft`;
+  }
+  function wxValue(obj,...keys){for(const k of keys){if(obj&&obj[k]!==null&&obj[k]!==undefined&&obj[k]!=='')return obj[k]}return null}
+
+  function normaliseStation(data,icao){
+    const airports=data.airports || data.stations || data.weather || data;
+    return airports?.[icao] || (Array.isArray(airports)?airports.find(x=>(x.icao||x.stationId||x.id)===icao):null);
+  }
+  function normalisePeriods(station){
+    return station?.taf?.periods || station?.tafPeriods || station?.periods || [];
+  }
+
+  async function loadWeather(){
+    const grid=document.getElementById('weatherGrid');
+    try{
+      const response=await fetch(`weather.json?ts=${Date.now()}`,{cache:'no-store'});
+      if(!response.ok) throw new Error(`weather.json returned HTTP ${response.status}`);
+      const data=await response.json();
+      document.getElementById('weatherUpdated').textContent=`Updated ${formatTime(data.generatedUtc||data.time||data.updatedUtc)} local`;
+      grid.innerHTML='';
+
+      Object.entries(AIRPORTS).forEach(([icao,airport])=>{
+        const station=normaliseStation(data,icao) || {};
+        const metar=station.metar || station.current || {};
+        const periods=normalisePeriods(station);
+        const category=wxValue(metar,'category','flightCategory','fltCat') || wxValue(station,'category','flightCategory') || 'UNKNOWN';
+        const temperature=wxValue(metar,'temperatureC','temperature','temp');
+        const dewpoint=wxValue(metar,'dewpointC','dewpoint','dewp');
+        const qnh=wxValue(metar,'qnhHpa','altimeterHpa','qnh','altim');
+        const cloud=wxValue(metar,'cloudText','clouds','cloud') || '--';
+        const weather=wxValue(metar,'weather','wx','wxString') || 'NOSIG';
+        const raw=wxValue(metar,'raw','rawText','rawOb') || 'Raw METAR not supplied';
+
+        const panel=document.createElement('article');
+        panel.className='panel';
+        const periodHtml=periods.length ? periods.slice(0,6).map(p=>{
+          const cat=wxValue(p,'category','flightCategory','cat') || 'UNKNOWN';
+          const time=wxValue(p,'timeLabel','time','valid','period') || '--';
+          return `<div class="taf-period">
+            <div class="taf-time">${esc(time)}</div>
+            <div class="taf-category ${categoryClass(cat)}">${esc(cat)}</div>
+            <div class="taf-detail">
+              <span>Wind</span><strong class="${windClass(p)}">${esc(windText(p))}</strong>
+              <span>Visibility</span><strong>${esc(visibilityText(p))}</strong>
+              <span>Ceiling</span><strong>${esc(ceilingText(p))}</strong>
+              <span>Weather</span><strong>${esc(wxValue(p,'weather','wx','wxString')||'--')}</strong>
+            </div>
+          </div>`;
+        }).join('') : '<div class="weather-error">No structured TAF periods are present in weather.json for this airport.</div>';
+
+        panel.innerHTML=`
+          <div class="panel-head"><div class="airport-title"><div><div class="airport-code">${airport.label} · ${icao}</div><div class="airport-name">${airport.name}</div></div></div><span class="category ${categoryClass(category)}">${esc(category)}</span></div>
+          <div class="panel-body">
+            <div class="metar-grid">
+              <div class="wx-cell"><div class="wx-key">Wind</div><div class="wx-value ${windClass(metar)}">${esc(windText(metar))}</div></div>
+              <div class="wx-cell"><div class="wx-key">Visibility</div><div class="wx-value">${esc(visibilityText(metar))}</div></div>
+              <div class="wx-cell"><div class="wx-key">Ceiling</div><div class="wx-value">${esc(ceilingText(metar))}</div></div>
+              <div class="wx-cell"><div class="wx-key">Temp / dew</div><div class="wx-value">${temperature==null?'--':esc(Math.round(Number(temperature))+'°C')} / ${dewpoint==null?'--':esc(Math.round(Number(dewpoint))+'°C')}</div></div>
+              <div class="wx-cell"><div class="wx-key">QNH</div><div class="wx-value">${qnh==null?'--':esc(Math.round(Number(qnh))+' hPa')}</div></div>
+              <div class="wx-cell"><div class="wx-key">Cloud / WX</div><div class="wx-value">${esc(cloud)} · ${esc(weather)}</div></div>
+            </div>
+            <div class="raw">${esc(raw)}</div>
+            <div class="taf-title">TAF timeline including wind</div>
+            <div class="taf-list">${periodHtml}</div>
+          </div>`;
+        grid.appendChild(panel);
+      });
+      return data;
+    }catch(error){
+      document.getElementById('weatherUpdated').textContent='Weather feed unavailable';
+      grid.innerHTML=`<article class="panel" style="grid-column:1/-1"><div class="panel-body"><div class="weather-error"><strong>weather.json is not available yet.</strong><br>${esc(error.message)}<br><br>The aircraft dashboard remains operational. Add the weather-feed workflow and this section will populate automatically.</div></div></article>`;
+      throw error;
+    }
+  }
+
+  async function refresh(){
+    let aircraftOK=false, weatherOK=false;
+    try{await loadAircraft();aircraftOK=true}catch(e){console.error(e);document.getElementById('flightList').innerHTML=`<div class="weather-error">Aircraft feed error: ${esc(e.message)}</div>`}
+    try{await loadWeather();weatherOK=true}catch(e){console.warn(e)}
+    const dot=document.getElementById('feedDot');
+    const status=document.getElementById('feedStatus');
+    dot.className=`dot ${aircraftOK&&weatherOK?'ok':aircraftOK?'warn':'bad'}`;
+    status.textContent=aircraftOK&&weatherOK?'Aircraft and weather feeds online':aircraftOK?'Aircraft online · weather pending':'Feed unavailable';
+  }
+
+  function tick(){document.getElementById('clock').textContent=new Date().toLocaleTimeString('en-GB',{timeZone:'Europe/Guernsey',hour12:false})}
+  tick(); setInterval(tick,1000);
+  refresh(); setInterval(refresh,60000);
+</script>
 </body>
 </html>
