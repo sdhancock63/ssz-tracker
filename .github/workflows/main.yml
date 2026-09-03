@@ -71,6 +71,8 @@ jobs:
           with open("opensky.json", "r") as f:
               data = json.load(f)
 
+          states = data.get("states") or []
+
           output = {
               "generatedUtc": datetime.now(timezone.utc).isoformat(),
               "time": data.get("time"),
@@ -78,7 +80,7 @@ jobs:
               "aircraft": []
           }
 
-          for s in data.get("states", []):
+          for s in states:
 
               if len(s) < 17:
                   continue
@@ -107,12 +109,16 @@ jobs:
                   "latitude": s[6],
                   "onGround": s[8],
                   "track": s[10],
-                  "altitudeFeet":
+                  "altitudeFeet": (
                       round(altitude * 3.28084)
-                      if altitude is not None else None,
-                  "speedKnots":
+                      if altitude is not None
+                      else None
+                  ),
+                  "speedKnots": (
                       round(speed * 1.94384)
-                      if speed is not None else None
+                      if speed is not None
+                      else None
+                  )
               })
 
           output["count"] = len(output["aircraft"])
