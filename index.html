@@ -341,18 +341,12 @@ setInterval(tick,1000);
 
 window.addEventListener('load', () => {
 
-    map.invalidateSize();
-
     setTimeout(() => {
-        map.invalidateSize();
-    }, 100);
 
-    setTimeout(() => {
-        map.invalidateSize();
-    }, 500);
+        map.invalidateSize(true);
 
-    setTimeout(() => {
-        map.invalidateSize();
+        map.setView([50.5, -2.0], 7);
+
     }, 1000);
 
     refresh();
