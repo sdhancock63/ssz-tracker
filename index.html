@@ -137,12 +137,28 @@
     // SSZ3:'GCI → EMA', SSZ4:'EMA → GCI'
   };
 
-  const map = L.map('map', {
+ const map = L.map('map', {
     zoomControl: true,
-   }).setView([50.5, -2.0], 7);
+    preferCanvas: false
+});
+
+map.setView([50.5, -2.0], 7);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
     maxZoom:18, attribution:'© OpenStreetMap contributors'
   }).addTo(map);
+  map.whenReady(() => {
+
+    map.invalidateSize(true);
+
+    requestAnimationFrame(() => {
+        map.invalidateSize(true);
+    });
+
+    setTimeout(() => {
+        map.invalidateSize(true);
+    }, 1000);
+
+});
   setTimeout(() => {
     map.invalidateSize(true);
 }, 2000);
