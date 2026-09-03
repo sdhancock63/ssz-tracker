@@ -340,16 +340,27 @@
   tick();
 setInterval(tick,1000);
 
-refresh();
-
 window.addEventListener('load', () => {
+
+    map.invalidateSize();
+
     setTimeout(() => {
-        map.invalidateSize(true);
+        map.invalidateSize();
+    }, 100);
+
+    setTimeout(() => {
+        map.invalidateSize();
     }, 500);
+
+    setTimeout(() => {
+        map.invalidateSize();
+    }, 1000);
+
+    refresh();
 });
 
 window.addEventListener('resize', () => {
-    map.invalidateSize(true);
+    map.invalidateSize();
 });
 
 setInterval(refresh,60000);
