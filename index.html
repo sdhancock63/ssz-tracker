@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SSZ Tracker</title>
+    <style>
+        body{
+            font-family:Segoe UI,Arial,sans-serif;
+            background:#0b1420;
+            color:white;
+            text-align:center;
+            padding-top:100px;
+        }
+
+        h1{
+            color:#25e37c;
+        }
+
+        .box{
+            width:500px;
+            margin:auto;
+            border:1px solid #25e37c;
+            padding:20px;
+            border-radius:10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h1>SSZ Aircraft Tracker</h1>
+
+    <p>Dashboard deployment successful.</p>
+
+    <p id="time"></p>
+</div>
+
+<script>
+document.getElementById("time").innerHTML =
+    "Loaded at " + new Date().toLocaleString();
+</script>
+
+</body>
+</html>
