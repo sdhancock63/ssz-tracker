@@ -1,23 +1,65 @@
-name: Test OpenSky Access
+name: Generate SSZ Feed
 
 on:
   workflow_dispatch:
 
 jobs:
-  test-opensky:
+  build-feed:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Test OpenSky
-        run: |
-          echo "Testing OpenSky anonymously"
+      - uses: actions/checkout@v4
 
+      - name: Download OpenSky data
+        run: |
           curl -L \
             "https://opensky-network.org/api/states/all" \
-            -o response.json
+            -o opensky.json
 
-          echo "Response size:"
-          wc -c response.json
+      - name: Build SSZ feed
+        run: |
+          python3 << 'EOF'
+          import json
 
-          echo "First 500 characters:"
-          head -c 500 response.json
+          with open("opensky.json","r") as f:
+              data = json.load(f)
+
+          result = {
+              "time": data["time"],
+              "aircraft": []
+          }
+
+          for s in data.get("states",[]):
+
+              callsign = (s[1] or "").strip()
+
+              if callsign.startswith("SSZ"):
+
+                  result["aircraft"].append({
+                      "icao24": s[0],
+                      "callsign": callsign,
+                      "longitude": s[5],
+                      "latitude": s[6],
+                      "altitude": s[7],
+                      "velocity": s[9],
+                      "track": s[10],
+                      "onGround": s[8]
+                  })
+
+          with open("ssz.json","w") as f:
+              json.dump(result,f,indent=2)
+
+          print("Aircraft found:",
+                len(result["aircraft"]))
+          EOF
+
+      - name: Commit feed
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          git add ssz.json
+
+          git commit -m "Update SSZ feed" || echo "No changes"
+
+          git push
