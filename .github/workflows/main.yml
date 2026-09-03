@@ -1,4 +1,4 @@
-name: Generate SSZ Feed
+name: Generate Specsavers Aviation Feed
 
 permissions:
   contents: write
@@ -9,6 +9,10 @@ on:
   schedule:
     - cron: '*/5 * * * *'
 
+concurrency:
+  group: specsavers-aviation-feed
+  cancel-in-progress: false
+
 jobs:
   build-feed:
     runs-on: ubuntu-latest
@@ -17,57 +21,121 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Download OpenSky data
+      - name: Check Guernsey operating hours
+        id: operating-hours
+        shell: bash
         run: |
-          curl -L \
-            "https://opensky-network.org/api/states/all" \
+          LOCAL_HOUR=$(TZ=Europe/Guernsey date '+%H')
+
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "fetch=true" >> "$GITHUB_OUTPUT"
+          elif [ "$LOCAL_HOUR" -ge 6 ] && [ "$LOCAL_HOUR" -lt 22 ]; then
+            echo "fetch=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "fetch=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Download OpenSky data
+        if: steps.operating-hours.outputs.fetch == 'true'
+        run: |
+          curl \
+            --fail \
+            --silent \
+            --show-error \
+            --location \
+            "https://opensky-network.org/api/states/all?icao24=424c5c&icao24=43ea43&icao24=43ea40" \
             -o opensky.json
 
-      - name: Build SSZ feed
+      - name: Build feed
+        if: steps.operating-hours.outputs.fetch == 'true'
         run: |
-          python3 << 'EOF'
+          python3 << 'PYTHON'
           import json
+          from datetime import datetime, timezone
+
+          FLEET = {
+              "424c5c": {
+                  "registration": "M-SPEC",
+                  "aircraftType": "King Air 360"
+              },
+              "43ea43": {
+                  "registration": "M-SPEL",
+                  "aircraftType": "King Air 350i"
+              },
+              "43ea40": {
+                  "registration": "M-SPEX",
+                  "aircraftType": "King Air 350i"
+              }
+          }
 
           with open("opensky.json", "r") as f:
               data = json.load(f)
 
-          result = {
-              "time": data["time"],
+          output = {
+              "generatedUtc": datetime.now(timezone.utc).isoformat(),
+              "time": data.get("time"),
+              "count": 0,
               "aircraft": []
           }
 
           for s in data.get("states", []):
 
-              callsign = (s[1] or "").strip()
+              if len(s) < 17:
+                  continue
 
-              if callsign.startswith("GR"):
+              icao24 = str(s[0] or "").lower().strip()
+              callsign = str(s[1] or "").upper().strip()
 
-                  result["aircraft"].append({
-                      "icao24": s[0],
-                      "callsign": callsign,
-                      "country": s[2],
-                      "longitude": s[5],
-                      "latitude": s[6],
-                      "altitude": s[7],
-                      "velocity": s[9],
-                      "track": s[10],
-                      "verticalRate": s[11],
-                      "onGround": s[8]
-                  })
+              if not (
+                  callsign.startswith("SSZ")
+                  or icao24 in FLEET
+              ):
+                  continue
+
+              fleet = FLEET.get(icao24, {})
+
+              altitude = s[7]
+              speed = s[9]
+
+              output["aircraft"].append({
+                  "registration": fleet.get("registration"),
+                  "aircraftType": fleet.get("aircraftType"),
+                  "icao24": icao24,
+                  "callsign": callsign,
+                  "country": s[2],
+                  "longitude": s[5],
+                  "latitude": s[6],
+                  "onGround": s[8],
+                  "track": s[10],
+                  "altitudeFeet":
+                      round(altitude * 3.28084)
+                      if altitude is not None else None,
+                  "speedKnots":
+                      round(speed * 1.94384)
+                      if speed is not None else None
+              })
+
+          output["count"] = len(output["aircraft"])
 
           with open("ssz.json", "w") as f:
-              json.dump(result, f, indent=2)
+              json.dump(output, f, indent=2)
 
-          print("Aircraft found:", len(result["aircraft"]))
-          EOF
+          print("Aircraft found:", output["count"])
+          PYTHON
 
       - name: Commit feed
+        if: steps.operating-hours.outputs.fetch == 'true'
         run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add ssz.json
 
-          git commit -m "Update SSZ feed" || echo "No changes"
+          if git diff --cached --quiet; then
+            echo "No changes"
+            exit 0
+          fi
 
+          git commit -m "Update Specsavers Aviation feed"
           git push
+`
