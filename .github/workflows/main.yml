@@ -1,5 +1,8 @@
 name: Generate SSZ Feed
 
+permissions:
+  contents: write
+
 on:
   workflow_dispatch:
 
@@ -8,7 +11,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Download OpenSky data
         run: |
@@ -21,7 +25,7 @@ jobs:
           python3 << 'EOF'
           import json
 
-          with open("opensky.json","r") as f:
+          with open("opensky.json", "r") as f:
               data = json.load(f)
 
           result = {
@@ -29,12 +33,10 @@ jobs:
               "aircraft": []
           }
 
-          for s in data.get("states",[]):
-
+          for s in data.get("states", []):
               callsign = (s[1] or "").strip()
 
               if callsign.startswith("SSZ"):
-
                   result["aircraft"].append({
                       "icao24": s[0],
                       "callsign": callsign,
@@ -46,11 +48,10 @@ jobs:
                       "onGround": s[8]
                   })
 
-          with open("ssz.json","w") as f:
-              json.dump(result,f,indent=2)
+          with open("ssz.json", "w") as f:
+              json.dump(result, f, indent=2)
 
-          print("Aircraft found:",
-                len(result["aircraft"]))
+          print("Aircraft found:", len(result["aircraft"]))
           EOF
 
       - name: Commit feed
