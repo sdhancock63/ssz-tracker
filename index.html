@@ -222,7 +222,15 @@
         card.onclick=()=>{map.flyTo([a.latitude,a.longitude],9);marker.openPopup()};
       }
     });
-    if(bounds.length) map.fitBounds(bounds,{padding:[60,60],maxZoom:8});
+    if(bounds.length){
+    map.fitBounds(bounds,{
+        padding:[60,60],
+        maxZoom:8
+    });
+}
+else{
+    map.setView([50.5,-2.0],7);
+}
     return data;
   }
 
