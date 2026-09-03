@@ -40,7 +40,7 @@ jobs:
 
               callsign = (s[1] or "").strip()
 
-              if callsign:
+              if callsign.startswith("GR"):
 
                   result["aircraft"].append({
                       "icao24": s[0],
