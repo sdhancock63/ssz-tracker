@@ -30,14 +30,6 @@
     .metric,.panel{background:linear-gradient(180deg,rgba(16,36,56,.96),rgba(10,25,40,.96));border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
     .metric{padding:16px}.metric-label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}.metric-value{font-size:30px;font-weight:700;margin-top:5px}.metric-note{font-size:12px;color:var(--muted);margin-top:3px}
     .main-grid{display:grid;grid-template-columns:minmax(0,2.15fr) minmax(330px,.85fr);gap:14px;margin-bottom:14px}
-    .leaflet-container,
-.leaflet-map-pane,
-.leaflet-tile-pane,
-.leaflet-pane,
-.leaflet-layer,
-.leaflet-tile-container{
-    transform:none !important;
-}
     .panel-head{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-bottom:1px solid var(--line)}
     .panel-head h2{font-size:15px;margin:0;text-transform:uppercase;letter-spacing:.1em}.panel-body{padding:14px}
     #map{
@@ -95,8 +87,8 @@
 <main>
   <section class="summary">
     <div class="metric"><div class="metric-label">Active aircraft</div><div id="activeCount" class="metric-value">0</div><div class="metric-note">Visible in latest OpenSky feed</div></div>
-    <div class="metric"><div class="metric-label">Airborne</div><div id="airborneCount" class="metric-value">0</div><div class="metric-note">M-SPEC, M-SPEL, M-SPEX or SSZ*</div></div>
-    <div class="metric"><div class="metric-label">Feed age</div><div id="feedAge" class="metric-value">--</div><div class="metric-note">Aircraft feed generated UTC</div></div>
+    <div class="metric"><div class="metric-label">Airborne</div><div id="airborneCount" class="metric-value">0</div><div class="metric-note">M-SPEC, M-SPEK, M-SPEL or SSZ*</div></div>
+    <div class="metric"><div class="metric-label">Feed age</div><div id="feedAge" class="metric-value">--</div><div class="metric-note">Age of latest OpenSky sample</div></div>
     <div class="metric"><div class="metric-label">Weather airports</div><div class="metric-value">3</div><div class="metric-note">EGJB · EGHI · EGNX</div></div>
   </section>
 
@@ -137,31 +129,23 @@
     // SSZ3:'GCI → EMA', SSZ4:'EMA → GCI'
   };
 
- const map = L.map('map', {
-    zoomControl: true,
-    preferCanvas: false
-});
+  const DEFAULT_VIEW = {center:[50.5,-2.0], zoom:7};
 
-map.setView([50.5, -2.0], 7);
+  const map = L.map('map',{zoomControl:true});
+  map.setView(DEFAULT_VIEW.center, DEFAULT_VIEW.zoom);
+
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
     maxZoom:18, attribution:'© OpenStreetMap contributors'
   }).addTo(map);
-  map.whenReady(() => {
 
-    map.invalidateSize(true);
-
-    requestAnimationFrame(() => {
-        map.invalidateSize(true);
-    });
-
-    setTimeout(() => {
-        map.invalidateSize(true);
-    }, 1000);
-
-});
-  setTimeout(() => {
-    map.invalidateSize(true);
-}, 2000);
+  // One size recalculation once the map is ready, plus one whenever the
+  // container actually changes size. No timers, no transform overrides.
+  map.whenReady(() => map.invalidateSize());
+  if(window.ResizeObserver){
+    new ResizeObserver(() => map.invalidateSize()).observe(document.getElementById('map'));
+  }else{
+    window.addEventListener('resize',() => map.invalidateSize());
+  }
 
   Object.entries(AIRPORTS).forEach(([icao,a]) => {
     L.circleMarker([a.lat,a.lon],{radius:6,color:'#38bdf8',fillColor:'#07111d',fillOpacity:1,weight:2})
@@ -169,7 +153,6 @@ map.setView([50.5, -2.0], 7);
   });
 
   const aircraftLayer = L.layerGroup().addTo(map);
-  let aircraftMarkers = new Map();
 
   function esc(value){
     return String(value ?? '').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
@@ -182,7 +165,9 @@ map.setView([50.5, -2.0], 7);
   }
   function ageText(value){
     if(!value) return '--';
-    const seconds=Math.max(0,Math.round((Date.now()-new Date(value).getTime())/1000));
+    const d = typeof value === 'number' ? new Date(value*1000) : new Date(value);
+    if(isNaN(d)) return '--';
+    const seconds=Math.max(0,Math.round((Date.now()-d.getTime())/1000));
     if(seconds<60) return `${seconds}s`;
     if(seconds<3600) return `${Math.floor(seconds/60)}m`;
     return `${Math.floor(seconds/3600)}h ${Math.floor((seconds%3600)/60)}m`;
@@ -198,20 +183,22 @@ map.setView([50.5, -2.0], 7);
     if(!response.ok) throw new Error(`Aircraft feed returned HTTP ${response.status}`);
     const data=await response.json();
     const aircraft=Array.isArray(data.aircraft)?data.aircraft:[];
+    // data.time is the OpenSky sample time; generatedUtc is only when the Action ran.
+    const sampleTime = data.time ?? data.generatedUtc;
 
     document.getElementById('activeCount').textContent=aircraft.length;
     document.getElementById('airborneCount').textContent=aircraft.filter(a=>!a.onGround).length;
-    document.getElementById('feedAge').textContent=ageText(data.generatedUtc);
+    document.getElementById('feedAge').textContent=ageText(sampleTime);
     document.getElementById('flightCountText').textContent=`${aircraft.length} contact${aircraft.length===1?'':'s'}`;
-    document.getElementById('mapUpdated').textContent=`Updated ${formatTime(data.generatedUtc)} local`;
+    document.getElementById('mapUpdated').textContent=`Updated ${formatTime(sampleTime)} local`;
 
     aircraftLayer.clearLayers();
-    aircraftMarkers.clear();
     const list=document.getElementById('flightList');
     list.innerHTML='';
 
     if(!aircraft.length){
       list.innerHTML='<div class="empty"><strong>No active Specsavers Aviation flights detected</strong>The fleet will appear automatically when OpenSky reports a matching aircraft.</div>';
+      map.setView(DEFAULT_VIEW.center, DEFAULT_VIEW.zoom);
       return data;
     }
 
@@ -223,12 +210,13 @@ map.setView([50.5, -2.0], 7);
       const altitude=a.onGround?'GND':(a.altitudeFeet!=null?`FL${String(Math.round(a.altitudeFeet/100)).padStart(3,'0')}`:'--');
       const speed=a.speedKnots!=null?`${Math.round(a.speedKnots)} kt`:'--';
       const heading=a.track!=null?`${Math.round(a.track)}°`:'--';
+      const typeSuffix=a.aircraftType?` · ${esc(a.aircraftType)}`:'';
 
       const card=document.createElement('div');
       card.className=`flight-card ${a.onGround?'ground':''}`;
       card.innerHTML=`
         <div class="flight-top">
-          <div><div class="callsign">${esc(callsign)}</div><div class="registration">${esc(registration)} · ${esc(a.aircraftType||'')}</div></div>
+          <div><div class="callsign">${esc(callsign)}</div><div class="registration">${esc(registration)}${typeSuffix}</div></div>
           <div class="route">${esc(routeFor(callsign))}</div>
         </div>
         <div class="flight-data">
@@ -241,20 +229,16 @@ map.setView([50.5, -2.0], 7);
       if(positionValid){
         const marker=L.marker([a.latitude,a.longitude],{icon:aircraftIcon(a.track,a.onGround)}).addTo(aircraftLayer);
         marker.bindPopup(`<strong>${esc(callsign)}</strong><br>${esc(registration)}<br>${esc(routeFor(callsign))}<br>${esc(altitude)} · ${esc(speed)} · ${esc(heading)}`);
-        aircraftMarkers.set(a.icao24,marker);
         bounds.push([a.latitude,a.longitude]);
         card.onclick=()=>{map.flyTo([a.latitude,a.longitude],9);marker.openPopup()};
       }
     });
+
     if(bounds.length){
-    map.fitBounds(bounds,{
-        padding:[60,60],
-        maxZoom:8
-    });
-}
-else{
-    map.setView([50.5,-2.0],7);
-}
+      map.fitBounds(bounds,{padding:[60,60],maxZoom:8});
+    }else{
+      map.setView(DEFAULT_VIEW.center, DEFAULT_VIEW.zoom);
+    }
     return data;
   }
 
@@ -366,26 +350,10 @@ else{
 
   function tick(){document.getElementById('clock').textContent=new Date().toLocaleTimeString('en-GB',{timeZone:'Europe/Guernsey',hour12:false})}
   tick();
-setInterval(tick,1000);
+  setInterval(tick,1000);
 
-window.addEventListener('load', () => {
-
-    setTimeout(() => {
-
-        map.invalidateSize(true);
-
-        map.setView([50.5, -2.0], 7);
-
-    }, 1000);
-
-    refresh();
-});
-
-window.addEventListener('resize', () => {
-    map.invalidateSize();
-});
-
-setInterval(refresh,60000);
+  refresh();
+  setInterval(refresh,60000);
 </script>
 </body>
 </html>
