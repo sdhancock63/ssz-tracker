@@ -276,7 +276,7 @@ jobs:
 
               # ---- Aircraft ----
               if curl --fail --silent --show-error --location \
-                   "https://opensky-network.org/api/states/all?icao24=424c5c&icao24=43ea43&icao24=43ea40" \
+                   "https://opensky-network.org/api/states/all?icao24=424c5c&icao24=43ea43&icao24=424b86" \
                    -o opensky.json
               then
                 python3 build_feed.py || echo "Feed build failed, skipping this cycle"
