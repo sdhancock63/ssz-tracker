@@ -7,9 +7,11 @@ on:
   workflow_dispatch:
 
   schedule:
-    # Dispatched hourly. GitHub drops most short-interval schedules under load,
-    # so the polling cadence is handled inside the job instead of by cron.
-    - cron: '0 * * * *'
+    # Twice-hourly dispatch. GitHub keeps one pending run per concurrency group,
+    # so while a job is polling the next dispatch sits queued and starts the
+    # moment that job ends — continuous handover rather than a gap. Two
+    # dispatches an hour means a single dropped trigger costs nothing.
+    - cron: '0,30 * * * *'
 
 concurrency:
   group: specsavers-aviation-feed
@@ -18,7 +20,7 @@ concurrency:
 jobs:
   build-feed:
     runs-on: ubuntu-latest
-    timeout-minutes: 55
+    timeout-minutes: 60
 
     steps:
       - name: Checkout repository
@@ -33,7 +35,7 @@ jobs:
           FLEET = {
               "424c5c": {"registration": "M-SPEC", "aircraftType": "King Air 360"},
               "43ea43": {"registration": "M-SPEL", "aircraftType": "King Air 350i"},
-              "424b86": {"registration": "M-SPEK", "aircraftType": "King Air 360"},
+              "43ea40": {"registration": "M-SPEK", "aircraftType": "King Air 350i"},
           }
 
           with open("opensky.json") as f:
@@ -259,9 +261,10 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # Stop polling 50 minutes in, so this job finishes before the next
-          # hourly dispatch arrives.
-          DEADLINE=$(( $(date +%s) + 50 * 60 ))
+          # Poll for 55 minutes, then exit and let the queued run take over.
+          # Slightly longer than the 30-minute dispatch interval, so there is
+          # always a pending run waiting to pick up the moment this one ends.
+          DEADLINE=$(( $(date +%s) + 55 * 60 ))
 
           # Aircraft every cycle (5 min); weather every third cycle (15 min),
           # which is ample since METARs update roughly half-hourly.
@@ -276,7 +279,7 @@ jobs:
 
               # ---- Aircraft ----
               if curl --fail --silent --show-error --location \
-                   "https://opensky-network.org/api/states/all?icao24=424c5c&icao24=43ea43&icao24=424b86" \
+                   "https://opensky-network.org/api/states/all?icao24=424c5c&icao24=43ea43&icao24=43ea40" \
                    -o opensky.json
               then
                 python3 build_feed.py || echo "Feed build failed, skipping this cycle"
@@ -324,3 +327,5 @@ jobs:
             CYCLE=$(( CYCLE + 1 ))
             sleep 300
           done
+
+          echo "Deadline reached after ${CYCLE} cycles; handing over to the queued run."
