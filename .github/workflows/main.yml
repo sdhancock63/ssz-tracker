@@ -7,7 +7,9 @@ on:
   workflow_dispatch:
 
   schedule:
-    - cron: '*/5 * * * *'
+    # Dispatched hourly. GitHub drops most short-interval schedules under load,
+    # so the polling cadence is handled inside the job instead of by cron.
+    - cron: '0 * * * *'
 
 concurrency:
   group: specsavers-aviation-feed
@@ -16,59 +18,25 @@ concurrency:
 jobs:
   build-feed:
     runs-on: ubuntu-latest
+    timeout-minutes: 55
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Check Guernsey operating hours
-        id: operating-hours
-        shell: bash
+      - name: Write feed builder
         run: |
-          LOCAL_HOUR=$(TZ=Europe/Guernsey date '+%H')
-
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "fetch=true" >> "$GITHUB_OUTPUT"
-          elif [ "$LOCAL_HOUR" -ge 6 ] && [ "$LOCAL_HOUR" -lt 22 ]; then
-            echo "fetch=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "fetch=false" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Download OpenSky data
-        if: steps.operating-hours.outputs.fetch == 'true'
-        run: |
-          curl \
-            --fail \
-            --silent \
-            --show-error \
-            --location \
-            "https://opensky-network.org/api/states/all?icao24=424c5c&icao24=43ea43&icao24=43ea40" \
-            -o opensky.json
-
-      - name: Build feed
-        if: steps.operating-hours.outputs.fetch == 'true'
-        run: |
-          python3 << 'PYTHON'
+          cat > build_feed.py << 'PYTHON'
           import json
           from datetime import datetime, timezone
 
           FLEET = {
-              "424c5c": {
-                  "registration": "M-SPEC",
-                  "aircraftType": "King Air 360"
-              },
-              "43ea43": {
-                  "registration": "M-SPEL",
-                  "aircraftType": "King Air 350i"
-              },
-              "43ea40": {
-                  "registration": "M-SPEX",
-                  "aircraftType": "King Air 350i"
-              }
+              "424c5c": {"registration": "M-SPEC", "aircraftType": "King Air 360"},
+              "43ea43": {"registration": "M-SPEL", "aircraftType": "King Air 350i"},
+              "43ea40": {"registration": "M-SPEK", "aircraftType": "King Air 350i"},
           }
 
-          with open("opensky.json", "r") as f:
+          with open("opensky.json") as f:
               data = json.load(f)
 
           states = data.get("states") or []
@@ -77,25 +45,20 @@ jobs:
               "generatedUtc": datetime.now(timezone.utc).isoformat(),
               "time": data.get("time"),
               "count": 0,
-              "aircraft": []
+              "aircraft": [],
           }
 
           for s in states:
-
               if len(s) < 17:
                   continue
 
               icao24 = str(s[0] or "").lower().strip()
               callsign = str(s[1] or "").upper().strip()
 
-              if not (
-                  callsign.startswith("SSZ")
-                  or icao24 in FLEET
-              ):
+              if not (callsign.startswith("SSZ") or icao24 in FLEET):
                   continue
 
               fleet = FLEET.get(icao24, {})
-
               altitude = s[7]
               speed = s[9]
 
@@ -110,15 +73,11 @@ jobs:
                   "onGround": s[8],
                   "track": s[10],
                   "altitudeFeet": (
-                      round(altitude * 3.28084)
-                      if altitude is not None
-                      else None
+                      round(altitude * 3.28084) if altitude is not None else None
                   ),
                   "speedKnots": (
-                      round(speed * 1.94384)
-                      if speed is not None
-                      else None
-                  )
+                      round(speed * 1.94384) if speed is not None else None
+                  ),
               })
 
           output["count"] = len(output["aircraft"])
@@ -129,18 +88,45 @@ jobs:
           print("Aircraft found:", output["count"])
           PYTHON
 
-      - name: Commit feed
-        if: steps.operating-hours.outputs.fetch == 'true'
+      - name: Poll OpenSky and publish feed
+        shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add ssz.json
+          # Stop polling 50 minutes in, so this job finishes before the next
+          # hourly dispatch arrives.
+          DEADLINE=$(( $(date +%s) + 50 * 60 ))
 
-          if git diff --cached --quiet; then
-            echo "No changes"
-            exit 0
-          fi
+          while [ "$(date +%s)" -lt "$DEADLINE" ]; do
+            LOCAL_HOUR=$(TZ=Europe/Guernsey date '+%H')
 
-          git commit -m "Update Specsavers Aviation feed"
-          git push
+            # Re-checked every cycle, not just at job start, so a job that
+            # begins at 21:00 stops fetching when the window closes at 22:00.
+            if [ "$LOCAL_HOUR" -ge 6 ] && [ "$LOCAL_HOUR" -lt 22 ]; then
+
+              if curl --fail --silent --show-error --location \
+                   "https://opensky-network.org/api/states/all?icao24=424c5c&icao24=43ea43&icao24=43ea40" \
+                   -o opensky.json
+              then
+                python3 build_feed.py || echo "Feed build failed, skipping this cycle"
+
+                git add ssz.json
+                if git diff --cached --quiet; then
+                  echo "No change to feed"
+                else
+                  git commit -m "Update Specsavers Aviation feed"
+                  # Another commit may have landed while we were sleeping.
+                  git pull --rebase --quiet || git rebase --abort || true
+                  git push || echo "Push failed, will retry next cycle"
+                fi
+              else
+                echo "OpenSky fetch failed (rate limit or outage), skipping this cycle"
+              fi
+
+            else
+              echo "Outside operating hours (${LOCAL_HOUR}:00 local), not fetching"
+            fi
+
+            sleep 300
+          done
