@@ -88,7 +88,146 @@ jobs:
           print("Aircraft found:", output["count"])
           PYTHON
 
-      - name: Poll OpenSky and publish feed
+      - name: Write weather builder
+        run: |
+          cat > build_weather.py << 'PYTHON'
+          import json
+          from datetime import datetime, timezone
+
+          STATIONS = ["EGJB", "EGHI", "EGNX"]
+
+
+          def load(path):
+              try:
+                  with open(path) as f:
+                      data = json.load(f)
+                  return data if isinstance(data, list) else []
+              except Exception:
+                  return []
+
+
+          def ceiling_from(clouds):
+              """Lowest broken, overcast or obscured layer, in feet AGL."""
+              lowest = None
+              for layer in clouds or []:
+                  cover = str(layer.get("cover") or "").upper()
+                  base = layer.get("base")
+                  if cover in ("BKN", "OVC", "OVX") and base is not None:
+                      lowest = base if lowest is None else min(lowest, base)
+              return lowest
+
+
+          def cloud_text(clouds):
+              parts = []
+              for layer in clouds or []:
+                  cover = str(layer.get("cover") or "").upper()
+                  base = layer.get("base")
+                  if not cover:
+                      continue
+                  parts.append(cover if base is None else "%s%03d" % (cover, int(base) // 100))
+              return " ".join(parts) if parts else "SKC"
+
+
+          def vis_miles(visib):
+              if visib is None:
+                  return None
+              try:
+                  return float(str(visib).replace("+", "").strip())
+              except ValueError:
+                  return None
+
+
+          def vis_text(visib):
+              miles = vis_miles(visib)
+              if miles is None:
+                  return str(visib) if visib is not None else None
+              return "%g km (%g SM)" % (round(miles * 1.609, 1), miles)
+
+
+          def category(ceiling, visib):
+              """Standard flight category from ceiling (ft) and visibility (SM)."""
+              miles = vis_miles(visib)
+              c = ceiling if ceiling is not None else 99999
+              v = miles if miles is not None else 99
+
+              if c < 500 or v < 1:
+                  return "LIFR"
+              if c < 1000 or v < 3:
+                  return "IFR"
+              if c <= 3000 or v <= 5:
+                  return "MVFR"
+              return "VFR"
+
+
+          def stamp(unix_time):
+              if not unix_time:
+                  return "--"
+              d = datetime.fromtimestamp(unix_time, timezone.utc)
+              return d.strftime("%d/%H%MZ")
+
+
+          metars = {str(m.get("icaoId") or "").upper(): m for m in load("metar.json")}
+          tafs = {str(t.get("icaoId") or "").upper(): t for t in load("taf.json")}
+
+          output = {
+              "generatedUtc": datetime.now(timezone.utc).isoformat(),
+              "airports": {},
+          }
+
+          for icao in STATIONS:
+              m = metars.get(icao) or {}
+              t = tafs.get(icao) or {}
+
+              ceiling = ceiling_from(m.get("clouds"))
+
+              metar = {
+                  "raw": m.get("rawOb"),
+                  "category": m.get("fltCat") or category(ceiling, m.get("visib")),
+                  "windDirection": m.get("wdir"),
+                  "windSpeedKt": m.get("wspd"),
+                  "windGustKt": m.get("wgst"),
+                  "visibilityText": vis_text(m.get("visib")),
+                  "ceilingFt": ceiling,
+                  "temperatureC": m.get("temp"),
+                  "dewpointC": m.get("dewp"),
+                  "qnhHpa": m.get("altim"),
+                  "cloudText": cloud_text(m.get("clouds")),
+                  "weather": m.get("wxString") or "NOSIG",
+                  "observedUtc": m.get("obsTime"),
+              }
+
+              periods = []
+              for f in (t.get("fcsts") or []):
+                  p_ceiling = ceiling_from(f.get("clouds"))
+                  periods.append({
+                      "timeLabel": stamp(f.get("timeFrom")),
+                      "category": category(p_ceiling, f.get("visib")),
+                      "windDirection": f.get("wdir"),
+                      "windSpeedKt": f.get("wspd"),
+                      "windGustKt": f.get("wgst"),
+                      "visibilityText": vis_text(f.get("visib")),
+                      "ceilingFt": p_ceiling,
+                      "weather": f.get("wxString") or cloud_text(f.get("clouds")),
+                      "change": f.get("fcstChange"),
+                  })
+
+              output["airports"][icao] = {
+                  "metar": metar,
+                  "taf": {
+                      "raw": t.get("rawTAF"),
+                      "issuedUtc": t.get("issueTime"),
+                      "periods": periods,
+                  },
+              }
+
+          with open("weather.json", "w") as f:
+              json.dump(output, f, indent=2)
+
+          found = [i for i in STATIONS if output["airports"][i]["metar"]["raw"]]
+          print("Weather built for:", ", ".join(found) if found else "no stations")
+          PYTHON
+
+      - name: Poll feeds and publish
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
@@ -98,6 +237,10 @@ jobs:
           # hourly dispatch arrives.
           DEADLINE=$(( $(date +%s) + 50 * 60 ))
 
+          # Aircraft every cycle (5 min); weather every third cycle (15 min),
+          # which is ample since METARs update roughly half-hourly.
+          CYCLE=0
+
           while [ "$(date +%s)" -lt "$DEADLINE" ]; do
             LOCAL_HOUR=$(TZ=Europe/Guernsey date '+%H')
 
@@ -105,28 +248,53 @@ jobs:
             # begins at 21:00 stops fetching when the window closes at 22:00.
             if [ "$LOCAL_HOUR" -ge 6 ] && [ "$LOCAL_HOUR" -lt 22 ]; then
 
+              # ---- Aircraft ----
               if curl --fail --silent --show-error --location \
                    "https://opensky-network.org/api/states/all?icao24=424c5c&icao24=43ea43&icao24=43ea40" \
                    -o opensky.json
               then
                 python3 build_feed.py || echo "Feed build failed, skipping this cycle"
-
-                git add ssz.json
-                if git diff --cached --quiet; then
-                  echo "No change to feed"
-                else
-                  git commit -m "Update Specsavers Aviation feed"
-                  # Another commit may have landed while we were sleeping.
-                  git pull --rebase --quiet || git rebase --abort || true
-                  git push || echo "Push failed, will retry next cycle"
-                fi
               else
                 echo "OpenSky fetch failed (rate limit or outage), skipping this cycle"
+              fi
+
+              # ---- Weather ----
+              if [ $(( CYCLE % 3 )) -eq 0 ]; then
+                METAR_OK=false
+                TAF_OK=false
+
+                curl --fail --silent --show-error --location \
+                  "https://aviationweather.gov/api/data/metar?ids=EGJB,EGHI,EGNX&format=json" \
+                  -o metar.json && METAR_OK=true
+
+                curl --fail --silent --show-error --location \
+                  "https://aviationweather.gov/api/data/taf?ids=EGJB,EGHI,EGNX&format=json" \
+                  -o taf.json && TAF_OK=true
+
+                if [ "$METAR_OK" = true ] && [ "$TAF_OK" = true ]; then
+                  python3 build_weather.py || echo "Weather build failed, keeping previous weather.json"
+                else
+                  echo "Weather fetch failed, keeping previous weather.json"
+                fi
+              fi
+
+              # ---- Publish ----
+              git add ssz.json 2>/dev/null || true
+              git add weather.json 2>/dev/null || true
+
+              if git diff --cached --quiet; then
+                echo "No change to feeds"
+              else
+                git commit -m "Update Specsavers Aviation feeds"
+                # Another commit may have landed while we were sleeping.
+                git pull --rebase --quiet || git rebase --abort || true
+                git push || echo "Push failed, will retry next cycle"
               fi
 
             else
               echo "Outside operating hours (${LOCAL_HOUR}:00 local), not fetching"
             fi
 
+            CYCLE=$(( CYCLE + 1 ))
             sleep 300
           done
