@@ -16,24 +16,29 @@
     }
     *{box-sizing:border-box}
     html,body{height:100%}
-    body{margin:0;background:linear-gradient(145deg,#050c14,#0a1725 55%,#07111d);color:var(--text);font-family:Segoe UI,Arial,sans-serif}
-    header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 24px;border-bottom:1px solid var(--line);background:rgba(7,17,29,.94);position:sticky;top:0;z-index:1000;backdrop-filter:blur(10px)}
-    h1{font-size:clamp(20px,2.4vw,32px);margin:0;letter-spacing:.02em}
-    .subtitle{color:var(--muted);font-size:13px;margin-top:4px}
-    .header-status{display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:flex-end}
-    .status-pill{display:flex;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--line);padding:8px 12px;border-radius:999px;color:var(--muted);font-size:13px}
+    body{margin:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;background:linear-gradient(145deg,#050c14,#0a1725 55%,#07111d);color:var(--text);font-family:Segoe UI,Arial,sans-serif}
+    header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:10px 18px;border-bottom:1px solid var(--line);background:rgba(7,17,29,.94);flex:none;z-index:1000}
+    h1{font-size:clamp(17px,1.8vw,24px);margin:0;letter-spacing:.02em}
+    .subtitle{color:var(--muted);font-size:12px;margin-top:2px}
+    .header-status{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    .status-pill{display:flex;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--line);padding:6px 11px;border-radius:999px;color:var(--muted);font-size:12px}
     .dot{width:9px;height:9px;border-radius:50%;background:var(--muted);box-shadow:0 0 10px currentColor}.dot.ok{background:var(--green)}.dot.warn{background:var(--amber)}.dot.bad{background:var(--red)}
-    main{padding:18px;max-width:1800px;margin:auto}
-    .summary{display:grid;grid-template-columns:repeat(4,minmax(160px,1fr));gap:14px;margin-bottom:14px}
-    .metric,.panel{background:linear-gradient(180deg,rgba(16,36,56,.96),rgba(10,25,40,.96));border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
-    .metric{padding:16px}.metric-label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}.metric-value{font-size:30px;font-weight:700;margin-top:5px}.metric-note{font-size:12px;color:var(--muted);margin-top:3px}
-    .main-grid{display:grid;grid-template-columns:minmax(0,2.15fr) minmax(330px,.85fr);gap:14px;margin-bottom:14px}
-    .panel-head{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-bottom:1px solid var(--line)}
-    .panel-head h2{font-size:15px;margin:0;text-transform:uppercase;letter-spacing:.1em}.panel-body{padding:14px}
+    /* Viewport-height grid: summary sizes to content, the map/flights row and
+       the weather row share what's left, and each panel scrolls internally. */
+    main{padding:10px;max-width:1900px;margin:auto;width:100%;flex:1;min-height:0;display:grid;grid-template-rows:auto minmax(0,1.25fr) minmax(0,1fr) auto;gap:10px;overflow:hidden}
+    .summary{display:grid;grid-template-columns:repeat(4,minmax(140px,1fr));gap:10px;margin:0}
+    .metric,.panel{background:linear-gradient(180deg,rgba(16,36,56,.96),rgba(10,25,40,.96));border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)}
+    .metric{padding:9px 13px}.metric-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}.metric-value{font-size:22px;font-weight:700;margin-top:1px}.metric-note{font-size:11px;color:var(--muted);margin-top:1px}
+    .main-grid{display:grid;grid-template-columns:minmax(0,2.15fr) minmax(320px,.85fr);gap:10px;margin:0;min-height:0}
+    .main-grid>.panel{display:flex;flex-direction:column;min-height:0;overflow:hidden}
+    .panel-head{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;border-bottom:1px solid var(--line);flex:none}
+    .panel-head h2{font-size:13px;margin:0;text-transform:uppercase;letter-spacing:.1em}.panel-body{padding:10px;min-height:0;overflow:auto}
+    .main-grid>.panel>.panel-body{flex:1}
     #map{
     width:100%;
-    height:500px;
-    min-height:500px;
+    height:100%;
+    min-height:0;
+    flex:1;
     display:block;
     position:relative;
     overflow:hidden;
@@ -52,22 +57,38 @@
     background:#0d1b2a;
     color:var(--text)
 }
-    .flight-list{display:grid;gap:10px;max-height:500px;overflow:auto}
-    .flight-card{border:1px solid var(--line);border-left:4px solid var(--green);background:rgba(7,17,29,.68);border-radius:10px;padding:12px;cursor:pointer}
+    .flight-list{display:grid;gap:8px;align-content:start}
+    .flight-card{border:1px solid var(--line);border-left:4px solid var(--green);background:rgba(7,17,29,.68);border-radius:10px;padding:10px;cursor:pointer}
     .flight-card.ground{border-left-color:var(--muted)}
-    .flight-top{display:flex;justify-content:space-between;gap:12px}.callsign{font-size:20px;font-weight:700;color:var(--green)}.registration{color:var(--muted);font-size:12px;margin-top:2px}.route{font-weight:600;text-align:right}.flight-data{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}.data-box{background:#091624;border-radius:8px;padding:8px}.data-label{color:var(--muted);font-size:10px;text-transform:uppercase}.data-value{font-size:14px;margin-top:2px}
-    .empty{padding:34px 14px;text-align:center;color:var(--muted)}.empty strong{display:block;color:var(--text);font-size:18px;margin-bottom:6px}
-    .weather-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-    .airport-title{display:flex;align-items:center;justify-content:space-between;gap:12px}.airport-code{font-size:22px;font-weight:750}.airport-name{font-size:12px;color:var(--muted)}
-    .category{display:inline-flex;align-items:center;justify-content:center;min-width:58px;padding:6px 9px;border:1px solid currentColor;border-radius:7px;font-weight:700;background:#08131f}.VFR{color:var(--green)}.MVFR{color:var(--blue)}.IFR{color:var(--red)}.LIFR{color:var(--purple)}.UNKNOWN{color:var(--muted)}
-    .metar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}.wx-cell{background:#091624;border:1px solid #152b40;border-radius:8px;padding:9px;min-height:62px}.wx-key{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}.wx-value{font-size:16px;font-weight:650;margin-top:5px;word-break:break-word}
-    .raw{font-family:Consolas,monospace;font-size:11px;line-height:1.45;color:#b8cde0;background:#07111d;border:1px solid #162d43;padding:9px;border-radius:8px;overflow-wrap:anywhere}
-    .taf-title{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin:14px 0 8px}.taf-list{display:grid;gap:8px}.taf-period{display:grid;grid-template-columns:78px 62px 1fr;gap:8px;align-items:center;background:#091624;border:1px solid #152b40;border-radius:9px;padding:9px}.taf-time{font-weight:700}.taf-category{font-size:11px;text-align:center;padding:4px;border:1px solid currentColor;border-radius:5px}.taf-detail{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3px 10px;font-size:12px}.taf-detail span:nth-child(odd){color:var(--muted)}
+    .flight-top{display:flex;justify-content:space-between;gap:12px}.callsign{font-size:17px;font-weight:700;color:var(--green)}.registration{color:var(--muted);font-size:12px;margin-top:2px}.route{font-weight:600;text-align:right}.flight-data{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:8px}.data-box{background:#091624;border-radius:8px;padding:6px 8px}.data-label{color:var(--muted);font-size:10px;text-transform:uppercase}.data-value{font-size:14px;margin-top:2px}
+    .empty{padding:20px 14px;text-align:center;color:var(--muted)}.empty strong{display:block;color:var(--text);font-size:16px;margin-bottom:6px}
+    .weather-section{min-height:0;display:flex;flex-direction:column;overflow:hidden}
+    .weather-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;min-height:0;flex:1;overflow:hidden}
+    .weather-grid>.panel{display:flex;flex-direction:column;min-height:0;overflow:hidden}
+    .weather-grid>.panel>.panel-body{flex:1;min-height:0;overflow:auto}
+    .airport-title{display:flex;align-items:center;justify-content:space-between;gap:12px}.airport-code{font-size:18px;font-weight:750}.airport-name{font-size:12px;color:var(--muted)}
+    .category{display:inline-flex;align-items:center;justify-content:center;min-width:52px;padding:4px 8px;font-size:12px;border:1px solid currentColor;border-radius:7px;font-weight:700;background:#08131f}.VFR{color:var(--green)}.MVFR{color:var(--blue)}.IFR{color:var(--red)}.LIFR{color:var(--purple)}.UNKNOWN{color:var(--muted)}
+    .metar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:0 0 8px}.wx-cell{background:#091624;border:1px solid #152b40;border-radius:8px;padding:6px 8px;min-height:0}.wx-key{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}.wx-value{font-size:14px;font-weight:650;margin-top:2px;word-break:break-word}
+    .raw{font-family:Consolas,monospace;font-size:10.5px;line-height:1.4;color:#b8cde0;background:#07111d;border:1px solid #162d43;padding:9px;border-radius:8px;overflow-wrap:anywhere}
+    .taf-title{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin:10px 0 6px}.taf-list{display:grid;gap:8px}.taf-period{display:grid;grid-template-columns:74px 58px 1fr;gap:8px;align-items:center;background:#091624;border:1px solid #152b40;border-radius:9px;padding:7px}.taf-time{font-weight:700}.taf-category{font-size:11px;text-align:center;padding:4px;border:1px solid currentColor;border-radius:5px}.taf-detail{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3px 10px;font-size:12px}.taf-detail span:nth-child(odd){color:var(--muted)}
     .wind-low{color:var(--green)}.wind-mid{color:var(--amber)}.wind-high{color:var(--orange)}.wind-severe{color:var(--red)}
     .weather-error{color:var(--amber);padding:16px;border:1px dashed #725f25;border-radius:8px;background:rgba(249,199,79,.06)}
-    footer{color:var(--muted);font-size:11px;padding:18px 4px 4px;text-align:center}
-    @media(max-width:1100px){.summary{grid-template-columns:repeat(2,1fr)}.main-grid{grid-template-columns:1fr}.weather-grid{grid-template-columns:1fr 1fr}.flight-list{max-height:none}}
-    @media(max-width:700px){header{align-items:flex-start;flex-direction:column}.header-status{justify-content:flex-start}.summary,.weather-grid{grid-template-columns:1fr}.main-grid{display:block}.main-grid>.panel{margin-bottom:14px}#map{height:420px}.metar-grid{grid-template-columns:repeat(2,1fr)}.taf-period{grid-template-columns:70px 55px 1fr}.taf-detail{grid-template-columns:1fr}}
+    footer{color:var(--muted);font-size:10px;padding:2px 4px;text-align:center;flex:none}
+    /* Below these sizes a single screen isn't realistic, so let the page scroll
+       normally again rather than crushing everything. */
+    @media(max-width:1100px),(max-height:620px){
+      body{height:auto;overflow:auto;display:block}
+      main{display:block;overflow:visible;height:auto}
+      .summary{grid-template-columns:repeat(2,1fr);margin-bottom:10px}
+      .main-grid{grid-template-columns:1fr;margin-bottom:10px}
+      .weather-section,.weather-grid{display:block;overflow:visible}
+      .weather-grid{display:grid;grid-template-columns:1fr 1fr}
+      .weather-grid>.panel,.main-grid>.panel{overflow:visible}
+      .weather-grid>.panel>.panel-body,.main-grid>.panel>.panel-body{overflow:visible}
+      #map{height:420px;min-height:420px;flex:none}
+      .weather-grid>.panel{margin-bottom:10px}
+    }
+    @media(max-width:700px){header{align-items:flex-start;flex-direction:column}.header-status{justify-content:flex-start}.summary,.weather-grid{grid-template-columns:1fr}.main-grid{display:block}.main-grid>.panel{margin-bottom:14px}.metar-grid{grid-template-columns:repeat(2,1fr)}.taf-period{grid-template-columns:70px 55px 1fr}.taf-detail{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -103,8 +124,8 @@
     </article>
   </section>
 
-  <section>
-    <div class="panel-head" style="border:0;padding:12px 2px"><h2>METAR and TAF Overview</h2><span id="weatherUpdated" class="subtitle">Awaiting weather feed</span></div>
+  <section class="weather-section">
+    <div class="panel-head" style="border:0;padding:0 2px 8px;flex:none"><h2>METAR and TAF Overview</h2><span id="weatherUpdated" class="subtitle">Awaiting weather feed</span></div>
     <div id="weatherGrid" class="weather-grid"></div>
   </section>
 
