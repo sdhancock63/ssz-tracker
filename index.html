@@ -6,7 +6,8 @@
   <meta name="theme-color" content="#07111d">
   <title>Specsavers Aviation Operations Dashboard</title>
 
-<link rel="stylesheet" href="leaflet.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIINfQ3ynqJKIQkMZkMZpG40dZB+R8dF3Hc=" crossorigin="">
 
   <style>
     :root {
@@ -79,6 +80,7 @@
   </div>
   <div class="header-status">
     <div class="status-pill"><span id="feedDot" class="dot"></span><span id="feedStatus">Loading feeds…</span></div>
+    <div class="status-pill">Next update&nbsp;<strong id="nextUpdate">--</strong></div>
     <div class="status-pill">Local time&nbsp;<strong id="clock">--:--:--</strong></div>
   </div>
 </header>
@@ -113,7 +115,8 @@
   </footer>
 </main>
 
-<script src="leaflet.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
   const AIRPORTS = {
     EGJB:{label:'GCI',name:'Guernsey',lat:49.434956,lon:-2.601969},
@@ -122,9 +125,10 @@
   };
 
   const ROUTES = {
-    SSZ1:'GCI → SOU', SSZ2:'SOU → GCI'
-    // Add further known flight-number routes here, for example:
-    // SSZ3:'GCI → EMA', SSZ4:'EMA → GCI'
+    SSZ1:'GCI → SOU', SSZ3:'GCI → SOU',
+    SSZ2:'SOU → GCI', SSZ4:'SOU → GCI',
+    SSZ5:'GCI → EMA', SSZ7:'GCI → EMA',
+    SSZ6:'EMA → GCI', SSZ8:'EMA → GCI'
   };
 
   const DEFAULT_VIEW = {center:[50.5,-2.0], zoom:7};
@@ -170,7 +174,7 @@
     if(seconds<3600) return `${Math.floor(seconds/60)}m`;
     return `${Math.floor(seconds/3600)}h ${Math.floor((seconds%3600)/60)}m`;
   }
-  function routeFor(callsign){return ROUTES[(callsign||'').trim().toUpperCase()] || 'Route not configured'}
+  function routeFor(callsign){return ROUTES[(callsign||'').trim().toUpperCase()] || 'Ad Hoc'}
   function aircraftIcon(track=0,onGround=false){
     const colour=onGround?'#8fa7bd':'#25e37c';
     return L.divIcon({className:'',iconSize:[34,34],iconAnchor:[17,17],html:`<div style="width:34px;height:34px;display:flex;align-items:center;justify-content:center;transform:rotate(${Number(track)||0}deg);color:${colour};font-size:25px;text-shadow:0 0 8px #000">▲</div>`});
@@ -346,12 +350,38 @@
     status.textContent=aircraftOK&&weatherOK?'Aircraft and weather feeds online':aircraftOK?'Aircraft online · weather pending':'Feed unavailable';
   }
 
-  function tick(){document.getElementById('clock').textContent=new Date().toLocaleTimeString('en-GB',{timeZone:'Europe/Guernsey',hour12:false})}
+  const REFRESH_MS = 60000;
+  let nextRefreshAt = 0;
+
+  function countdown(){
+    const el=document.getElementById('nextUpdate');
+    if(!nextRefreshAt){el.textContent='updating…';return}
+    const seconds=Math.max(0,Math.round((nextRefreshAt-Date.now())/1000));
+    el.textContent = seconds ? `${seconds}s` : 'now';
+  }
+
+  // Chained rather than setInterval, so the countdown always reflects the real
+  // gap and a slow fetch can't stack refreshes on top of each other.
+  async function scheduleRefresh(){
+    nextRefreshAt = 0;
+    countdown();
+    try{
+      await refresh();
+    } finally {
+      nextRefreshAt = Date.now() + REFRESH_MS;
+      countdown();
+      setTimeout(scheduleRefresh, REFRESH_MS);
+    }
+  }
+
+  function tick(){
+    document.getElementById('clock').textContent=new Date().toLocaleTimeString('en-GB',{timeZone:'Europe/Guernsey',hour12:false});
+    countdown();
+  }
   tick();
   setInterval(tick,1000);
 
-  refresh();
-  setInterval(refresh,60000);
+  scheduleRefresh();
 </script>
 </body>
 </html>
