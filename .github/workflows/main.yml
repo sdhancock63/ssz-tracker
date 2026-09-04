@@ -138,10 +138,36 @@ jobs:
 
 
           def vis_text(visib):
+              """Fallback formatter for when only the API's statute-mile value exists."""
               miles = vis_miles(visib)
               if miles is None:
                   return str(visib) if visib is not None else None
-              return "%g km (%g SM)" % (round(miles * 1.609, 1), miles)
+              # The API caps reporting at "6+" SM, which for a UK aerodrome means
+              # the METAR said 9999 — i.e. 10 km or more.
+              if "+" in str(visib):
+                  return "10 km+"
+              km = miles * 1.609
+              if km < 5:
+                  return "%d m" % (round(km * 1000 / 100) * 100)
+              return "%.1f km" % km
+
+
+          def vis_from_raw(raw, visib):
+              """Prefer the visibility group in the raw METAR, which is in metres."""
+              if raw:
+                  tokens = str(raw).split()
+                  if "CAVOK" in tokens:
+                      return "CAVOK"
+                  # Skip station and timestamp, then look for a bare 4-digit group.
+                  for token in tokens[2:]:
+                      if len(token) == 4 and token.isdigit():
+                          metres = int(token)
+                          if metres >= 9999:
+                              return "10 km+"
+                          if metres < 5000:
+                              return "%d m" % metres
+                          return "%.1f km" % (metres / 1000)
+              return vis_text(visib)
 
 
           def category(ceiling, visib):
@@ -186,7 +212,7 @@ jobs:
                   "windDirection": m.get("wdir"),
                   "windSpeedKt": m.get("wspd"),
                   "windGustKt": m.get("wgst"),
-                  "visibilityText": vis_text(m.get("visib")),
+                  "visibilityText": vis_from_raw(m.get("rawOb"), m.get("visib")),
                   "ceilingFt": ceiling,
                   "temperatureC": m.get("temp"),
                   "dewpointC": m.get("dewp"),
