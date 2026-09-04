@@ -35,7 +35,7 @@ jobs:
           FLEET = {
               "424c5c": {"registration": "M-SPEC", "aircraftType": "King Air 360"},
               "43ea43": {"registration": "M-SPEL", "aircraftType": "King Air 350i"},
-              "43ea40": {"registration": "M-SPEK", "aircraftType": "King Air 350i"},
+              "424b86": {"registration": "M-SPEK", "aircraftType": "King Air 360"},
           }
 
           with open("opensky.json") as f:
@@ -279,7 +279,7 @@ jobs:
 
               # ---- Aircraft ----
               if curl --fail --silent --show-error --location \
-                   "https://opensky-network.org/api/states/all?icao24=424c5c&icao24=43ea43&icao24=43ea40" \
+                   "https://opensky-network.org/api/states/all?icao24=424c5c&icao24=43ea43&icao24=424b86" \
                    -o opensky.json
               then
                 python3 build_feed.py || echo "Feed build failed, skipping this cycle"
