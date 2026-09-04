@@ -1,20 +1,6 @@
 {
-  "generatedUtc": "2026-09-04T13:23:29.530690+00:00",
-  "time": 1788528207,
-  "count": 1,
-  "aircraft": [
-    {
-      "registration": "M-SPEK",
-      "aircraftType": "King Air 360",
-      "icao24": "424b86",
-      "callsign": "SSZ103",
-      "country": "United Kingdom",
-      "longitude": -2.709,
-      "latitude": 51.3814,
-      "onGround": true,
-      "track": 19.69,
-      "altitudeFeet": null,
-      "speedKnots": 11
-    }
-  ]
+  "generatedUtc": "2026-09-04T13:27:59.662395+00:00",
+  "time": 1788528470,
+  "count": 0,
+  "aircraft": []
 }
