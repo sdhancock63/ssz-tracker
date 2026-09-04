@@ -33,7 +33,7 @@ jobs:
           FLEET = {
               "424c5c": {"registration": "M-SPEC", "aircraftType": "King Air 360"},
               "43ea43": {"registration": "M-SPEL", "aircraftType": "King Air 350i"},
-              "43ea40": {"registration": "M-SPEK", "aircraftType": "King Air 350i"},
+              "424B86": {"registration": "M-SPEK", "aircraftType": "King Air 360"},
           }
 
           with open("opensky.json") as f:
