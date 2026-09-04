@@ -1,21 +1,21 @@
 {
-  "generatedUtc": "2026-09-04T19:11:02.420646+00:00",
+  "generatedUtc": "2026-09-04T19:26:09.954994+00:00",
   "airports": {
     "EGJB": {
       "metar": {
-        "raw": "METAR EGJB 041850Z 30009KT 9999 -RA FEW012 17/14 Q1020",
+        "raw": "METAR EGJB 041920Z 31009KT 9999 -RA FEW012 17/12 Q1021",
         "category": "VFR",
-        "windDirection": 300,
+        "windDirection": 310,
         "windSpeedKt": 9,
         "windGustKt": null,
         "visibilityText": "10 km+",
         "ceilingFt": null,
         "temperatureC": 17,
-        "dewpointC": 14,
-        "qnhHpa": 1020,
+        "dewpointC": 12,
+        "qnhHpa": 1021,
         "cloudText": "FEW012",
         "weather": "-RA",
-        "observedUtc": 1788547800
+        "observedUtc": 1788549600
       },
       "taf": {
         "raw": "TAF EGJB 041702Z 0418/0503 30009KT 9999 FEW010 SCT018 PROB30 TEMPO 0418/0420 9000 -SHRA BKN014",
@@ -48,19 +48,19 @@
     },
     "EGHI": {
       "metar": {
-        "raw": "METAR EGHI 041850Z AUTO 27008KT 9999 NCD 17/10 Q1018",
+        "raw": "METAR EGHI 041920Z AUTO 27006KT 9999 NCD 16/10 Q1018",
         "category": "VFR",
         "windDirection": 270,
-        "windSpeedKt": 8,
+        "windSpeedKt": 6,
         "windGustKt": null,
         "visibilityText": "10 km+",
         "ceilingFt": null,
-        "temperatureC": 17,
+        "temperatureC": 16,
         "dewpointC": 10,
         "qnhHpa": 1018,
         "cloudText": "SKC",
         "weather": "NOSIG",
-        "observedUtc": 1788547800
+        "observedUtc": 1788549600
       },
       "taf": {
         "raw": "TAF EGHI 041702Z 0418/0503 28011KT 9999 SCT030",
@@ -82,19 +82,19 @@
     },
     "EGNX": {
       "metar": {
-        "raw": "METAR EGNX 041850Z 25016KT 9999 SCT041 17/10 Q1015",
+        "raw": "METAR EGNX 041920Z 25016KT 9999 SCT038 16/11 Q1015",
         "category": "VFR",
         "windDirection": 250,
         "windSpeedKt": 16,
         "windGustKt": null,
         "visibilityText": "10 km+",
         "ceilingFt": null,
-        "temperatureC": 17,
-        "dewpointC": 10,
+        "temperatureC": 16,
+        "dewpointC": 11,
         "qnhHpa": 1015,
-        "cloudText": "SCT041",
+        "cloudText": "SCT038",
         "weather": "NOSIG",
-        "observedUtc": 1788547800
+        "observedUtc": 1788549600
       },
       "taf": {
         "raw": "TAF EGNX 041653Z 0418/0518 27018G28KT 9999 FEW020 SCT035 BECMG 0418/0421 26011KT",
