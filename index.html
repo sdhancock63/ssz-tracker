@@ -226,7 +226,13 @@
     aircraft.forEach(a=>{
       const callsign=(a.callsign||'').trim() || 'No callsign';
       const registration=a.registration || a.icao24 || 'Unknown aircraft';
-      const positionValid=Number.isFinite(Number(a.latitude))&&Number.isFinite(Number(a.longitude));
+      // Number(null) is 0, which passes isFinite — so null has to be excluded
+      // explicitly. OpenSky sends null coordinates when it has a state vector
+      // but no position fix.
+      const lat = a.latitude, lon = a.longitude;
+      const positionValid = lat !== null && lat !== undefined
+                         && lon !== null && lon !== undefined
+                         && Number.isFinite(Number(lat)) && Number.isFinite(Number(lon));
       const altitude=a.onGround?'GND':(a.altitudeFeet!=null?`FL${String(Math.round(a.altitudeFeet/100)).padStart(3,'0')}`:'--');
       const speed=a.speedKnots!=null?`${Math.round(a.speedKnots)} kt`:'--';
       const heading=a.track!=null?`${Math.round(a.track)}°`:'--';
@@ -247,10 +253,10 @@
       list.appendChild(card);
 
       if(positionValid){
-        const marker=L.marker([a.latitude,a.longitude],{icon:aircraftIcon(a.track,a.onGround)}).addTo(aircraftLayer);
+        const marker=L.marker([Number(lat),Number(lon)],{icon:aircraftIcon(a.track,a.onGround)}).addTo(aircraftLayer);
         marker.bindPopup(`<strong>${esc(callsign)}</strong><br>${esc(registration)}<br>${esc(routeFor(callsign))}<br>${esc(altitude)} · ${esc(speed)} · ${esc(heading)}`);
-        bounds.push([a.latitude,a.longitude]);
-        card.onclick=()=>{map.flyTo([a.latitude,a.longitude],9);marker.openPopup()};
+        bounds.push([Number(lat),Number(lon)]);
+        card.onclick=()=>{map.flyTo([Number(lat),Number(lon)],9);marker.openPopup()};
       }
     });
 
