@@ -1,21 +1,21 @@
 {
-  "generatedUtc": "2026-09-05T13:19:03.773990+00:00",
+  "generatedUtc": "2026-09-05T13:34:11.305366+00:00",
   "airports": {
     "EGJB": {
       "metar": {
-        "raw": "METAR EGJB 051250Z 29008KT 260V340 9999 FEW030 19/08 Q1026",
+        "raw": "METAR EGJB 051320Z 30006KT 210V340 9999 FEW035 20/10 Q1026",
         "category": "VFR",
-        "windDirection": 290,
-        "windSpeedKt": 8,
+        "windDirection": 300,
+        "windSpeedKt": 6,
         "windGustKt": null,
         "visibilityText": "10 km+",
         "ceilingFt": null,
-        "temperatureC": 19,
-        "dewpointC": 8,
+        "temperatureC": 20,
+        "dewpointC": 10,
         "qnhHpa": 1026,
-        "cloudText": "FEW030",
+        "cloudText": "FEW035",
         "weather": "NOSIG",
-        "observedUtc": 1788612600
+        "observedUtc": 1788614400
       },
       "taf": {
         "raw": "TAF EGJB 051059Z 0512/0521 28006KT 9999 FEW025",
@@ -37,19 +37,19 @@
     },
     "EGHI": {
       "metar": {
-        "raw": "METAR EGHI 051250Z 25006KT 210V280 CAVOK 21/08 Q1025",
+        "raw": "METAR EGHI 051320Z AUTO 27005KT 230V350 9999 NCD 22/08 Q1025",
         "category": "VFR",
-        "windDirection": 250,
-        "windSpeedKt": 6,
+        "windDirection": 270,
+        "windSpeedKt": 5,
         "windGustKt": null,
-        "visibilityText": "CAVOK",
+        "visibilityText": "10 km+",
         "ceilingFt": null,
-        "temperatureC": 21,
+        "temperatureC": 22,
         "dewpointC": 8,
         "qnhHpa": 1025,
         "cloudText": "SKC",
         "weather": "NOSIG",
-        "observedUtc": 1788612600
+        "observedUtc": 1788614400
       },
       "taf": {
         "raw": "TAF EGHI 051100Z 0512/0521 27008KT 9999 FEW040",
