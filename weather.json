@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-09-06T05:05:47.733891+00:00",
+  "generatedUtc": "2026-09-06T05:20:53.872536+00:00",
   "airports": {
     "EGJB": {
       "metar": {
@@ -18,19 +18,30 @@
         "observedUtc": 1788670200
       },
       "taf": {
-        "raw": "TAF EGJB 060215Z 0603/0612 12010KT CAVOK",
-        "issuedUtc": "2026-09-06T02:15:00.000Z",
+        "raw": "TAF EGJB 060456Z 0606/0615 13010KT CAVOK PROB30 TEMPO 0614/0615 SHRA BKN010CB",
+        "issuedUtc": "2026-09-06T04:56:00.000Z",
         "periods": [
           {
-            "timeLabel": "06/0300Z",
+            "timeLabel": "06/0600Z",
             "category": "VFR",
-            "windDirection": 120,
+            "windDirection": 130,
             "windSpeedKt": 10,
             "windGustKt": null,
             "visibilityText": "10 km+",
             "ceilingFt": null,
             "weather": "NSW",
             "change": null
+          },
+          {
+            "timeLabel": "06/1400Z",
+            "category": "MVFR",
+            "windDirection": null,
+            "windSpeedKt": null,
+            "windGustKt": null,
+            "visibilityText": "",
+            "ceilingFt": 1000,
+            "weather": "SHRA",
+            "change": "TEMPO"
           }
         ]
       }
@@ -52,18 +63,18 @@
         "observedUtc": 1788670200
       },
       "taf": {
-        "raw": "TAF EGHI 060133Z 0603/0612 07004KT CAVOK",
-        "issuedUtc": "2026-09-06T01:33:00.000Z",
+        "raw": "TAF EGHI 060454Z 0606/0615 14008KT 9999 SCT020",
+        "issuedUtc": "2026-09-06T04:54:00.000Z",
         "periods": [
           {
-            "timeLabel": "06/0300Z",
+            "timeLabel": "06/0600Z",
             "category": "VFR",
-            "windDirection": 70,
-            "windSpeedKt": 4,
+            "windDirection": 140,
+            "windSpeedKt": 8,
             "windGustKt": null,
             "visibilityText": "10 km+",
             "ceilingFt": null,
-            "weather": "NSW",
+            "weather": "SCT020",
             "change": null
           }
         ]
@@ -86,51 +97,40 @@
         "observedUtc": 1788670200
       },
       "taf": {
-        "raw": "TAF EGNX 052259Z 0600/0624 VRB03KT CAVOK PROB30 TEMPO 0602/0608 6000 RA BECMG 0608/0611 18010KT PROB30 TEMPO 0621/0624 BKN045",
-        "issuedUtc": "2026-09-05T22:59:00.000Z",
+        "raw": "TAF EGNX 060456Z 0606/0706 19008KT 9999 FEW048 PROB40 TEMPO 0606/0609 7000 RA PROB30 TEMPO 0702/0706 7000 SHRA BKN014",
+        "issuedUtc": "2026-09-06T04:56:00.000Z",
         "periods": [
           {
-            "timeLabel": "06/0000Z",
+            "timeLabel": "06/0600Z",
             "category": "VFR",
-            "windDirection": "VRB",
-            "windSpeedKt": 3,
+            "windDirection": 190,
+            "windSpeedKt": 8,
             "windGustKt": null,
             "visibilityText": "10 km+",
             "ceilingFt": null,
-            "weather": "NSW",
+            "weather": "FEW048",
             "change": null
           },
           {
-            "timeLabel": "06/0200Z",
+            "timeLabel": "06/0600Z",
             "category": "MVFR",
             "windDirection": null,
             "windSpeedKt": null,
             "windGustKt": null,
-            "visibilityText": "6.0 km",
+            "visibilityText": "7.0 km",
             "ceilingFt": null,
             "weather": "RA",
             "change": "TEMPO"
           },
           {
-            "timeLabel": "06/0800Z",
-            "category": "VFR",
-            "windDirection": 180,
-            "windSpeedKt": 10,
-            "windGustKt": null,
-            "visibilityText": "10 km+",
-            "ceilingFt": null,
-            "weather": "NSW",
-            "change": "BECMG"
-          },
-          {
-            "timeLabel": "06/2100Z",
-            "category": "VFR",
+            "timeLabel": "07/0200Z",
+            "category": "MVFR",
             "windDirection": null,
             "windSpeedKt": null,
             "windGustKt": null,
-            "visibilityText": "",
-            "ceilingFt": 4500,
-            "weather": "BKN045",
+            "visibilityText": "7.0 km",
+            "ceilingFt": 1400,
+            "weather": "SHRA",
             "change": "TEMPO"
           }
         ]
