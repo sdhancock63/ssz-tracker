@@ -1,37 +1,26 @@
 {
-  "generatedUtc": "2026-09-06T16:36:56.318056+00:00",
+  "generatedUtc": "2026-09-06T17:48:22.953311+00:00",
   "airports": {
     "EGJB": {
       "metar": {
-        "raw": "METAR EGJB 061620Z 14008KT CAVOK 24/13 Q1017",
+        "raw": "METAR EGJB 061720Z 13007KT CAVOK 23/14 Q1017",
         "category": "VFR",
-        "windDirection": 140,
-        "windSpeedKt": 8,
+        "windDirection": 130,
+        "windSpeedKt": 7,
         "windGustKt": null,
         "visibilityText": "CAVOK",
         "ceilingFt": null,
-        "temperatureC": 24,
-        "dewpointC": 13,
+        "temperatureC": 23,
+        "dewpointC": 14,
         "qnhHpa": 1017,
         "cloudText": "SKC",
         "weather": "NOSIG",
-        "observedUtc": 1788711600
+        "observedUtc": 1788715200
       },
       "taf": {
-        "raw": "TAF EGJB 061401Z 0615/0624 13010KT CAVOK BECMG 0618/0620 28010KT PROB40 TEMPO 0621/0624 5000 BR BKN002 PROB30 TEMPO 0623/0624 0900 FG BKN000",
-        "issuedUtc": "2026-09-06T14:01:00.000Z",
+        "raw": "TAF EGJB 061659Z 0618/0703 28010KT CAVOK PROB40 TEMPO 0621/0703 4000 BR BKN002 PROB30 TEMPO 0623/0703 0300 FG BKN000",
+        "issuedUtc": "2026-09-06T16:59:00.000Z",
         "periods": [
-          {
-            "timeLabel": "06/1500Z",
-            "category": "VFR",
-            "windDirection": 130,
-            "windSpeedKt": 10,
-            "windGustKt": null,
-            "visibilityText": "10 km+",
-            "ceilingFt": null,
-            "weather": "NSW",
-            "change": null
-          },
           {
             "timeLabel": "06/1800Z",
             "category": "VFR",
@@ -41,7 +30,7 @@
             "visibilityText": "10 km+",
             "ceilingFt": null,
             "weather": "NSW",
-            "change": "BECMG"
+            "change": null
           },
           {
             "timeLabel": "06/2100Z",
@@ -49,7 +38,7 @@
             "windDirection": null,
             "windSpeedKt": null,
             "windGustKt": null,
-            "visibilityText": "5.0 km",
+            "visibilityText": "4000 m",
             "ceilingFt": 200,
             "weather": "BR",
             "change": "TEMPO"
@@ -60,7 +49,7 @@
             "windDirection": null,
             "windSpeedKt": null,
             "windGustKt": null,
-            "visibilityText": "900 m",
+            "visibilityText": "300 m",
             "ceilingFt": null,
             "weather": "FG",
             "change": "TEMPO"
@@ -70,28 +59,28 @@
     },
     "EGHI": {
       "metar": {
-        "raw": "METAR EGHI 061620Z AUTO 13007KT 9999 NCD 23/14 Q1018",
+        "raw": "METAR EGHI 061720Z AUTO 14008KT 9999 NCD 22/15 Q1017",
         "category": "VFR",
-        "windDirection": 130,
-        "windSpeedKt": 7,
+        "windDirection": 140,
+        "windSpeedKt": 8,
         "windGustKt": null,
         "visibilityText": "10 km+",
         "ceilingFt": null,
-        "temperatureC": 23,
-        "dewpointC": 14,
-        "qnhHpa": 1018,
+        "temperatureC": 22,
+        "dewpointC": 15,
+        "qnhHpa": 1017,
         "cloudText": "SKC",
         "weather": "NOSIG",
-        "observedUtc": 1788711600
+        "observedUtc": 1788715200
       },
       "taf": {
-        "raw": "TAF EGHI 061359Z 0615/0624 16010KT CAVOK BECMG 0619/0621 22005KT PROB30 TEMPO 0620/0624 7000 SHRA",
-        "issuedUtc": "2026-09-06T13:59:00.000Z",
+        "raw": "TAF EGHI 061701Z 0618/0703 15010KT CAVOK BECMG 0619/0621 22005KT PROB30 TEMPO 0620/0624 7000 SHRA BECMG 0623/0701 BKN010",
+        "issuedUtc": "2026-09-06T17:01:00.000Z",
         "periods": [
           {
-            "timeLabel": "06/1500Z",
+            "timeLabel": "06/1800Z",
             "category": "VFR",
-            "windDirection": 160,
+            "windDirection": 150,
             "windSpeedKt": 10,
             "windGustKt": null,
             "visibilityText": "10 km+",
@@ -120,34 +109,45 @@
             "ceilingFt": null,
             "weather": "SHRA",
             "change": "TEMPO"
+          },
+          {
+            "timeLabel": "06/2300Z",
+            "category": "MVFR",
+            "windDirection": 220,
+            "windSpeedKt": 5,
+            "windGustKt": null,
+            "visibilityText": "10 km+",
+            "ceilingFt": 1000,
+            "weather": "NSW",
+            "change": "BECMG"
           }
         ]
       }
     },
     "EGNX": {
       "metar": {
-        "raw": "METAR EGNX 061620Z 19007KT 9999 VCSH FEW039 24/12 Q1016",
+        "raw": "METAR EGNX 061720Z 15005KT 120V180 CAVOK 24/12 Q1015",
         "category": "VFR",
-        "windDirection": 190,
-        "windSpeedKt": 7,
+        "windDirection": 150,
+        "windSpeedKt": 5,
         "windGustKt": null,
-        "visibilityText": "10 km+",
+        "visibilityText": "CAVOK",
         "ceilingFt": null,
         "temperatureC": 24,
         "dewpointC": 12,
-        "qnhHpa": 1016,
-        "cloudText": "FEW039",
-        "weather": "VCSH",
-        "observedUtc": 1788711600
+        "qnhHpa": 1015,
+        "cloudText": "SKC",
+        "weather": "NOSIG",
+        "observedUtc": 1788715200
       },
       "taf": {
-        "raw": "TAF AMD EGNX 061252Z 0612/0712 20009KT 9999 FEW040 PROB30 TEMPO 0612/0614 6000 SHRA PROB30 TEMPO 0702/0706 7000 SHRA BKN014 BECMG 0706/0709 26010KT TEMPO 0706/0710 6000 RA SHRA BKN010",
-        "issuedUtc": "2026-09-06T12:52:00.000Z",
+        "raw": "TAF EGNX 061701Z 0618/0718 19009KT 9999 FEW040 PROB30 TEMPO 0703/0709 8000 -RA -SHRA BKN014 BECMG 0706/0709 27012KT",
+        "issuedUtc": "2026-09-06T17:01:00.000Z",
         "periods": [
           {
-            "timeLabel": "06/1200Z",
+            "timeLabel": "06/1800Z",
             "category": "VFR",
-            "windDirection": 200,
+            "windDirection": 190,
             "windSpeedKt": 9,
             "windGustKt": null,
             "visibilityText": "10 km+",
@@ -156,48 +156,26 @@
             "change": null
           },
           {
-            "timeLabel": "06/1200Z",
+            "timeLabel": "07/0300Z",
             "category": "MVFR",
             "windDirection": null,
             "windSpeedKt": null,
             "windGustKt": null,
-            "visibilityText": "6.0 km",
-            "ceilingFt": null,
-            "weather": "SHRA",
-            "change": "TEMPO"
-          },
-          {
-            "timeLabel": "07/0200Z",
-            "category": "MVFR",
-            "windDirection": null,
-            "windSpeedKt": null,
-            "windGustKt": null,
-            "visibilityText": "7.0 km",
+            "visibilityText": "8.0 km",
             "ceilingFt": 1400,
-            "weather": "SHRA",
+            "weather": "-RA -SHRA",
             "change": "TEMPO"
           },
           {
             "timeLabel": "07/0600Z",
             "category": "VFR",
-            "windDirection": 260,
-            "windSpeedKt": 10,
+            "windDirection": 270,
+            "windSpeedKt": 12,
             "windGustKt": null,
             "visibilityText": "10 km+",
             "ceilingFt": null,
             "weather": "FEW040",
             "change": "BECMG"
-          },
-          {
-            "timeLabel": "07/0600Z",
-            "category": "MVFR",
-            "windDirection": null,
-            "windSpeedKt": null,
-            "windGustKt": null,
-            "visibilityText": "6.0 km",
-            "ceilingFt": 1000,
-            "weather": "RA SHRA",
-            "change": "TEMPO"
           }
         ]
       }
