@@ -1,28 +1,28 @@
 {
-  "generatedUtc": "2026-09-06T05:36:00.129347+00:00",
+  "generatedUtc": "2026-09-06T08:59:12.074761+00:00",
   "airports": {
     "EGJB": {
       "metar": {
-        "raw": "METAR EGJB 060520Z 11008KT CAVOK 16/14 Q1021",
+        "raw": "METAR EGJB 060850Z 14010KT CAVOK 20/15 Q1021",
         "category": "VFR",
-        "windDirection": 110,
-        "windSpeedKt": 8,
+        "windDirection": 140,
+        "windSpeedKt": 10,
         "windGustKt": null,
         "visibilityText": "CAVOK",
         "ceilingFt": null,
-        "temperatureC": 16,
-        "dewpointC": 14,
+        "temperatureC": 20,
+        "dewpointC": 15,
         "qnhHpa": 1021,
         "cloudText": "SKC",
         "weather": "NOSIG",
-        "observedUtc": 1788672000
+        "observedUtc": 1788684600
       },
       "taf": {
-        "raw": "TAF EGJB 060456Z 0606/0615 13010KT CAVOK PROB30 TEMPO 0614/0615 SHRA BKN010CB",
-        "issuedUtc": "2026-09-06T04:56:00.000Z",
+        "raw": "TAF EGJB 060756Z 0609/0618 13010KT CAVOK PROB30 TEMPO 0610/0614 8000 SHRA BKN100CB",
+        "issuedUtc": "2026-09-06T07:56:00.000Z",
         "periods": [
           {
-            "timeLabel": "06/0600Z",
+            "timeLabel": "06/0900Z",
             "category": "VFR",
             "windDirection": 130,
             "windSpeedKt": 10,
@@ -33,13 +33,13 @@
             "change": null
           },
           {
-            "timeLabel": "06/1400Z",
+            "timeLabel": "06/1000Z",
             "category": "MVFR",
             "windDirection": null,
             "windSpeedKt": null,
             "windGustKt": null,
-            "visibilityText": "",
-            "ceilingFt": 1000,
+            "visibilityText": "8.0 km",
+            "ceilingFt": 10000,
             "weather": "SHRA",
             "change": "TEMPO"
           }
@@ -48,33 +48,33 @@
     },
     "EGHI": {
       "metar": {
-        "raw": "METAR EGHI 060520Z AUTO VRB02KT 9999 NCD 11/11 Q1023",
+        "raw": "METAR EGHI 060850Z AUTO 15009KT 120V190 9999 NCD 21/14 Q1022",
         "category": "VFR",
-        "windDirection": "VRB",
-        "windSpeedKt": 2,
+        "windDirection": 150,
+        "windSpeedKt": 9,
         "windGustKt": null,
         "visibilityText": "10 km+",
         "ceilingFt": null,
-        "temperatureC": 11,
-        "dewpointC": 11,
-        "qnhHpa": 1023,
+        "temperatureC": 21,
+        "dewpointC": 14,
+        "qnhHpa": 1022,
         "cloudText": "SKC",
         "weather": "NOSIG",
-        "observedUtc": 1788672000
+        "observedUtc": 1788684600
       },
       "taf": {
-        "raw": "TAF EGHI 060454Z 0606/0615 14008KT 9999 SCT020",
-        "issuedUtc": "2026-09-06T04:54:00.000Z",
+        "raw": "TAF EGHI 060801Z 0609/0618 16008KT CAVOK",
+        "issuedUtc": "2026-09-06T08:01:00.000Z",
         "periods": [
           {
-            "timeLabel": "06/0600Z",
+            "timeLabel": "06/0900Z",
             "category": "VFR",
-            "windDirection": 140,
+            "windDirection": 160,
             "windSpeedKt": 8,
             "windGustKt": null,
             "visibilityText": "10 km+",
             "ceilingFt": null,
-            "weather": "SCT020",
+            "weather": "NSW",
             "change": null
           }
         ]
@@ -82,19 +82,19 @@
     },
     "EGNX": {
       "metar": {
-        "raw": "METAR EGNX 060520Z 20005KT CAVOK 14/10 Q1022",
+        "raw": "METAR EGNX 060850Z 18009KT CAVOK 18/11 Q1021",
         "category": "VFR",
-        "windDirection": 200,
-        "windSpeedKt": 5,
+        "windDirection": 180,
+        "windSpeedKt": 9,
         "windGustKt": null,
         "visibilityText": "CAVOK",
         "ceilingFt": null,
-        "temperatureC": 14,
-        "dewpointC": 10,
-        "qnhHpa": 1022,
+        "temperatureC": 18,
+        "dewpointC": 11,
+        "qnhHpa": 1021,
         "cloudText": "SKC",
         "weather": "NOSIG",
-        "observedUtc": 1788672000
+        "observedUtc": 1788684600
       },
       "taf": {
         "raw": "TAF EGNX 060456Z 0606/0706 19008KT 9999 FEW048 PROB40 TEMPO 0606/0609 7000 RA PROB30 TEMPO 0702/0706 7000 SHRA BKN014",
