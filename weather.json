@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-09-07T17:07:22.267729+00:00",
+  "generatedUtc": "2026-09-07T17:22:29.976488+00:00",
   "airports": {
     "EGJB": {
       "metar": {
@@ -18,18 +18,18 @@
         "observedUtc": 1788799800
       },
       "taf": {
-        "raw": "TAF EGJB 071400Z 0715/0724 27012KT 9999 FEW009 BKN035",
-        "issuedUtc": "2026-09-07T14:00:00.000Z",
+        "raw": "TAF EGJB 071653Z 0718/0803 26011KT 9999 FEW006 BKN030",
+        "issuedUtc": "2026-09-07T16:53:00.000Z",
         "periods": [
           {
-            "timeLabel": "07/1500Z",
-            "category": "VFR",
-            "windDirection": 270,
-            "windSpeedKt": 12,
+            "timeLabel": "07/1800Z",
+            "category": "MVFR",
+            "windDirection": 260,
+            "windSpeedKt": 11,
             "windGustKt": null,
             "visibilityText": "10 km+",
-            "ceilingFt": 3500,
-            "weather": "FEW009 BKN035",
+            "ceilingFt": 3000,
+            "weather": "FEW006 BKN030",
             "change": null
           }
         ]
@@ -52,19 +52,30 @@
         "observedUtc": 1788799800
       },
       "taf": {
-        "raw": "TAF EGHI 071357Z 0715/0724 24012KT 9999 SCT025 TEMPO 0721/0723 8000 -RA TEMPO 0723/0724 6000 RA",
-        "issuedUtc": "2026-09-07T13:57:00.000Z",
+        "raw": "TAF EGHI 071655Z 0718/0803 29010KT 9999 SCT025 BECMG 0719/0722 23009KT TEMPO 0721/0723 8000 -RA TEMPO 0723/0724 6000 RA BKN013 PROB30 TEMPO 0800/0803 3000 +RA BKN007",
+        "issuedUtc": "2026-09-07T16:55:00.000Z",
         "periods": [
           {
-            "timeLabel": "07/1500Z",
+            "timeLabel": "07/1800Z",
             "category": "VFR",
-            "windDirection": 240,
-            "windSpeedKt": 12,
+            "windDirection": 290,
+            "windSpeedKt": 10,
             "windGustKt": null,
             "visibilityText": "10 km+",
             "ceilingFt": null,
             "weather": "SCT025",
             "change": null
+          },
+          {
+            "timeLabel": "07/1900Z",
+            "category": "VFR",
+            "windDirection": 230,
+            "windSpeedKt": 9,
+            "windGustKt": null,
+            "visibilityText": "10 km+",
+            "ceilingFt": null,
+            "weather": "SCT025",
+            "change": "BECMG"
           },
           {
             "timeLabel": "07/2100Z",
@@ -84,8 +95,19 @@
             "windSpeedKt": null,
             "windGustKt": null,
             "visibilityText": "6.0 km",
-            "ceilingFt": null,
+            "ceilingFt": 1300,
             "weather": "RA",
+            "change": "TEMPO"
+          },
+          {
+            "timeLabel": "08/0000Z",
+            "category": "IFR",
+            "windDirection": null,
+            "windSpeedKt": null,
+            "windGustKt": null,
+            "visibilityText": "3000 m",
+            "ceilingFt": 700,
+            "weather": "+RA",
             "change": "TEMPO"
           }
         ]
@@ -108,14 +130,14 @@
         "observedUtc": 1788798000
       },
       "taf": {
-        "raw": "TAF EGNX 071058Z 0712/0812 28012KT 9999 FEW020 SCT030 BECMG 0718/0721 21010KT TEMPO 0719/0807 7000 RA SHRA PROB30 TEMPO 0721/0805 4000 +RA +SHRA BKN010 BECMG 0808/0811 28013KT",
-        "issuedUtc": "2026-09-07T10:58:00.000Z",
+        "raw": "TAF EGNX 071659Z 0718/0818 22015KT 9999 FEW020 SCT030 TEMPO 0719/0807 6000 RA SHRA BKN013 PROB30 TEMPO 0721/0805 4000 +RA +SHRA BKN008 TEMPO 0803/0806 24005KT BECMG 0808/0811 28012KT PROB30 TEMPO 0812/0818 28015G25KT 7000 -SHRA",
+        "issuedUtc": "2026-09-07T16:59:00.000Z",
         "periods": [
           {
-            "timeLabel": "07/1200Z",
+            "timeLabel": "07/1800Z",
             "category": "VFR",
-            "windDirection": 280,
-            "windSpeedKt": 12,
+            "windDirection": 220,
+            "windSpeedKt": 15,
             "windGustKt": null,
             "visibilityText": "10 km+",
             "ceilingFt": null,
@@ -123,24 +145,13 @@
             "change": null
           },
           {
-            "timeLabel": "07/1800Z",
-            "category": "VFR",
-            "windDirection": 210,
-            "windSpeedKt": 10,
-            "windGustKt": null,
-            "visibilityText": "10 km+",
-            "ceilingFt": null,
-            "weather": "FEW020 SCT030",
-            "change": "BECMG"
-          },
-          {
             "timeLabel": "07/1900Z",
             "category": "MVFR",
             "windDirection": null,
             "windSpeedKt": null,
             "windGustKt": null,
-            "visibilityText": "7.0 km",
-            "ceilingFt": null,
+            "visibilityText": "6.0 km",
+            "ceilingFt": 1300,
             "weather": "RA SHRA",
             "change": "TEMPO"
           },
@@ -151,20 +162,42 @@
             "windSpeedKt": null,
             "windGustKt": null,
             "visibilityText": "4000 m",
-            "ceilingFt": 1000,
+            "ceilingFt": 800,
             "weather": "+RA +SHRA",
+            "change": "TEMPO"
+          },
+          {
+            "timeLabel": "08/0300Z",
+            "category": "VFR",
+            "windDirection": 240,
+            "windSpeedKt": 5,
+            "windGustKt": null,
+            "visibilityText": "",
+            "ceilingFt": null,
+            "weather": "SKC",
             "change": "TEMPO"
           },
           {
             "timeLabel": "08/0800Z",
             "category": "VFR",
             "windDirection": 280,
-            "windSpeedKt": 13,
+            "windSpeedKt": 12,
             "windGustKt": null,
             "visibilityText": "10 km+",
             "ceilingFt": null,
             "weather": "FEW020 SCT030",
             "change": "BECMG"
+          },
+          {
+            "timeLabel": "08/1200Z",
+            "category": "MVFR",
+            "windDirection": 280,
+            "windSpeedKt": 15,
+            "windGustKt": 25,
+            "visibilityText": "7.0 km",
+            "ceilingFt": null,
+            "weather": "-SHRA",
+            "change": "TEMPO"
           }
         ]
       }
