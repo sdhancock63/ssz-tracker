@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-09-07T08:39:38.040426+00:00",
+  "generatedUtc": "2026-09-07T08:54:44.634436+00:00",
   "airports": {
     "EGJB": {
       "metar": {
@@ -115,19 +115,19 @@
     },
     "EGNX": {
       "metar": {
-        "raw": "METAR EGNX 070820Z 29012KT 9999 FEW012 BKN030 17/15 Q1014",
-        "category": "MVFR",
-        "windDirection": 290,
-        "windSpeedKt": 12,
+        "raw": "METAR EGNX 070850Z 28011KT 9999 SCT014 BKN032 17/13 Q1015",
+        "category": "VFR",
+        "windDirection": 280,
+        "windSpeedKt": 11,
         "windGustKt": null,
         "visibilityText": "10 km+",
-        "ceilingFt": 3000,
+        "ceilingFt": 3200,
         "temperatureC": 17,
-        "dewpointC": 15,
-        "qnhHpa": 1014,
-        "cloudText": "FEW012 BKN030",
+        "dewpointC": 13,
+        "qnhHpa": 1015,
+        "cloudText": "SCT014 BKN032",
         "weather": "NOSIG",
-        "observedUtc": 1788769200
+        "observedUtc": 1788771000
       },
       "taf": {
         "raw": "TAF EGNX 070456Z 0706/0806 21010KT 9999 FEW030 PROB30 TEMPO 0706/0708 7000 RA SHRA BKN014 BECMG 0707/0710 27010KT BECMG 0718/0721 21010KT TEMPO 0719/0806 7000 RA SHRA PROB30 TEMPO 0721/0805 4000 +RA +SHRA BKN008",
