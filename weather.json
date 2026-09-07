@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-09-07T18:33:08.436220+00:00",
+  "generatedUtc": "2026-09-07T18:48:15.035625+00:00",
   "airports": {
     "EGJB": {
       "metar": {
@@ -52,8 +52,8 @@
         "observedUtc": 1788805200
       },
       "taf": {
-        "raw": "TAF AMD EGHI 071803Z 0718/0803 24012KT 9999 SCT025 TEMPO 0721/0723 8000 -RA TEMPO 0723/0724 6000 RA BKN013 PROB30 TEMPO 0800/0803 3000 +RA BKN007",
-        "issuedUtc": "2026-09-07T18:03:00.000Z",
+        "raw": "TAF AMD EGHI 071840Z 0718/0803 24012KT 9999 SCT025 TEMPO 0721/0723 8000 -RA TEMPO 0723/0803 6000 RA BKN013 PROB30 TEMPO 0800/0803 3000 +RA BKN007",
+        "issuedUtc": "2026-09-07T18:40:00.000Z",
         "periods": [
           {
             "timeLabel": "07/1800Z",
