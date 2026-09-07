@@ -1,21 +1,21 @@
 {
-  "generatedUtc": "2026-09-07T06:12:57.386037+00:00",
+  "generatedUtc": "2026-09-07T06:28:03.425351+00:00",
   "airports": {
     "EGJB": {
       "metar": {
-        "raw": "METAR EGJB 070550Z 26013KT 9999 FEW001 SCT002 BKN015 18/18 Q1019",
-        "category": "MVFR",
+        "raw": "METAR EGJB 070620Z 26012KT 9999 FEW003 BKN004 17/17 Q1019",
+        "category": "LIFR",
         "windDirection": 260,
-        "windSpeedKt": 13,
+        "windSpeedKt": 12,
         "windGustKt": null,
         "visibilityText": "10 km+",
-        "ceilingFt": 1500,
-        "temperatureC": 18,
-        "dewpointC": 18,
+        "ceilingFt": 400,
+        "temperatureC": 17,
+        "dewpointC": 17,
         "qnhHpa": 1019,
-        "cloudText": "FEW001 SCT002 BKN015",
+        "cloudText": "FEW003 BKN004",
         "weather": "NOSIG",
-        "observedUtc": 1788760200
+        "observedUtc": 1788762000
       },
       "taf": {
         "raw": "TAF EGJB 070458Z 0706/0715 25012KT 0200 FG BKN000 BECMG 0706/0708 2000 BR FEW000 BKN001 PROB40 TEMPO 0708/0712 0200 -DZ FG BKN000 PROB30 TEMPO 0706/0711 6000 SCT002 BKN003 BECMG 0711/0714 28012KT 9999 NSW FEW004 SCT008",
@@ -81,7 +81,7 @@
     },
     "EGHI": {
       "metar": {
-        "raw": "METAR EGHI 070550Z AUTO 20004KT 9999 BKN016 OVC047 17/16 Q1016",
+        "raw": "METAR EGHI 070620Z AUTO 20004KT 9999 BKN016 17/17 Q1016",
         "category": "MVFR",
         "windDirection": 200,
         "windSpeedKt": 4,
@@ -89,11 +89,11 @@
         "visibilityText": "10 km+",
         "ceilingFt": 1600,
         "temperatureC": 17,
-        "dewpointC": 16,
+        "dewpointC": 17,
         "qnhHpa": 1016,
-        "cloudText": "BKN016 OVC047",
+        "cloudText": "BKN016",
         "weather": "NOSIG",
-        "observedUtc": 1788760200
+        "observedUtc": 1788762000
       },
       "taf": {
         "raw": "TAF EGHI 070457Z 0706/0715 24006KT 9999 FEW010 SCT025 TEMPO 0706/0710 BKN009 PROB30 TEMPO 0706/0708 6000 -DZ BKN004",
@@ -137,19 +137,19 @@
     },
     "EGNX": {
       "metar": {
-        "raw": "METAR EGNX 070550Z 20007KT 9999 SCT022 17/15 Q1013",
+        "raw": "METAR EGNX 070620Z 21007KT 9999 FEW020 18/16 Q1013",
         "category": "VFR",
-        "windDirection": 200,
+        "windDirection": 210,
         "windSpeedKt": 7,
         "windGustKt": null,
         "visibilityText": "10 km+",
         "ceilingFt": null,
-        "temperatureC": 17,
-        "dewpointC": 15,
+        "temperatureC": 18,
+        "dewpointC": 16,
         "qnhHpa": 1013,
-        "cloudText": "SCT022",
+        "cloudText": "FEW020",
         "weather": "NOSIG",
-        "observedUtc": 1788760200
+        "observedUtc": 1788762000
       },
       "taf": {
         "raw": "TAF EGNX 070456Z 0706/0806 21010KT 9999 FEW030 PROB30 TEMPO 0706/0708 7000 RA SHRA BKN014 BECMG 0707/0710 27010KT BECMG 0718/0721 21010KT TEMPO 0719/0806 7000 RA SHRA PROB30 TEMPO 0721/0805 4000 +RA +SHRA BKN008",
