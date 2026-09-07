@@ -1,6 +1,6 @@
 {
-  "generatedUtc": "2026-09-07T17:37:36.875832+00:00",
-  "time": 1788802655,
+  "generatedUtc": "2026-09-07T17:42:40.048198+00:00",
+  "time": 1788802946,
   "count": 2,
   "aircraft": [
     {
@@ -9,12 +9,12 @@
       "icao24": "43ea43",
       "callsign": "SSZ9E",
       "country": "United Kingdom",
-      "longitude": -2.0605,
-      "latitude": 49.9801,
+      "longitude": -2.2793,
+      "latitude": 49.6788,
       "onGround": false,
-      "track": 208.05,
-      "altitudeFeet": 10500,
-      "speedKnots": 259
+      "track": 193.41,
+      "altitudeFeet": 5825,
+      "speedKnots": 246
     },
     {
       "registration": "M-SPEK",
@@ -22,12 +22,12 @@
       "icao24": "424b86",
       "callsign": "SSZ8",
       "country": "United Kingdom",
-      "longitude": -1.3366,
-      "latitude": 52.8258,
-      "onGround": true,
-      "track": 351.56,
-      "altitudeFeet": null,
-      "speedKnots": 11
+      "longitude": -1.3515,
+      "latitude": 52.8304,
+      "onGround": false,
+      "track": 267.18,
+      "altitudeFeet": 825,
+      "speedKnots": 142
     }
   ]
 }
