@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-09-08T17:21:02.257003+00:00",
+  "generatedUtc": "2026-09-08T17:26:04.813107+00:00",
   "time": 0,
   "count": 1,
   "aircraft": [
@@ -12,9 +12,9 @@
       "longitude": null,
       "latitude": null,
       "onGround": false,
-      "track": 300.94,
+      "track": 278.44,
       "altitudeFeet": null,
-      "speedKnots": 5
+      "speedKnots": 0
     }
   ]
 }
