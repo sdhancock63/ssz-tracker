@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-09-08T08:13:24.081772+00:00",
+  "generatedUtc": "2026-09-08T08:17:49.848386+00:00",
   "airports": {
     "EGJB": {
       "metar": {
@@ -18,41 +18,19 @@
         "observedUtc": 1788853800
       },
       "taf": {
-        "raw": "TAF EGJB 080457Z 0806/0815 23012KT 9000 -RA BKN014 TEMPO 0806/0810 4000 RA BKN007 PROB30 TEMPO 0806/0810 16018G30KT 2000 +RA BKN004 BKN020TCU BECMG 0809/0812 35015KT 9999 NSW SCT030",
-        "issuedUtc": "2026-09-08T04:57:00.000Z",
+        "raw": "TAF EGJB 080757Z 0809/0818 23012KT 9000 -RA FEW005 BKN012 BECMG 0809/0812 35015KT 9999 NSW SCT025 TEMPO 0809/0810 4000 RA BKN005 PROB30 TEMPO 0809/0810 16018G30KT 2000 +RA BKN003 BKN015TCU",
+        "issuedUtc": "2026-09-08T07:57:00.000Z",
         "periods": [
           {
-            "timeLabel": "08/0600Z",
+            "timeLabel": "08/0900Z",
             "category": "MVFR",
             "windDirection": 230,
             "windSpeedKt": 12,
             "windGustKt": null,
             "visibilityText": "9.0 km",
-            "ceilingFt": 1400,
+            "ceilingFt": 1200,
             "weather": "-RA",
             "change": null
-          },
-          {
-            "timeLabel": "08/0600Z",
-            "category": "IFR",
-            "windDirection": null,
-            "windSpeedKt": null,
-            "windGustKt": null,
-            "visibilityText": "4000 m",
-            "ceilingFt": 700,
-            "weather": "RA",
-            "change": "TEMPO"
-          },
-          {
-            "timeLabel": "08/0600Z",
-            "category": "LIFR",
-            "windDirection": 160,
-            "windSpeedKt": 18,
-            "windGustKt": 30,
-            "visibilityText": "2000 m",
-            "ceilingFt": 400,
-            "weather": "+RA",
-            "change": "TEMPO"
           },
           {
             "timeLabel": "08/0900Z",
@@ -64,6 +42,28 @@
             "ceilingFt": null,
             "weather": "NSW",
             "change": "BECMG"
+          },
+          {
+            "timeLabel": "08/0900Z",
+            "category": "IFR",
+            "windDirection": null,
+            "windSpeedKt": null,
+            "windGustKt": null,
+            "visibilityText": "4000 m",
+            "ceilingFt": 500,
+            "weather": "RA",
+            "change": "TEMPO"
+          },
+          {
+            "timeLabel": "08/0900Z",
+            "category": "LIFR",
+            "windDirection": 160,
+            "windSpeedKt": 18,
+            "windGustKt": 30,
+            "visibilityText": "2000 m",
+            "ceilingFt": 300,
+            "weather": "+RA",
+            "change": "TEMPO"
           }
         ]
       }
@@ -85,14 +85,14 @@
         "observedUtc": 1788853800
       },
       "taf": {
-        "raw": "TAF EGHI 080454Z 0806/0815 24008KT 9999 SCT025 TEMPO 0806/0815 6000 RA BKN013 PROB40 TEMPO 0806/0815 3000 +RA BKN007 BECMG 0812/0815 30010KT",
-        "issuedUtc": "2026-09-08T04:54:00.000Z",
+        "raw": "TAF EGHI 080756Z 0809/0818 22007KT 9999 SCT025 TEMPO 0809/0814 6000 RA BKN014 PROB40 TEMPO 0809/0814 3000 +RA BKN006 BECMG 0812/0815 30010KT",
+        "issuedUtc": "2026-09-08T07:56:00.000Z",
         "periods": [
           {
-            "timeLabel": "08/0600Z",
+            "timeLabel": "08/0900Z",
             "category": "VFR",
-            "windDirection": 240,
-            "windSpeedKt": 8,
+            "windDirection": 220,
+            "windSpeedKt": 7,
             "windGustKt": null,
             "visibilityText": "10 km+",
             "ceilingFt": null,
@@ -100,24 +100,24 @@
             "change": null
           },
           {
-            "timeLabel": "08/0600Z",
+            "timeLabel": "08/0900Z",
             "category": "MVFR",
             "windDirection": null,
             "windSpeedKt": null,
             "windGustKt": null,
             "visibilityText": "6.0 km",
-            "ceilingFt": 1300,
+            "ceilingFt": 1400,
             "weather": "RA",
             "change": "TEMPO"
           },
           {
-            "timeLabel": "08/0600Z",
+            "timeLabel": "08/0900Z",
             "category": "IFR",
             "windDirection": null,
             "windSpeedKt": null,
             "windGustKt": null,
             "visibilityText": "3000 m",
-            "ceilingFt": 700,
+            "ceilingFt": 600,
             "weather": "+RA",
             "change": "TEMPO"
           },
