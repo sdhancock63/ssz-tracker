@@ -1,11 +1,11 @@
 {
-  "generatedUtc": "2026-09-09T16:15:20.609933+00:00",
+  "generatedUtc": "2026-09-09T16:30:31.472444+00:00",
   "airports": {
     "EGJB": {
       "metar": {
-        "raw": "METAR EGJB 091550Z 32007KT 270V340 9999 FEW026 18/10 Q1020",
+        "raw": "METAR EGJB 091620Z 30007KT 270V340 9999 FEW026 18/10 Q1020",
         "category": "VFR",
-        "windDirection": 320,
+        "windDirection": 300,
         "windSpeedKt": 7,
         "windGustKt": null,
         "visibilityText": "10 km+",
@@ -15,7 +15,7 @@
         "qnhHpa": 1020,
         "cloudText": "FEW026",
         "weather": "NOSIG",
-        "observedUtc": 1788969000
+        "observedUtc": 1788970800
       },
       "taf": {
         "raw": "TAF EGJB 091359Z 0915/0924 28007KT 9999 FEW025",
@@ -37,7 +37,7 @@
     },
     "EGHI": {
       "metar": {
-        "raw": "METAR EGHI 091550Z 31006KT 280V340 9999 FEW047 19/08 Q1018",
+        "raw": "METAR EGHI 091620Z 31006KT 260V340 9999 FEW048 19/08 Q1018",
         "category": "VFR",
         "windDirection": 310,
         "windSpeedKt": 6,
@@ -47,9 +47,9 @@
         "temperatureC": 19,
         "dewpointC": 8,
         "qnhHpa": 1018,
-        "cloudText": "FEW047",
+        "cloudText": "FEW048",
         "weather": "NOSIG",
-        "observedUtc": 1788969000
+        "observedUtc": 1788970800
       },
       "taf": {
         "raw": "TAF EGHI 091358Z 0915/0924 30006KT 9999 SCT045",
@@ -71,19 +71,19 @@
     },
     "EGNX": {
       "metar": {
-        "raw": "METAR EGNX 091550Z 26010KT 9999 FEW049 16/09 Q1017",
+        "raw": "METAR EGNX 091620Z 26008KT 9999 FEW040 16/10 Q1017",
         "category": "VFR",
         "windDirection": 260,
-        "windSpeedKt": 10,
+        "windSpeedKt": 8,
         "windGustKt": null,
         "visibilityText": "10 km+",
         "ceilingFt": null,
         "temperatureC": 16,
-        "dewpointC": 9,
+        "dewpointC": 10,
         "qnhHpa": 1017,
-        "cloudText": "FEW049",
+        "cloudText": "FEW040",
         "weather": "NOSIG",
-        "observedUtc": 1788969000
+        "observedUtc": 1788970800
       },
       "taf": {
         "raw": "TAF EGNX 091057Z 0912/1012 30010KT 9999 SCT040 BECMG 0916/0919 24005KT PROB30 1003/1007 8000",
