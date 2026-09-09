@@ -1,6 +1,6 @@
 {
-  "generatedUtc": "2026-09-09T12:45:30.251819+00:00",
-  "time": 0,
+  "generatedUtc": "2026-09-09T12:50:47.094505+00:00",
+  "time": 1788958233,
   "count": 1,
   "aircraft": [
     {
@@ -9,12 +9,12 @@
       "icao24": "424b86",
       "callsign": "SSZ7",
       "country": "United Kingdom",
-      "longitude": null,
-      "latitude": null,
+      "longitude": -2.6175,
+      "latitude": 49.4343,
       "onGround": false,
-      "track": 306.56,
-      "altitudeFeet": null,
-      "speedKnots": 2
+      "track": 265.76,
+      "altitudeFeet": 450,
+      "speedKnots": 135
     }
   ]
 }
