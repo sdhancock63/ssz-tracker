@@ -1,35 +1,35 @@
 {
-  "generatedUtc": "2026-09-12T13:56:57.265436+00:00",
+  "generatedUtc": "2026-09-12T16:23:07.652498+00:00",
   "airports": {
     "EGJB": {
       "metar": {
-        "raw": "METAR EGJB 121350Z 23012KT 210V270 9999 FEW025 20/14 Q1025",
+        "raw": "METAR EGJB 121550Z 24011KT CAVOK 19/14 Q1025",
         "category": "VFR",
-        "windDirection": 230,
-        "windSpeedKt": 12,
+        "windDirection": 240,
+        "windSpeedKt": 11,
         "windGustKt": null,
-        "visibilityText": "10 km+",
+        "visibilityText": "CAVOK",
         "ceilingFt": null,
-        "temperatureC": 20,
+        "temperatureC": 19,
         "dewpointC": 14,
         "qnhHpa": 1025,
-        "cloudText": "FEW025",
+        "cloudText": "SKC",
         "weather": "NOSIG",
-        "observedUtc": 1789221000
+        "observedUtc": 1789228200
       },
       "taf": {
-        "raw": "TAF EGJB 121100Z 1212/1221 26008KT 9999 FEW017",
-        "issuedUtc": "2026-09-12T11:00:00.000Z",
+        "raw": "TAF EGJB 121358Z 1215/1224 25011KT 9999 FEW015",
+        "issuedUtc": "2026-09-12T13:58:00.000Z",
         "periods": [
           {
-            "timeLabel": "12/1200Z",
+            "timeLabel": "12/1500Z",
             "category": "VFR",
-            "windDirection": 260,
-            "windSpeedKt": 8,
+            "windDirection": 250,
+            "windSpeedKt": 11,
             "windGustKt": null,
             "visibilityText": "10 km+",
             "ceilingFt": null,
-            "weather": "FEW017",
+            "weather": "FEW015",
             "change": null
           }
         ]
@@ -37,26 +37,26 @@
     },
     "EGHI": {
       "metar": {
-        "raw": "METAR EGHI 121350Z AUTO 19012KT 160V220 9999 SCT026 BKN041 21/15 Q1022",
+        "raw": "METAR EGHI 121550Z COR 22014KT 9999 SCT040 21/15 Q1022",
         "category": "VFR",
-        "windDirection": 190,
-        "windSpeedKt": 12,
+        "windDirection": 220,
+        "windSpeedKt": 14,
         "windGustKt": null,
         "visibilityText": "10 km+",
-        "ceilingFt": 4100,
+        "ceilingFt": null,
         "temperatureC": 21,
         "dewpointC": 15,
         "qnhHpa": 1022,
-        "cloudText": "SCT026 BKN041",
+        "cloudText": "SCT040",
         "weather": "NOSIG",
-        "observedUtc": 1789221000
+        "observedUtc": 1789228200
       },
       "taf": {
-        "raw": "TAF EGHI 121057Z 1212/1221 23011KT 9999 SCT020 PROB30 TEMPO 1213/1221 BKN014",
-        "issuedUtc": "2026-09-12T10:57:00.000Z",
+        "raw": "TAF EGHI 121357Z 1215/1224 23011KT 9999 SCT020 PROB30 TEMPO 1219/1224 BKN014",
+        "issuedUtc": "2026-09-12T13:57:00.000Z",
         "periods": [
           {
-            "timeLabel": "12/1200Z",
+            "timeLabel": "12/1500Z",
             "category": "VFR",
             "windDirection": 230,
             "windSpeedKt": 11,
@@ -67,7 +67,7 @@
             "change": null
           },
           {
-            "timeLabel": "12/1300Z",
+            "timeLabel": "12/1900Z",
             "category": "MVFR",
             "windDirection": null,
             "windSpeedKt": null,
@@ -82,19 +82,19 @@
     },
     "EGNX": {
       "metar": {
-        "raw": "METAR EGNX 121350Z 24017KT 9999 BKN025 21/16 Q1018",
+        "raw": "METAR EGNX 121550Z 24015KT 9999 BKN024 20/16 Q1018",
         "category": "MVFR",
         "windDirection": 240,
-        "windSpeedKt": 17,
+        "windSpeedKt": 15,
         "windGustKt": null,
         "visibilityText": "10 km+",
-        "ceilingFt": 2500,
-        "temperatureC": 21,
+        "ceilingFt": 2400,
+        "temperatureC": 20,
         "dewpointC": 16,
         "qnhHpa": 1018,
-        "cloudText": "BKN025",
+        "cloudText": "BKN024",
         "weather": "NOSIG",
-        "observedUtc": 1789221000
+        "observedUtc": 1789228200
       },
       "taf": {
         "raw": "TAF EGNX 121055Z 1212/1312 21010KT 9999 SCT025 TEMPO 1212/1216 22016G26KT PROB30 TEMPO 1212/1214 6000 RA SHRA TEMPO 1214/1220 6000 RA SHRA PROB30 TEMPO 1215/1220 BKN014 TEMPO 1220/1304 BKN012 PROB30 TEMPO 1220/1304 6000 RADZ BKN008 BECMG 1303/1306 29003KT TEMPO 1304/1312 6000 RADZ BKN008 PROB30 TEMPO 1304/1306 2500 +RADZ BKN004",
