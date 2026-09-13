@@ -1,21 +1,21 @@
 {
-  "generatedUtc": "2026-09-13T19:22:28.345198+00:00",
+  "generatedUtc": "2026-09-13T19:37:36.239543+00:00",
   "airports": {
     "EGJB": {
       "metar": {
-        "raw": "METAR EGJB 131850Z 29008KT 9999 BKN005 17/16 Q1024",
+        "raw": "METAR EGJB 131920Z 29008KT 9999 FEW005 BKN006 17/16 Q1025",
         "category": "IFR",
         "windDirection": 290,
         "windSpeedKt": 8,
         "windGustKt": null,
         "visibilityText": "10 km+",
-        "ceilingFt": 500,
+        "ceilingFt": 600,
         "temperatureC": 17,
         "dewpointC": 16,
-        "qnhHpa": 1024,
-        "cloudText": "BKN005",
+        "qnhHpa": 1025,
+        "cloudText": "FEW005 BKN006",
         "weather": "NOSIG",
-        "observedUtc": 1789325400
+        "observedUtc": 1789327200
       },
       "taf": {
         "raw": "TAF EGJB 131657Z 1318/1403 28009KT 9999 FEW005 SCT008 PROB40 TEMPO 1318/1321 BKN007 BECMG 1321/1324 FEW004 BKN008 PROB40 TEMPO 1400/1403 BKN004",
@@ -70,19 +70,19 @@
     },
     "EGHI": {
       "metar": {
-        "raw": "METAR EGHI 131850Z AUTO 21009KT 9999 BKN024 BKN032 20/18 Q1022",
+        "raw": "METAR EGHI 131920Z AUTO 21009KT 9999 OVC023 19/18 Q1022",
         "category": "MVFR",
         "windDirection": 210,
         "windSpeedKt": 9,
         "windGustKt": null,
         "visibilityText": "10 km+",
-        "ceilingFt": 2400,
-        "temperatureC": 20,
+        "ceilingFt": 2300,
+        "temperatureC": 19,
         "dewpointC": 18,
         "qnhHpa": 1022,
-        "cloudText": "BKN024 BKN032",
+        "cloudText": "OVC023",
         "weather": "NOSIG",
-        "observedUtc": 1789325400
+        "observedUtc": 1789327200
       },
       "taf": {
         "raw": "TAF EGHI 131655Z 1318/1403 25004KT 9999 FEW014 BKN030 TEMPO 1321/1403 4000 BR PROB30 1401/1403 0300 FG VV///",
@@ -126,19 +126,19 @@
     },
     "EGNX": {
       "metar": {
-        "raw": "METAR EGNX 131850Z 12004KT 9999 BKN028 21/15 Q1020",
+        "raw": "METAR EGNX 131920Z 14005KT 120V200 9999 BKN024 21/15 Q1020",
         "category": "MVFR",
-        "windDirection": 120,
-        "windSpeedKt": 4,
+        "windDirection": 140,
+        "windSpeedKt": 5,
         "windGustKt": null,
         "visibilityText": "10 km+",
-        "ceilingFt": 2800,
+        "ceilingFt": 2400,
         "temperatureC": 21,
         "dewpointC": 15,
         "qnhHpa": 1020,
-        "cloudText": "BKN028",
+        "cloudText": "BKN024",
         "weather": "NOSIG",
-        "observedUtc": 1789325400
+        "observedUtc": 1789327200
       },
       "taf": {
         "raw": "TAF EGNX 131657Z 1318/1418 23006KT 9999 SCT020 TEMPO 1322/1410 BKN014 PROB30 TEMPO 1402/1409 7000 -RADZ BKN009 TEMPO 1413/1415 5000 RADZ BKN012",
