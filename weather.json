@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-09-13T16:59:08.171281+00:00",
+  "generatedUtc": "2026-09-13T17:14:16.142927+00:00",
   "airports": {
     "EGJB": {
       "metar": {
@@ -130,13 +130,13 @@
         "observedUtc": 1789318200
       },
       "taf": {
-        "raw": "TAF EGNX 131057Z 1312/1412 28006KT 9999 SCT020 BECMG 1322/1401 21010KT TEMPO 1400/1409 BKN014 PROB30 TEMPO 1402/1406 BKN009",
-        "issuedUtc": "2026-09-13T10:57:00.000Z",
+        "raw": "TAF EGNX 131657Z 1318/1418 23006KT 9999 SCT020 TEMPO 1322/1410 BKN014 PROB30 TEMPO 1402/1409 7000 -RADZ BKN009 TEMPO 1413/1415 5000 RADZ BKN012",
+        "issuedUtc": "2026-09-13T16:57:00.000Z",
         "periods": [
           {
-            "timeLabel": "13/1200Z",
+            "timeLabel": "13/1800Z",
             "category": "VFR",
-            "windDirection": 280,
+            "windDirection": 230,
             "windSpeedKt": 6,
             "windGustKt": null,
             "visibilityText": "10 km+",
@@ -146,17 +146,6 @@
           },
           {
             "timeLabel": "13/2200Z",
-            "category": "VFR",
-            "windDirection": 210,
-            "windSpeedKt": 10,
-            "windGustKt": null,
-            "visibilityText": "10 km+",
-            "ceilingFt": null,
-            "weather": "SCT020",
-            "change": "BECMG"
-          },
-          {
-            "timeLabel": "14/0000Z",
             "category": "MVFR",
             "windDirection": null,
             "windSpeedKt": null,
@@ -172,9 +161,20 @@
             "windDirection": null,
             "windSpeedKt": null,
             "windGustKt": null,
-            "visibilityText": "",
+            "visibilityText": "7.0 km",
             "ceilingFt": 900,
-            "weather": "BKN009",
+            "weather": "-RA -DZ",
+            "change": "TEMPO"
+          },
+          {
+            "timeLabel": "14/1300Z",
+            "category": "MVFR",
+            "windDirection": null,
+            "windSpeedKt": null,
+            "windGustKt": null,
+            "visibilityText": "5.0 km",
+            "ceilingFt": 1200,
+            "weather": "RA DZ",
             "change": "TEMPO"
           }
         ]
