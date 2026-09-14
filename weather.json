@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-09-14T15:25:45.960050+00:00",
+  "generatedUtc": "2026-09-14T15:40:53.555228+00:00",
   "airports": {
     "EGJB": {
       "metar": {
@@ -115,19 +115,19 @@
     },
     "EGNX": {
       "metar": {
-        "raw": "METAR EGNX 141450Z 23014KT 9999 SCT020 24/18 Q1018",
+        "raw": "METAR EGNX 141520Z 22013KT 9999 SCT027 24/17 Q1018",
         "category": "VFR",
-        "windDirection": 230,
-        "windSpeedKt": 14,
+        "windDirection": 220,
+        "windSpeedKt": 13,
         "windGustKt": null,
         "visibilityText": "10 km+",
         "ceilingFt": null,
         "temperatureC": 24,
-        "dewpointC": 18,
+        "dewpointC": 17,
         "qnhHpa": 1018,
-        "cloudText": "SCT020",
+        "cloudText": "SCT027",
         "weather": "NOSIG",
-        "observedUtc": 1789397400
+        "observedUtc": 1789399200
       },
       "taf": {
         "raw": "TAF AMD EGNX 141100Z 1411/1506 23008KT 9999 SCT015 TEMPO 1411/1415 5000 RADZ BKN007 TEMPO 1500/1506 BKN012 PROB30 TEMPO 1504/1506 6000 RA SHRA BKN008",
