@@ -1,20 +1,20 @@
 {
-  "generatedUtc": "2026-09-14T15:25:44.899868+00:00",
-  "time": 1789399540,
+  "generatedUtc": "2026-09-14T15:30:48.358011+00:00",
+  "time": 1789399844,
   "count": 1,
   "aircraft": [
     {
       "registration": "M-SPEL",
       "aircraftType": "King Air 350i",
       "icao24": "43ea43",
-      "callsign": "",
+      "callsign": "SSZ9D",
       "country": "United Kingdom",
-      "longitude": null,
-      "latitude": null,
+      "longitude": -3.2914,
+      "latitude": 50.7088,
       "onGround": false,
-      "track": 78.75,
-      "altitudeFeet": null,
-      "speedKnots": 25
+      "track": 85.32,
+      "altitudeFeet": 5750,
+      "speedKnots": 221
     }
   ]
 }
