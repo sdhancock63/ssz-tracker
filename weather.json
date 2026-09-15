@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-09-15T10:31:46.185852+00:00",
+  "generatedUtc": "2026-09-15T10:46:54.688503+00:00",
   "airports": {
     "EGJB": {
       "metar": {
@@ -85,52 +85,19 @@
         "observedUtc": 1789467600
       },
       "taf": {
-        "raw": "TAF EGHI 150800Z 1509/1518 22007KT 9999 SCT030 BECMG 1509/1512 29010KT TEMPO 1509/1512 6000 -RADZ BKN007 PROB30 TEMPO 1509/1512 3000 RADZ",
-        "issuedUtc": "2026-09-15T08:00:00.000Z",
+        "raw": "TAF AMD EGHI 151031Z 1510/1518 29008KT 9999 SCT030",
+        "issuedUtc": "2026-09-15T10:31:00.000Z",
         "periods": [
           {
-            "timeLabel": "15/0900Z",
+            "timeLabel": "15/1000Z",
             "category": "VFR",
-            "windDirection": 220,
-            "windSpeedKt": 7,
+            "windDirection": 290,
+            "windSpeedKt": 8,
             "windGustKt": null,
             "visibilityText": "10 km+",
             "ceilingFt": null,
             "weather": "SCT030",
             "change": null
-          },
-          {
-            "timeLabel": "15/0900Z",
-            "category": "VFR",
-            "windDirection": 290,
-            "windSpeedKt": 10,
-            "windGustKt": null,
-            "visibilityText": "10 km+",
-            "ceilingFt": null,
-            "weather": "SCT030",
-            "change": "BECMG"
-          },
-          {
-            "timeLabel": "15/0900Z",
-            "category": "IFR",
-            "windDirection": null,
-            "windSpeedKt": null,
-            "windGustKt": null,
-            "visibilityText": "6.0 km",
-            "ceilingFt": 700,
-            "weather": "-RA -DZ",
-            "change": "TEMPO"
-          },
-          {
-            "timeLabel": "15/0900Z",
-            "category": "IFR",
-            "windDirection": null,
-            "windSpeedKt": null,
-            "windGustKt": null,
-            "visibilityText": "3000 m",
-            "ceilingFt": null,
-            "weather": "RA DZ",
-            "change": "TEMPO"
           }
         ]
       }
