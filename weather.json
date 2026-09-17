@@ -1,21 +1,21 @@
 {
-  "generatedUtc": "2026-09-17T09:54:36.076805+00:00",
+  "generatedUtc": "2026-09-17T10:53:48.888075+00:00",
   "airports": {
     "EGJB": {
       "metar": {
-        "raw": "METAR EGJB 170920Z 25016KT 9999 FEW005 BKN006 16/15 Q1015",
+        "raw": "METAR EGJB 171020Z 25018KT 2500 -RADZ BR FEW004 BKN005 16/16 Q1014",
         "category": "IFR",
         "windDirection": 250,
-        "windSpeedKt": 16,
+        "windSpeedKt": 18,
         "windGustKt": null,
-        "visibilityText": "10 km+",
-        "ceilingFt": 600,
+        "visibilityText": "2500 m",
+        "ceilingFt": 500,
         "temperatureC": 16,
-        "dewpointC": 15,
-        "qnhHpa": 1015,
-        "cloudText": "FEW005 BKN006",
-        "weather": "NOSIG",
-        "observedUtc": 1789636800
+        "dewpointC": 16,
+        "qnhHpa": 1014,
+        "cloudText": "FEW004 BKN005",
+        "weather": "-RA -DZ BR",
+        "observedUtc": 1789640400
       },
       "taf": {
         "raw": "TAF EGJB 170759Z 1709/1718 24020KT 9999 FEW010 BKN013 TEMPO 1709/1713 6000 -RA FEW007 BKN008 PROB40 TEMPO 1709/1712 3000 -RADZ FEW003 BKN005 PROB30 TEMPO 1709/1712 1500 RA BKN003 BECMG 1711/1713 29016KT SCT020",
@@ -81,19 +81,19 @@
     },
     "EGHI": {
       "metar": {
-        "raw": "METAR EGHI 170920Z AUTO 25011KT 220V280 9999 SCT010/// //////TCU 18/15 Q1011",
+        "raw": "METAR EGHI 171020Z 28009KT 250V320 9999 SCT010 18/13 Q1011",
         "category": "VFR",
-        "windDirection": 250,
-        "windSpeedKt": 11,
+        "windDirection": 280,
+        "windSpeedKt": 9,
         "windGustKt": null,
         "visibilityText": "10 km+",
         "ceilingFt": null,
         "temperatureC": 18,
-        "dewpointC": 15,
+        "dewpointC": 13,
         "qnhHpa": 1011,
         "cloudText": "SCT010",
         "weather": "NOSIG",
-        "observedUtc": 1789636800
+        "observedUtc": 1789640400
       },
       "taf": {
         "raw": "TAF EGHI 170801Z 1709/1718 24010KT 9999 FEW010 SCT025 TEMPO 1709/1711 6000 RA BKN012 PROB30 TEMPO 1709/1718 28015G25KT PROB30 TEMPO 1709/1711 3000 +SHRA BKN008",
