@@ -1,21 +1,21 @@
 {
-  "generatedUtc": "2026-09-18T10:25:06.476291+00:00",
+  "generatedUtc": "2026-09-18T10:40:15.056560+00:00",
   "airports": {
     "EGJB": {
       "metar": {
-        "raw": "METAR EGJB 180950Z 27008KT 220V290 9999 FEW026 BKN041 18/11 Q1018",
+        "raw": "METAR EGJB 181020Z 24011KT 9999 VCSH FEW025 SCT041 17/11 Q1018",
         "category": "VFR",
-        "windDirection": 270,
-        "windSpeedKt": 8,
+        "windDirection": 240,
+        "windSpeedKt": 11,
         "windGustKt": null,
         "visibilityText": "10 km+",
-        "ceilingFt": 4100,
-        "temperatureC": 18,
+        "ceilingFt": null,
+        "temperatureC": 17,
         "dewpointC": 11,
         "qnhHpa": 1018,
-        "cloudText": "FEW026 BKN041",
-        "weather": "NOSIG",
-        "observedUtc": 1789725000
+        "cloudText": "FEW025 SCT041",
+        "weather": "VCSH",
+        "observedUtc": 1789726800
       },
       "taf": {
         "raw": "TAF EGJB 180800Z 1809/1818 26014KT 9999 FEW023 SCT035 PROB30 TEMPO 1815/1818 26016G26KT",
