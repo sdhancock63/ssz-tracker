@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-09-18T20:01:20.464134+00:00",
+  "generatedUtc": "2026-09-18T20:16:29.210736+00:00",
   "airports": {
     "EGJB": {
       "metar": {
@@ -18,22 +18,22 @@
         "observedUtc": 1789761000
       },
       "taf": {
-        "raw": "TAF EGJB 181659Z 1818/1903 25016KT 9999 FEW020 PROB30 TEMPO 1818/1903 26017G27KT BECMG 1901/1903 FEW010 BKN015",
-        "issuedUtc": "2026-09-18T16:59:00.000Z",
+        "raw": "TAF EGJB 181956Z 1821/1906 25016KT 9999 BKN020 PROB30 TEMPO 1821/1904 26017G27KT BECMG 1901/1903 FEW010 BKN014 PROB30 TEMPO 1903/1906 BKN008",
+        "issuedUtc": "2026-09-18T19:56:00.000Z",
         "periods": [
           {
-            "timeLabel": "18/1800Z",
-            "category": "VFR",
+            "timeLabel": "18/2100Z",
+            "category": "MVFR",
             "windDirection": 250,
             "windSpeedKt": 16,
             "windGustKt": null,
             "visibilityText": "10 km+",
-            "ceilingFt": null,
-            "weather": "FEW020",
+            "ceilingFt": 2000,
+            "weather": "BKN020",
             "change": null
           },
           {
-            "timeLabel": "18/1800Z",
+            "timeLabel": "18/2100Z",
             "category": "VFR",
             "windDirection": 260,
             "windSpeedKt": 17,
@@ -50,9 +50,20 @@
             "windSpeedKt": 16,
             "windGustKt": null,
             "visibilityText": "10 km+",
-            "ceilingFt": 1500,
-            "weather": "FEW010 BKN015",
+            "ceilingFt": 1400,
+            "weather": "FEW010 BKN014",
             "change": "BECMG"
+          },
+          {
+            "timeLabel": "19/0300Z",
+            "category": "IFR",
+            "windDirection": null,
+            "windSpeedKt": null,
+            "windGustKt": null,
+            "visibilityText": "",
+            "ceilingFt": 800,
+            "weather": "BKN008",
+            "change": "TEMPO"
           }
         ]
       }
@@ -74,11 +85,11 @@
         "observedUtc": 1789761000
       },
       "taf": {
-        "raw": "TAF EGHI 181656Z 1818/1903 24013KT 9999 SCT030 PROB40 TEMPO 1818/1824 25016G26KT PROB30 TEMPO 1818/1819 8000 -RA TEMPO 1822/1903 BKN012 PROB30 TEMPO 1900/1903 25015G25KT",
-        "issuedUtc": "2026-09-18T16:56:00.000Z",
+        "raw": "TAF EGHI 181956Z 1821/1906 24013KT 9999 SCT030 PROB40 TEMPO 1821/1824 25016G26KT TEMPO 1822/1904 BKN012 PROB30 TEMPO 1900/1906 25015G25KT",
+        "issuedUtc": "2026-09-18T19:56:00.000Z",
         "periods": [
           {
-            "timeLabel": "18/1800Z",
+            "timeLabel": "18/2100Z",
             "category": "VFR",
             "windDirection": 240,
             "windSpeedKt": 13,
@@ -89,7 +100,7 @@
             "change": null
           },
           {
-            "timeLabel": "18/1800Z",
+            "timeLabel": "18/2100Z",
             "category": "VFR",
             "windDirection": 250,
             "windSpeedKt": 16,
@@ -97,17 +108,6 @@
             "visibilityText": "",
             "ceilingFt": null,
             "weather": "SKC",
-            "change": "TEMPO"
-          },
-          {
-            "timeLabel": "18/1800Z",
-            "category": "MVFR",
-            "windDirection": null,
-            "windSpeedKt": null,
-            "windGustKt": null,
-            "visibilityText": "8.0 km",
-            "ceilingFt": null,
-            "weather": "-RA",
             "change": "TEMPO"
           },
           {
