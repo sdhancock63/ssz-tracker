@@ -1,21 +1,21 @@
 {
-  "generatedUtc": "2026-09-20T17:17:48.729700+00:00",
+  "generatedUtc": "2026-09-20T19:06:23.784832+00:00",
   "airports": {
     "EGJB": {
       "metar": {
-        "raw": "METAR EGJB 201650Z 28006KT 9999 FEW009 18/15 Q1030",
+        "raw": "METAR EGJB 201850Z 32003KT 270V350 9999 SCT006 16/16 Q1031",
         "category": "VFR",
-        "windDirection": 280,
-        "windSpeedKt": 6,
+        "windDirection": 320,
+        "windSpeedKt": 3,
         "windGustKt": null,
         "visibilityText": "10 km+",
         "ceilingFt": null,
-        "temperatureC": 18,
-        "dewpointC": 15,
-        "qnhHpa": 1030,
-        "cloudText": "FEW009",
+        "temperatureC": 16,
+        "dewpointC": 16,
+        "qnhHpa": 1031,
+        "cloudText": "SCT006",
         "weather": "NOSIG",
-        "observedUtc": 1789923000
+        "observedUtc": 1789930200
       },
       "taf": {
         "raw": "TAF EGJB 201656Z 2018/2103 34005KT 9999 FEW007 SCT009 PROB40 TEMPO 2019/2103 BKN008 PROB30 TEMPO 2023/2103 VRB03KT 3000 BR MIFG FEW000 SCT001",
@@ -59,19 +59,19 @@
     },
     "EGHI": {
       "metar": {
-        "raw": "METAR EGHI 201650Z 34008KT CAVOK 20/08 Q1029",
+        "raw": "METAR EGHI 201850Z 33003KT CAVOK 17/07 Q1030",
         "category": "VFR",
-        "windDirection": 340,
-        "windSpeedKt": 8,
+        "windDirection": 330,
+        "windSpeedKt": 3,
         "windGustKt": null,
         "visibilityText": "CAVOK",
         "ceilingFt": null,
-        "temperatureC": 20,
-        "dewpointC": 8,
-        "qnhHpa": 1029,
+        "temperatureC": 17,
+        "dewpointC": 7,
+        "qnhHpa": 1030,
         "cloudText": "SKC",
         "weather": "NOSIG",
-        "observedUtc": 1789923000
+        "observedUtc": 1789930200
       },
       "taf": {
         "raw": "TAF EGHI 201655Z 2018/2103 32005KT 9999 FEW040",
@@ -93,19 +93,19 @@
     },
     "EGNX": {
       "metar": {
-        "raw": "METAR EGNX 201650Z 29009KT CAVOK 15/06 Q1028",
+        "raw": "METAR EGNX 201850Z 27006KT CAVOK 12/07 Q1029",
         "category": "VFR",
-        "windDirection": 290,
-        "windSpeedKt": 9,
+        "windDirection": 270,
+        "windSpeedKt": 6,
         "windGustKt": null,
         "visibilityText": "CAVOK",
         "ceilingFt": null,
-        "temperatureC": 15,
-        "dewpointC": 6,
-        "qnhHpa": 1028,
+        "temperatureC": 12,
+        "dewpointC": 7,
+        "qnhHpa": 1029,
         "cloudText": "SKC",
         "weather": "NOSIG",
-        "observedUtc": 1789923000
+        "observedUtc": 1789930200
       },
       "taf": {
         "raw": "TAF EGNX 201655Z 2018/2118 29013KT 9999 FEW040 BECMG 2018/2021 26003KT PROB30 2100/2108 8000",
