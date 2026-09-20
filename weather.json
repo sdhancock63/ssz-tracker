@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-09-20T17:02:41.642894+00:00",
+  "generatedUtc": "2026-09-20T17:17:48.729700+00:00",
   "airports": {
     "EGJB": {
       "metar": {
@@ -18,33 +18,33 @@
         "observedUtc": 1789923000
       },
       "taf": {
-        "raw": "TAF EGJB 201405Z 2015/2024 32004KT 9999 FEW010 SCT015 PROB40 TEMPO 2018/2024 BKN014 PROB30 TEMPO 2021/2024 VRB03KT 3000 BR MIFG FEW000 SCT001",
-        "issuedUtc": "2026-09-20T14:05:00.000Z",
+        "raw": "TAF EGJB 201656Z 2018/2103 34005KT 9999 FEW007 SCT009 PROB40 TEMPO 2019/2103 BKN008 PROB30 TEMPO 2023/2103 VRB03KT 3000 BR MIFG FEW000 SCT001",
+        "issuedUtc": "2026-09-20T16:56:00.000Z",
         "periods": [
           {
-            "timeLabel": "20/1500Z",
+            "timeLabel": "20/1800Z",
             "category": "VFR",
-            "windDirection": 320,
-            "windSpeedKt": 4,
+            "windDirection": 340,
+            "windSpeedKt": 5,
             "windGustKt": null,
             "visibilityText": "10 km+",
             "ceilingFt": null,
-            "weather": "FEW010 SCT015",
+            "weather": "FEW007 SCT009",
             "change": null
           },
           {
-            "timeLabel": "20/1800Z",
-            "category": "MVFR",
+            "timeLabel": "20/1900Z",
+            "category": "IFR",
             "windDirection": null,
             "windSpeedKt": null,
             "windGustKt": null,
             "visibilityText": "",
-            "ceilingFt": 1400,
-            "weather": "BKN014",
+            "ceilingFt": 800,
+            "weather": "BKN008",
             "change": "TEMPO"
           },
           {
-            "timeLabel": "20/2100Z",
+            "timeLabel": "20/2300Z",
             "category": "IFR",
             "windDirection": "VRB",
             "windSpeedKt": 3,
@@ -74,14 +74,14 @@
         "observedUtc": 1789923000
       },
       "taf": {
-        "raw": "TAF EGHI 201356Z 2015/2024 32007KT 9999 FEW040",
-        "issuedUtc": "2026-09-20T13:56:00.000Z",
+        "raw": "TAF EGHI 201655Z 2018/2103 32005KT 9999 FEW040",
+        "issuedUtc": "2026-09-20T16:55:00.000Z",
         "periods": [
           {
-            "timeLabel": "20/1500Z",
+            "timeLabel": "20/1800Z",
             "category": "VFR",
             "windDirection": 320,
-            "windSpeedKt": 7,
+            "windSpeedKt": 5,
             "windGustKt": null,
             "visibilityText": "10 km+",
             "ceilingFt": null,
@@ -108,14 +108,14 @@
         "observedUtc": 1789923000
       },
       "taf": {
-        "raw": "TAF EGNX 201058Z 2012/2112 29014KT 9999 FEW040 BECMG 2018/2021 26004KT",
-        "issuedUtc": "2026-09-20T10:58:00.000Z",
+        "raw": "TAF EGNX 201655Z 2018/2118 29013KT 9999 FEW040 BECMG 2018/2021 26003KT PROB30 2100/2108 8000",
+        "issuedUtc": "2026-09-20T16:55:00.000Z",
         "periods": [
           {
-            "timeLabel": "20/1200Z",
+            "timeLabel": "20/1800Z",
             "category": "VFR",
             "windDirection": 290,
-            "windSpeedKt": 14,
+            "windSpeedKt": 13,
             "windGustKt": null,
             "visibilityText": "10 km+",
             "ceilingFt": null,
@@ -126,12 +126,23 @@
             "timeLabel": "20/1800Z",
             "category": "VFR",
             "windDirection": 260,
-            "windSpeedKt": 4,
+            "windSpeedKt": 3,
             "windGustKt": null,
             "visibilityText": "10 km+",
             "ceilingFt": null,
             "weather": "FEW040",
             "change": "BECMG"
+          },
+          {
+            "timeLabel": "21/0000Z",
+            "category": "MVFR",
+            "windDirection": null,
+            "windSpeedKt": null,
+            "windGustKt": null,
+            "visibilityText": "8.0 km",
+            "ceilingFt": null,
+            "weather": "SKC",
+            "change": "PROB"
           }
         ]
       }
