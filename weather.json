@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-09-21T20:06:49.811922+00:00",
+  "generatedUtc": "2026-09-21T20:21:58.526607+00:00",
   "airports": {
     "EGJB": {
       "metar": {
@@ -18,13 +18,13 @@
         "observedUtc": 1790020200
       },
       "taf": {
-        "raw": "TAF EGJB 211658Z 2118/2203 01005KT CAVOK",
-        "issuedUtc": "2026-09-21T16:58:00.000Z",
+        "raw": "TAF EGJB 212000Z 2121/2206 04005KT CAVOK",
+        "issuedUtc": "2026-09-21T20:00:00.000Z",
         "periods": [
           {
-            "timeLabel": "21/1800Z",
+            "timeLabel": "21/2100Z",
             "category": "VFR",
-            "windDirection": 10,
+            "windDirection": 40,
             "windSpeedKt": 5,
             "windGustKt": null,
             "visibilityText": "10 km+",
@@ -52,11 +52,11 @@
         "observedUtc": 1790020200
       },
       "taf": {
-        "raw": "TAF EGHI 211659Z 2118/2203 VRB03KT CAVOK PROB40 2200/2203 5000 BR",
-        "issuedUtc": "2026-09-21T16:59:00.000Z",
+        "raw": "TAF EGHI 211955Z 2121/2206 VRB03KT CAVOK PROB40 2200/2203 5000 BR PROB30 2203/2206 3000 BR MIFG",
+        "issuedUtc": "2026-09-21T19:55:00.000Z",
         "periods": [
           {
-            "timeLabel": "21/1800Z",
+            "timeLabel": "21/2100Z",
             "category": "VFR",
             "windDirection": "VRB",
             "windSpeedKt": 3,
@@ -75,6 +75,17 @@
             "visibilityText": "5.0 km",
             "ceilingFt": null,
             "weather": "BR",
+            "change": "PROB"
+          },
+          {
+            "timeLabel": "22/0300Z",
+            "category": "IFR",
+            "windDirection": null,
+            "windSpeedKt": null,
+            "windGustKt": null,
+            "visibilityText": "3000 m",
+            "ceilingFt": null,
+            "weather": "BR MIFG",
             "change": "PROB"
           }
         ]
