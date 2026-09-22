@@ -1,21 +1,21 @@
 {
-  "generatedUtc": "2026-09-22T12:22:54.431373+00:00",
+  "generatedUtc": "2026-09-22T12:38:03.147582+00:00",
   "airports": {
     "EGJB": {
       "metar": {
-        "raw": "METAR EGJB 221150Z 10006KT 080V140 9999 FEW006 21/11 Q1029",
+        "raw": "METAR EGJB 221220Z 06004KT 350V120 9999 FEW006 21/10 Q1029",
         "category": "VFR",
-        "windDirection": 100,
-        "windSpeedKt": 6,
+        "windDirection": 60,
+        "windSpeedKt": 4,
         "windGustKt": null,
         "visibilityText": "10 km+",
         "ceilingFt": null,
         "temperatureC": 21,
-        "dewpointC": 11,
+        "dewpointC": 10,
         "qnhHpa": 1029,
         "cloudText": "FEW006",
         "weather": "NOSIG",
-        "observedUtc": 1790077800
+        "observedUtc": 1790079600
       },
       "taf": {
         "raw": "TAF EGJB 221056Z 2212/2221 12005KT CAVOK BECMG 2213/2215 05011KT",
@@ -48,9 +48,9 @@
     },
     "EGHI": {
       "metar": {
-        "raw": "METAR EGHI 221150Z 19005KT 090V240 9999 FEW030 24/13 Q1029",
+        "raw": "METAR EGHI 221220Z 16005KT 120V230 9999 FEW030 24/13 Q1029",
         "category": "VFR",
-        "windDirection": 190,
+        "windDirection": 160,
         "windSpeedKt": 5,
         "windGustKt": null,
         "visibilityText": "10 km+",
@@ -60,7 +60,7 @@
         "qnhHpa": 1029,
         "cloudText": "FEW030",
         "weather": "NOSIG",
-        "observedUtc": 1790077800
+        "observedUtc": 1790079600
       },
       "taf": {
         "raw": "TAF EGHI 221100Z 2212/2221 17004KT CAVOK",
@@ -82,19 +82,19 @@
     },
     "EGNX": {
       "metar": {
-        "raw": "METAR EGNX 221150Z 27005KT 220V330 9999 FEW024 22/16 Q1029",
+        "raw": "METAR EGNX 221220Z 25006KT 220V290 9999 FEW025 23/16 Q1028",
         "category": "VFR",
-        "windDirection": 270,
-        "windSpeedKt": 5,
+        "windDirection": 250,
+        "windSpeedKt": 6,
         "windGustKt": null,
         "visibilityText": "10 km+",
         "ceilingFt": null,
-        "temperatureC": 22,
+        "temperatureC": 23,
         "dewpointC": 16,
-        "qnhHpa": 1029,
-        "cloudText": "FEW024",
+        "qnhHpa": 1028,
+        "cloudText": "FEW025",
         "weather": "NOSIG",
-        "observedUtc": 1790077800
+        "observedUtc": 1790079600
       },
       "taf": {
         "raw": "TAF EGNX 221058Z 2212/2312 21005KT 9999 FEW035 PROB30 2305/2309 BKN012 TEMPO 2306/2312 7000 RA BECMG 2307/2310 27011KT PROB40 TEMPO 2309/2312 28017G27KT 3000 +TSRA",
