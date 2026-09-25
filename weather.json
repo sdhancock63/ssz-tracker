@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-09-25T20:05:57.037371+00:00",
+  "generatedUtc": "2026-09-25T20:21:05.302472+00:00",
   "airports": {
     "EGJB": {
       "metar": {
@@ -18,18 +18,18 @@
         "observedUtc": 1790365800
       },
       "taf": {
-        "raw": "TAF EGJB 251658Z 2518/2603 33011KT 9999 FEW010 PROB30 TEMPO 2521/2524 35012G22KT",
-        "issuedUtc": "2026-09-25T16:58:00.000Z",
+        "raw": "TAF EGJB 251957Z 2521/2606 34011KT 9999 FEW008 PROB30 TEMPO 2521/2524 35012G22KT",
+        "issuedUtc": "2026-09-25T19:57:00.000Z",
         "periods": [
           {
-            "timeLabel": "25/1800Z",
+            "timeLabel": "25/2100Z",
             "category": "VFR",
-            "windDirection": 330,
+            "windDirection": 340,
             "windSpeedKt": 11,
             "windGustKt": null,
             "visibilityText": "10 km+",
             "ceilingFt": null,
-            "weather": "FEW010",
+            "weather": "FEW008",
             "change": null
           },
           {
@@ -63,19 +63,30 @@
         "observedUtc": 1790365800
       },
       "taf": {
-        "raw": "TAF EGHI 251658Z 2518/2603 34007KT 9999 FEW030",
-        "issuedUtc": "2026-09-25T16:58:00.000Z",
+        "raw": "TAF EGHI 251955Z 2521/2606 33006KT 9999 FEW030 PROB30 2604/2606 6000",
+        "issuedUtc": "2026-09-25T19:55:00.000Z",
         "periods": [
           {
-            "timeLabel": "25/1800Z",
+            "timeLabel": "25/2100Z",
             "category": "VFR",
-            "windDirection": 340,
-            "windSpeedKt": 7,
+            "windDirection": 330,
+            "windSpeedKt": 6,
             "windGustKt": null,
             "visibilityText": "10 km+",
             "ceilingFt": null,
             "weather": "FEW030",
             "change": null
+          },
+          {
+            "timeLabel": "26/0400Z",
+            "category": "MVFR",
+            "windDirection": null,
+            "windSpeedKt": null,
+            "windGustKt": null,
+            "visibilityText": "6.0 km",
+            "ceilingFt": null,
+            "weather": "SKC",
+            "change": "PROB"
           }
         ]
       }
