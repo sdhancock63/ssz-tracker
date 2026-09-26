@@ -1,12 +1,12 @@
 {
-  "generatedUtc": "2026-09-26T18:21:22.457090+00:00",
+  "generatedUtc": "2026-09-26T18:36:31.027507+00:00",
   "airports": {
     "EGJB": {
       "metar": {
-        "raw": "METAR EGJB 261750Z 05005KT CAVOK 15/12 Q1022",
+        "raw": "METAR EGJB 261820Z 05004KT CAVOK 15/12 Q1022",
         "category": "VFR",
         "windDirection": 50,
-        "windSpeedKt": 5,
+        "windSpeedKt": 4,
         "windGustKt": null,
         "visibilityText": "CAVOK",
         "ceilingFt": null,
@@ -15,7 +15,7 @@
         "qnhHpa": 1022,
         "cloudText": "SKC",
         "weather": "NOSIG",
-        "observedUtc": 1790445000
+        "observedUtc": 1790446800
       },
       "taf": {
         "raw": "TAF EGJB 261702Z 2618/2703 06006KT CAVOK BECMG 2622/2624 12012KT",
@@ -48,19 +48,19 @@
     },
     "EGHI": {
       "metar": {
-        "raw": "METAR EGHI 261750Z 20003KT CAVOK 15/10 Q1022",
+        "raw": "METAR EGHI 261820Z 21002KT CAVOK 14/10 Q1022",
         "category": "VFR",
-        "windDirection": 200,
-        "windSpeedKt": 3,
+        "windDirection": 210,
+        "windSpeedKt": 2,
         "windGustKt": null,
         "visibilityText": "CAVOK",
         "ceilingFt": null,
-        "temperatureC": 15,
+        "temperatureC": 14,
         "dewpointC": 10,
         "qnhHpa": 1022,
         "cloudText": "SKC",
         "weather": "NOSIG",
-        "observedUtc": 1790445000
+        "observedUtc": 1790446800
       },
       "taf": {
         "raw": "TAF EGHI 261657Z 2618/2703 21004KT 9999 FEW040",
@@ -82,10 +82,10 @@
     },
     "EGNX": {
       "metar": {
-        "raw": "METAR EGNX 261750Z 18005KT 090V210 CAVOK 17/08 Q1021",
+        "raw": "METAR EGNX 261820Z 18006KT CAVOK 17/08 Q1021",
         "category": "VFR",
         "windDirection": 180,
-        "windSpeedKt": 5,
+        "windSpeedKt": 6,
         "windGustKt": null,
         "visibilityText": "CAVOK",
         "ceilingFt": null,
@@ -94,7 +94,7 @@
         "qnhHpa": 1021,
         "cloudText": "SKC",
         "weather": "NOSIG",
-        "observedUtc": 1790445000
+        "observedUtc": 1790446800
       },
       "taf": {
         "raw": "TAF EGNX 261658Z 2618/2718 21008KT 9999 FEW045 BECMG 2706/2709 15012KT PROB30 TEMPO 2706/2710 7000 RA BKN008 TEMPO 2710/2717 6000 RA SHRA PROB40 TEMPO 2710/2717 18020G30KT BECMG 2714/2717 28009KT PROB30 TEMPO 2714/2717 4000 +SHRA BKN010",
