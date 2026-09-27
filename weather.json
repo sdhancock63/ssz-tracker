@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-09-27T20:29:45.504063+00:00",
+  "generatedUtc": "2026-09-27T20:44:53.232305+00:00",
   "airports": {
     "EGJB": {
       "metar": {
@@ -119,30 +119,19 @@
         "observedUtc": 1790540400
       },
       "taf": {
-        "raw": "TAF EGNX 271655Z 2718/2818 21015KT 9999 SCT018 BECMG 2722/2801 22005KT TEMPO 2802/2810 7000 PROB30 2804/2808 4000 BR",
-        "issuedUtc": "2026-09-27T16:55:00.000Z",
+        "raw": "TAF AMD EGNX 272031Z 2720/2818 27008KT 9999 FEW035 TEMPO 2802/2810 7000 PROB30 2804/2808 4000 BR",
+        "issuedUtc": "2026-09-27T20:31:00.000Z",
         "periods": [
           {
-            "timeLabel": "27/1800Z",
+            "timeLabel": "27/2000Z",
             "category": "VFR",
-            "windDirection": 210,
-            "windSpeedKt": 15,
+            "windDirection": 270,
+            "windSpeedKt": 8,
             "windGustKt": null,
             "visibilityText": "10 km+",
             "ceilingFt": null,
-            "weather": "SCT018",
+            "weather": "FEW035",
             "change": null
-          },
-          {
-            "timeLabel": "27/2200Z",
-            "category": "VFR",
-            "windDirection": 220,
-            "windSpeedKt": 5,
-            "windGustKt": null,
-            "visibilityText": "10 km+",
-            "ceilingFt": null,
-            "weather": "SCT018",
-            "change": "BECMG"
           },
           {
             "timeLabel": "28/0200Z",
