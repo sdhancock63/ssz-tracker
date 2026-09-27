@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-09-27T08:05:06.960629+00:00",
+  "generatedUtc": "2026-09-27T08:20:25.068521+00:00",
   "airports": {
     "EGJB": {
       "metar": {
@@ -18,11 +18,11 @@
         "observedUtc": 1790495400
       },
       "taf": {
-        "raw": "TAF AMD EGJB 270643Z 2706/2715 16012KT 9999 FEW004 SCT040 BECMG 2709/2711 6000 RA FEW002 SCT004 BKN008 PROB30 TEMPO 2710/2714 2000 RADZ BR FEW000 SCT001 BKN002 BECMG 2711/2714 22014KT 9999 NSW SCT014",
-        "issuedUtc": "2026-09-27T06:43:00.000Z",
+        "raw": "TAF EGJB 270800Z 2709/2718 16012KT 9999 FEW004 SCT040 BECMG 2709/2711 6000 RA FEW002 SCT004 BKN008 PROB30 TEMPO 2710/2714 2000 RADZ BR FEW000 SCT001 BKN002 BECMG 2711/2714 22014KT 9999 NSW SCT014 BECMG 2714/2717 28010KT",
+        "issuedUtc": "2026-09-27T08:00:00.000Z",
         "periods": [
           {
-            "timeLabel": "27/0600Z",
+            "timeLabel": "27/0900Z",
             "category": "VFR",
             "windDirection": 160,
             "windSpeedKt": 12,
@@ -64,6 +64,17 @@
             "ceilingFt": null,
             "weather": "NSW",
             "change": "BECMG"
+          },
+          {
+            "timeLabel": "27/1400Z",
+            "category": "VFR",
+            "windDirection": 280,
+            "windSpeedKt": 10,
+            "windGustKt": null,
+            "visibilityText": "10 km+",
+            "ceilingFt": null,
+            "weather": "NSW",
+            "change": "BECMG"
           }
         ]
       }
@@ -85,22 +96,11 @@
         "observedUtc": 1790495400
       },
       "taf": {
-        "raw": "TAF EGHI 270657Z 2706/2715 VRB03KT 9999 SCT018 BECMG 2706/2709 17010KT TEMPO 2706/2711 8000 -RA BKN014 TEMPO 2711/2715 7000 SHRA PROB30 TEMPO 2713/2715 18015G25KT 3000 +SHRA BKN008",
-        "issuedUtc": "2026-09-27T06:57:00.000Z",
+        "raw": "TAF EGHI 270756Z 2709/2718 17010KT 9999 SCT018 TEMPO 2709/2717 6000 SHRA BKN014 PROB30 TEMPO 2712/2715 18015G25KT 3000 +SHRA BKN008 BECMG 2716/2718 26010KT",
+        "issuedUtc": "2026-09-27T07:56:00.000Z",
         "periods": [
           {
-            "timeLabel": "27/0600Z",
-            "category": "VFR",
-            "windDirection": "VRB",
-            "windSpeedKt": 3,
-            "windGustKt": null,
-            "visibilityText": "10 km+",
-            "ceilingFt": null,
-            "weather": "SCT018",
-            "change": null
-          },
-          {
-            "timeLabel": "27/0600Z",
+            "timeLabel": "27/0900Z",
             "category": "VFR",
             "windDirection": 170,
             "windSpeedKt": 10,
@@ -108,32 +108,21 @@
             "visibilityText": "10 km+",
             "ceilingFt": null,
             "weather": "SCT018",
-            "change": "BECMG"
+            "change": null
           },
           {
-            "timeLabel": "27/0600Z",
+            "timeLabel": "27/0900Z",
             "category": "MVFR",
             "windDirection": null,
             "windSpeedKt": null,
             "windGustKt": null,
-            "visibilityText": "8.0 km",
+            "visibilityText": "6.0 km",
             "ceilingFt": 1400,
-            "weather": "-RA",
-            "change": "TEMPO"
-          },
-          {
-            "timeLabel": "27/1100Z",
-            "category": "MVFR",
-            "windDirection": null,
-            "windSpeedKt": null,
-            "windGustKt": null,
-            "visibilityText": "7.0 km",
-            "ceilingFt": null,
             "weather": "SHRA",
             "change": "TEMPO"
           },
           {
-            "timeLabel": "27/1300Z",
+            "timeLabel": "27/1200Z",
             "category": "IFR",
             "windDirection": 180,
             "windSpeedKt": 15,
@@ -142,6 +131,17 @@
             "ceilingFt": 800,
             "weather": "+SHRA",
             "change": "TEMPO"
+          },
+          {
+            "timeLabel": "27/1600Z",
+            "category": "VFR",
+            "windDirection": 260,
+            "windSpeedKt": 10,
+            "windGustKt": null,
+            "visibilityText": "10 km+",
+            "ceilingFt": null,
+            "weather": "SCT018",
+            "change": "BECMG"
           }
         ]
       }
