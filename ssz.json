@@ -1,33 +1,6 @@
 {
-  "generatedUtc": "2026-10-01T07:01:33.976218+00:00",
-  "time": 1790838090,
-  "count": 2,
-  "aircraft": [
-    {
-      "registration": "M-SPEL",
-      "aircraftType": "King Air 350i",
-      "icao24": "43ea43",
-      "callsign": "SSZ9A",
-      "country": "United Kingdom",
-      "longitude": -1.3226,
-      "latitude": 50.8786,
-      "onGround": false,
-      "track": 41.59,
-      "altitudeFeet": 6900,
-      "speedKnots": 214
-    },
-    {
-      "registration": "M-SPEK",
-      "aircraftType": "King Air 360",
-      "icao24": "424b86",
-      "callsign": "SSZ1",
-      "country": "United Kingdom",
-      "longitude": -1.3584,
-      "latitude": 50.9533,
-      "onGround": true,
-      "track": 298.12,
-      "altitudeFeet": null,
-      "speedKnots": 4
-    }
-  ]
+  "generatedUtc": "2026-10-01T13:34:26.740450+00:00",
+  "time": 1790861660,
+  "count": 0,
+  "aircraft": []
 }
