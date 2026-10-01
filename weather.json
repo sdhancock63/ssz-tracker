@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-01T06:26:18.948064+00:00",
+  "generatedUtc": "2026-10-01T06:41:24.814320+00:00",
   "airports": {
     "EGJB": {
       "metar": {
@@ -48,19 +48,19 @@
     },
     "EGHI": {
       "metar": {
-        "raw": "METAR EGHI 010550Z 14002KT 0900 R20/0800N FG FEW031 09/09 Q1019",
-        "category": "LIFR",
-        "windDirection": 140,
+        "raw": "METAR EGHI 010620Z 18002KT 9999 R20/1200U MIFG FEW031 08/08 Q1019",
+        "category": "VFR",
+        "windDirection": 180,
         "windSpeedKt": 2,
         "windGustKt": null,
-        "visibilityText": "900 m",
+        "visibilityText": "10 km+",
         "ceilingFt": null,
-        "temperatureC": 9,
-        "dewpointC": 9,
+        "temperatureC": 8,
+        "dewpointC": 8,
         "qnhHpa": 1019,
         "cloudText": "FEW031",
-        "weather": "FG",
-        "observedUtc": 1790833800
+        "weather": "MIFG",
+        "observedUtc": 1790835600
       },
       "taf": {
         "raw": "TAF EGHI 010503Z 0106/0115 VRB04KT 0300 FG FEW045 BECMG 0106/0109 9999 NSW TEMPO 0106/0107 7000 RA SHRA PROB30 TEMPO 0106/0107 2500 +SHRA BECMG 0110/0113 24010KT",
