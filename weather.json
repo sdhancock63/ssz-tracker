@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-02T20:29:32.716291+00:00",
+  "generatedUtc": "2026-10-02T20:44:42.930619+00:00",
   "airports": {
     "EGJB": {
       "metar": {
@@ -52,8 +52,8 @@
         "observedUtc": 1790972400
       },
       "taf": {
-        "raw": "TAF EGHI 021956Z 0221/0306 18004KT 9999 FEW040 PROB30 0300/03026 5000 BR",
-        "issuedUtc": "2026-10-02T19:56:00.000Z",
+        "raw": "TAF COR EGHI 022032Z 0221/0306 18004KT 9999 FEW040 PROB30 0300/0306 5000 BR",
+        "issuedUtc": "2026-10-02T20:32:00.000Z",
         "periods": [
           {
             "timeLabel": "02/2100Z",
@@ -67,10 +67,10 @@
             "change": null
           },
           {
-            "timeLabel": "02/2100Z",
+            "timeLabel": "03/0000Z",
             "category": "MVFR",
-            "windDirection": 30,
-            "windSpeedKt": 26,
+            "windDirection": null,
+            "windSpeedKt": null,
             "windGustKt": null,
             "visibilityText": "5.0 km",
             "ceilingFt": null,
