@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-03T18:09:38.460081+00:00",
+  "generatedUtc": "2026-10-03T18:24:45.824298+00:00",
   "airports": {
     "EGJB": {
       "metar": {
@@ -37,19 +37,19 @@
     },
     "EGHI": {
       "metar": {
-        "raw": "METAR EGHI 031750Z AUTO VRB02KT 9999 FEW027 17/15 Q1029",
+        "raw": "METAR EGHI 031820Z 14003KT 9999 FEW027 16/15 Q1029",
         "category": "VFR",
-        "windDirection": "VRB",
-        "windSpeedKt": 2,
+        "windDirection": 140,
+        "windSpeedKt": 3,
         "windGustKt": null,
         "visibilityText": "10 km+",
         "ceilingFt": null,
-        "temperatureC": 17,
+        "temperatureC": 16,
         "dewpointC": 15,
         "qnhHpa": 1029,
         "cloudText": "FEW027",
         "weather": "NOSIG",
-        "observedUtc": 1791049800
+        "observedUtc": 1791051600
       },
       "taf": {
         "raw": "TAF EGHI 031659Z 0318/0403 VRB02KT 9999 SCT030 PROB30 0320/0322 7000 TEMPO 0322/0403 4000 BR PROB30 0322/0403 0300 FG VV///",
