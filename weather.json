@@ -1,11 +1,11 @@
 {
-  "generatedUtc": "2026-10-06T08:42:32.686342+00:00",
+  "generatedUtc": "2026-10-06T08:57:40.426342+00:00",
   "airports": {
     "EGJB": {
       "metar": {
-        "raw": "METAR EGJB 060820Z 07010KT 9999 FEW008 17/15 Q1018",
+        "raw": "METAR EGJB 060850Z 08010KT 9999 FEW010 17/15 Q1018",
         "category": "VFR",
-        "windDirection": 70,
+        "windDirection": 80,
         "windSpeedKt": 10,
         "windGustKt": null,
         "visibilityText": "10 km+",
@@ -13,9 +13,9 @@
         "temperatureC": 17,
         "dewpointC": 15,
         "qnhHpa": 1018,
-        "cloudText": "FEW008",
+        "cloudText": "FEW010",
         "weather": "NOSIG",
-        "observedUtc": 1791274800
+        "observedUtc": 1791276600
       },
       "taf": {
         "raw": "TAF EGJB 060804Z 0609/0618 08010KT 9999 FEW008 PROB30 TEMPO 0612/0618 8000 SHRA BKN060CB",
@@ -48,19 +48,19 @@
     },
     "EGHI": {
       "metar": {
-        "raw": "METAR EGHI 060820Z AUTO 01003KT 330V040 2300 BR BKN002 13/13 Q1019",
+        "raw": "METAR EGHI 060850Z AUTO 36003KT 320V040 0550 R20/1300U FG OVC002 13/13 Q1019",
         "category": "LIFR",
-        "windDirection": 10,
+        "windDirection": 360,
         "windSpeedKt": 3,
         "windGustKt": null,
-        "visibilityText": "2300 m",
+        "visibilityText": "550 m",
         "ceilingFt": 200,
         "temperatureC": 13,
         "dewpointC": 13,
         "qnhHpa": 1019,
-        "cloudText": "BKN002",
-        "weather": "BR",
-        "observedUtc": 1791274800
+        "cloudText": "OVC002",
+        "weather": "FG",
+        "observedUtc": 1791276600
       },
       "taf": {
         "raw": "TAF EGHI 060758Z 0609/0618 VRB03KT 0300 FG VV/// BECMG 0609/0611 9999 NSW FEW020",
