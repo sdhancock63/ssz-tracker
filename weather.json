@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-10T19:13:40.264042+00:00",
+  "generatedUtc": "2026-10-10T19:28:49.082976+00:00",
   "airports": {
     "EGJB": {
       "metar": {
@@ -37,19 +37,19 @@
     },
     "EGHI": {
       "metar": {
-        "raw": "METAR EGHI 101850Z AUTO 26007KT 9999 NCD 11/06 Q1014",
+        "raw": "METAR EGHI 101920Z AUTO 26005KT 9999 NCD 10/06 Q1015",
         "category": "VFR",
         "windDirection": 260,
-        "windSpeedKt": 7,
+        "windSpeedKt": 5,
         "windGustKt": null,
         "visibilityText": "10 km+",
         "ceilingFt": null,
-        "temperatureC": 11,
+        "temperatureC": 10,
         "dewpointC": 6,
-        "qnhHpa": 1014,
+        "qnhHpa": 1015,
         "cloudText": "SKC",
         "weather": "NOSIG",
-        "observedUtc": 1791658200
+        "observedUtc": 1791660000
       },
       "taf": {
         "raw": "TAF EGHI 101702Z 1018/1103 28006KT 9999 FEW045",
@@ -71,19 +71,19 @@
     },
     "EGNX": {
       "metar": {
-        "raw": "METAR EGNX 101850Z 25012KT 9999 FEW045 09/06 Q1011",
+        "raw": "METAR EGNX 101920Z 25011KT 9999 FEW028 SCT047 10/07 Q1011",
         "category": "VFR",
         "windDirection": 250,
-        "windSpeedKt": 12,
+        "windSpeedKt": 11,
         "windGustKt": null,
         "visibilityText": "10 km+",
         "ceilingFt": null,
-        "temperatureC": 9,
-        "dewpointC": 6,
+        "temperatureC": 10,
+        "dewpointC": 7,
         "qnhHpa": 1011,
-        "cloudText": "FEW045",
+        "cloudText": "FEW028 SCT047",
         "weather": "NOSIG",
-        "observedUtc": 1791658200
+        "observedUtc": 1791660000
       },
       "taf": {
         "raw": "TAF EGNX 101659Z 1018/1118 27010KT 9999 FEW015 SCT030 TEMPO 1018/1023 28015G25KT 7000 SHRA PROB30 TEMPO 1023/1103 8000 -SHRA",
