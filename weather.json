@@ -1,21 +1,21 @@
 {
-  "generatedUtc": "2026-10-16T05:41:54.029322+00:00",
+  "generatedUtc": "2026-10-16T05:57:01.444029+00:00",
   "airports": {
     "EGJB": {
       "metar": {
-        "raw": "METAR EGJB 160520Z 31009KT 3000 RADZ BR FEW001 BKN002 15/14 Q1020",
+        "raw": "METAR EGJB 160550Z 31010KT 3000 RA BR FEW001 SCT002 BKN003 14/14 Q1020 REDZ",
         "category": "LIFR",
         "windDirection": 310,
-        "windSpeedKt": 9,
+        "windSpeedKt": 10,
         "windGustKt": null,
         "visibilityText": "3000 m",
-        "ceilingFt": 200,
-        "temperatureC": 15,
+        "ceilingFt": 300,
+        "temperatureC": 14,
         "dewpointC": 14,
         "qnhHpa": 1020,
-        "cloudText": "FEW001 BKN002",
-        "weather": "RA DZ BR",
-        "observedUtc": 1792128000
+        "cloudText": "FEW001 SCT002 BKN003",
+        "weather": "RA BR",
+        "observedUtc": 1792129800
       },
       "taf": {
         "raw": "TAF EGJB 160454Z 1606/1615 24012KT 9999 BKN009 PROB40 TEMPO 1606/1607 1500 RA BR BKN002 BECMG 1606/1608 35018KT SCT030",
@@ -59,19 +59,19 @@
     },
     "EGHI": {
       "metar": {
-        "raw": "METAR EGHI 160520Z AUTO 32007KT 5000 -RADZ FEW006/// SCT011/// OVC036/// //////TCU 14/14 Q1018 RERA",
-        "category": "MVFR",
-        "windDirection": 320,
+        "raw": "METAR EGHI 160550Z 33007KT 5000 RADZ BR BKN008 14/14 Q1018 RERA",
+        "category": "IFR",
+        "windDirection": 330,
         "windSpeedKt": 7,
         "windGustKt": null,
         "visibilityText": "5.0 km",
-        "ceilingFt": 3600,
+        "ceilingFt": 800,
         "temperatureC": 14,
         "dewpointC": 14,
         "qnhHpa": 1018,
-        "cloudText": "FEW006 SCT011 OVC036",
-        "weather": "-RA -DZ",
-        "observedUtc": 1792128000
+        "cloudText": "BKN008",
+        "weather": "RA DZ BR",
+        "observedUtc": 1792129800
       },
       "taf": {
         "raw": "TAF EGHI 160500Z 1606/1615 32010KT 9999 SCT020 TEMPO 1606/1607 6000 RA BKN008 PROB30 TEMPO 1606/1607 4000 RADZ BKN004",
@@ -115,19 +115,19 @@
     },
     "EGNX": {
       "metar": {
-        "raw": "METAR EGNX 160520Z 27003KT CAVOK 10/09 Q1019",
+        "raw": "METAR EGNX 160550Z 28006KT CAVOK 09/09 Q1019",
         "category": "VFR",
-        "windDirection": 270,
-        "windSpeedKt": 3,
+        "windDirection": 280,
+        "windSpeedKt": 6,
         "windGustKt": null,
         "visibilityText": "CAVOK",
         "ceilingFt": null,
-        "temperatureC": 10,
+        "temperatureC": 9,
         "dewpointC": 9,
         "qnhHpa": 1019,
         "cloudText": "SKC",
         "weather": "NOSIG",
-        "observedUtc": 1792128000
+        "observedUtc": 1792129800
       },
       "taf": {
         "raw": "TAF EGNX 160459Z 1606/1706 30009KT 9999 FEW040 TEMPO 1611/1618 6000 SHRA PROB30 TEMPO 1614/1617 4000 +SHRA PROB30 1704/1706 8000",
