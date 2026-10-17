@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-17T20:02:46.259817+00:00",
+  "generatedUtc": "2026-10-17T20:17:54.213154+00:00",
   "airports": {
     "EGJB": {
       "metar": {
@@ -18,40 +18,29 @@
         "observedUtc": 1792266600
       },
       "taf": {
-        "raw": "TAF EGJB 171700Z 1718/1803 03010KT 9999 SCT025 PROB40 TEMPO 1718/1803 04012G24KT PROB30 TEMPO 1722/1802 9000 SHRA BKN025",
-        "issuedUtc": "2026-10-17T17:00:00.000Z",
+        "raw": "TAF EGJB 172002Z 1721/1806 02010KT 9999 FEW035 PROB30 TEMPO 1721/1806 03012G22KT",
+        "issuedUtc": "2026-10-17T20:02:00.000Z",
         "periods": [
           {
-            "timeLabel": "17/1800Z",
+            "timeLabel": "17/2100Z",
             "category": "VFR",
-            "windDirection": 30,
+            "windDirection": 20,
             "windSpeedKt": 10,
             "windGustKt": null,
             "visibilityText": "10 km+",
             "ceilingFt": null,
-            "weather": "SCT025",
+            "weather": "FEW035",
             "change": null
           },
           {
-            "timeLabel": "17/1800Z",
+            "timeLabel": "17/2100Z",
             "category": "VFR",
-            "windDirection": 40,
+            "windDirection": 30,
             "windSpeedKt": 12,
-            "windGustKt": 24,
+            "windGustKt": 22,
             "visibilityText": "",
             "ceilingFt": null,
             "weather": "SKC",
-            "change": "TEMPO"
-          },
-          {
-            "timeLabel": "17/2200Z",
-            "category": "MVFR",
-            "windDirection": null,
-            "windSpeedKt": null,
-            "windGustKt": null,
-            "visibilityText": "9.0 km",
-            "ceilingFt": 2500,
-            "weather": "SHRA",
             "change": "TEMPO"
           }
         ]
@@ -74,14 +63,14 @@
         "observedUtc": 1792266600
       },
       "taf": {
-        "raw": "TAF EGHI 171657Z 1718/1803 01008KT 9999 FEW045",
-        "issuedUtc": "2026-10-17T16:57:00.000Z",
+        "raw": "TAF EGHI 172004Z 1721/1806 01006KT 9999 FEW045",
+        "issuedUtc": "2026-10-17T20:04:00.000Z",
         "periods": [
           {
-            "timeLabel": "17/1800Z",
+            "timeLabel": "17/2100Z",
             "category": "VFR",
             "windDirection": 10,
-            "windSpeedKt": 8,
+            "windSpeedKt": 6,
             "windGustKt": null,
             "visibilityText": "10 km+",
             "ceilingFt": null,
