@@ -1,21 +1,21 @@
 {
-  "generatedUtc": "2026-10-21T15:24:23.150950+00:00",
+  "generatedUtc": "2026-10-21T15:39:32.037029+00:00",
   "airports": {
     "EGJB": {
       "metar": {
-        "raw": "METAR EGJB 211450Z 26019KT 9999 VCSH FEW030CB 12/06 Q1011",
+        "raw": "METAR EGJB 211520Z 26023G33KT 9999 8000W SHRA SCT025CB SCT030 11/08 Q1011",
         "category": "VFR",
         "windDirection": 260,
-        "windSpeedKt": 19,
-        "windGustKt": null,
+        "windSpeedKt": 23,
+        "windGustKt": 33,
         "visibilityText": "10 km+",
         "ceilingFt": null,
-        "temperatureC": 12,
-        "dewpointC": 6,
+        "temperatureC": 11,
+        "dewpointC": 8,
         "qnhHpa": 1011,
-        "cloudText": "FEW030",
-        "weather": "VCSH",
-        "observedUtc": 1792594200
+        "cloudText": "SCT025 SCT030",
+        "weather": "SHRA",
+        "observedUtc": 1792596000
       },
       "taf": {
         "raw": "TAF EGJB 211358Z 2115/2124 27023KT 9999 FEW025TCU TEMPO 2115/2124 27021G38KT 8000 SHRA BKN020CB PROB30 TEMPO 2115/2124 3000 TSRAGS BKN014CB BECMG 2120/2122 24022KT",
@@ -137,19 +137,19 @@
     },
     "EGNX": {
       "metar": {
-        "raw": "METAR EGNX 211450Z 27014KT 9999 6000E -RA BKN014 BKN025 09/07 Q1000",
+        "raw": "METAR EGNX 211520Z 26016KT 9999 -RA BKN011 BKN024 08/07 Q1000",
         "category": "MVFR",
-        "windDirection": 270,
-        "windSpeedKt": 14,
+        "windDirection": 260,
+        "windSpeedKt": 16,
         "windGustKt": null,
         "visibilityText": "10 km+",
-        "ceilingFt": 1400,
-        "temperatureC": 9,
+        "ceilingFt": 1100,
+        "temperatureC": 8,
         "dewpointC": 7,
         "qnhHpa": 1000,
-        "cloudText": "BKN014 BKN025",
+        "cloudText": "BKN011 BKN024",
         "weather": "-RA",
-        "observedUtc": 1792594200
+        "observedUtc": 1792596000
       },
       "taf": {
         "raw": "TAF EGNX 211101Z 2112/2212 24009KT 9999 SCT025 BECMG 2112/2115 27018G28KT TEMPO 2112/2118 7000 RA SHRA PROB30 TEMPO 2113/2118 30021G38KT 3000 +RA +SHRA BKN014 BECMG 2121/2124 21009KT PROB30 2123/2201 8000 TEMPO 2201/2206 7000 RA SHRA PROB30 TEMPO 2202/2206 3000 +RA +SHRA BKN008 BECMG 2203/2206 27010KT",
