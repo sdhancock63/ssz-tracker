@@ -1,39 +1,39 @@
 {
-  "generatedUtc": "2026-10-23T18:17:21.842469+00:00",
+  "generatedUtc": "2026-10-23T20:41:19.283280+00:00",
   "airports": {
     "EGJB": {
       "metar": {
-        "raw": "METAR EGJB 231750Z 28023KT 9999 VCSH FEW028TCU SCT036 12/04 Q1014",
+        "raw": "METAR EGJB 231950Z 28022G33KT 9999 FEW027 12/06 Q1016",
         "category": "VFR",
         "windDirection": 280,
-        "windSpeedKt": 23,
-        "windGustKt": null,
+        "windSpeedKt": 22,
+        "windGustKt": 33,
         "visibilityText": "10 km+",
         "ceilingFt": null,
         "temperatureC": 12,
-        "dewpointC": 4,
-        "qnhHpa": 1014,
-        "cloudText": "FEW028 SCT036",
-        "weather": "VCSH",
-        "observedUtc": 1792777800
+        "dewpointC": 6,
+        "qnhHpa": 1016,
+        "cloudText": "FEW027",
+        "weather": "NOSIG",
+        "observedUtc": 1792785000
       },
       "taf": {
-        "raw": "TAF EGJB 231733Z 2318/2403 29026G43KT 9999 FEW024TCU SCT030 PROB40 TEMPO 2318/2403 8000 SHRA BKN018CB PROB30 TEMPO 2318/2403 4000 +SHRA BKN012CB BECMG 2322/2401 29022G33KT",
-        "issuedUtc": "2026-10-23T17:33:00.000Z",
+        "raw": "TAF EGJB 231957Z 2321/2406 29025G40KT 9999 FEW025TCU SCT035 PROB40 TEMPO 2321/2406 8000 SHRA BKN018TCU PROB30 TEMPO 2321/2403 4000 +SHRA BKN012CB BECMG 2323/2402 28020G30KT",
+        "issuedUtc": "2026-10-23T19:57:00.000Z",
         "periods": [
           {
-            "timeLabel": "23/1800Z",
+            "timeLabel": "23/2100Z",
             "category": "VFR",
             "windDirection": 290,
-            "windSpeedKt": 26,
-            "windGustKt": 43,
+            "windSpeedKt": 25,
+            "windGustKt": 40,
             "visibilityText": "10 km+",
             "ceilingFt": null,
-            "weather": "FEW024 SCT030",
+            "weather": "FEW025 SCT035",
             "change": null
           },
           {
-            "timeLabel": "23/1800Z",
+            "timeLabel": "23/2100Z",
             "category": "MVFR",
             "windDirection": null,
             "windSpeedKt": null,
@@ -44,7 +44,7 @@
             "change": "TEMPO"
           },
           {
-            "timeLabel": "23/1800Z",
+            "timeLabel": "23/2100Z",
             "category": "IFR",
             "windDirection": null,
             "windSpeedKt": null,
@@ -55,14 +55,14 @@
             "change": "TEMPO"
           },
           {
-            "timeLabel": "23/2200Z",
+            "timeLabel": "23/2300Z",
             "category": "VFR",
-            "windDirection": 290,
-            "windSpeedKt": 22,
-            "windGustKt": 33,
+            "windDirection": 280,
+            "windSpeedKt": 20,
+            "windGustKt": 30,
             "visibilityText": "10 km+",
             "ceilingFt": null,
-            "weather": "FEW024 SCT030",
+            "weather": "FEW025 SCT035",
             "change": "BECMG"
           }
         ]
@@ -70,51 +70,40 @@
     },
     "EGHI": {
       "metar": {
-        "raw": "METAR EGHI 231750Z AUTO 29017KT 9999 NCD 09/03 Q1008",
+        "raw": "METAR EGHI 232020Z AUTO 29014KT 250V310 9999 NCD 09/02 Q1011",
         "category": "VFR",
         "windDirection": 290,
-        "windSpeedKt": 17,
+        "windSpeedKt": 14,
         "windGustKt": null,
         "visibilityText": "10 km+",
         "ceilingFt": null,
         "temperatureC": 9,
-        "dewpointC": 3,
-        "qnhHpa": 1008,
+        "dewpointC": 2,
+        "qnhHpa": 1011,
         "cloudText": "SKC",
         "weather": "NOSIG",
-        "observedUtc": 1792777800
+        "observedUtc": 1792786800
       },
       "taf": {
-        "raw": "TAF EGHI 231655Z 2318/2403 30020G40KT 9999 SCT030 BECMG 2318/2321 27018G30KT BECMG 2400/2403 28010KT",
-        "issuedUtc": "2026-10-23T16:55:00.000Z",
+        "raw": "TAF EGHI 232001Z 2321/2406 27018G28KT 9999 SCT030 BECMG 2400/2403 25009KT",
+        "issuedUtc": "2026-10-23T20:01:00.000Z",
         "periods": [
           {
-            "timeLabel": "23/1800Z",
+            "timeLabel": "23/2100Z",
             "category": "VFR",
-            "windDirection": 300,
-            "windSpeedKt": 20,
-            "windGustKt": 40,
+            "windDirection": 270,
+            "windSpeedKt": 18,
+            "windGustKt": 28,
             "visibilityText": "10 km+",
             "ceilingFt": null,
             "weather": "SCT030",
             "change": null
           },
           {
-            "timeLabel": "23/1800Z",
-            "category": "VFR",
-            "windDirection": 270,
-            "windSpeedKt": 18,
-            "windGustKt": 30,
-            "visibilityText": "10 km+",
-            "ceilingFt": null,
-            "weather": "SCT030",
-            "change": "BECMG"
-          },
-          {
             "timeLabel": "24/0000Z",
             "category": "VFR",
-            "windDirection": 280,
-            "windSpeedKt": 10,
+            "windDirection": 250,
+            "windSpeedKt": 9,
             "windGustKt": null,
             "visibilityText": "10 km+",
             "ceilingFt": null,
@@ -126,19 +115,19 @@
     },
     "EGNX": {
       "metar": {
-        "raw": "METAR EGNX 231750Z 30017G29KT 9999 BKN024 08/05 Q1002",
+        "raw": "METAR EGNX 232020Z 28020KT 9999 8000SW -RA SCT012 BKN024 07/05 Q1005",
         "category": "MVFR",
-        "windDirection": 300,
-        "windSpeedKt": 17,
-        "windGustKt": 29,
+        "windDirection": 280,
+        "windSpeedKt": 20,
+        "windGustKt": null,
         "visibilityText": "10 km+",
         "ceilingFt": 2400,
-        "temperatureC": 8,
+        "temperatureC": 7,
         "dewpointC": 5,
-        "qnhHpa": 1002,
-        "cloudText": "BKN024",
-        "weather": "NOSIG",
-        "observedUtc": 1792777800
+        "qnhHpa": 1005,
+        "cloudText": "SCT012 BKN024",
+        "weather": "-RA",
+        "observedUtc": 1792786800
       },
       "taf": {
         "raw": "TAF EGNX 231653Z 2318/2418 29020G35KT 9999 SCT035 TEMPO 2318/2323 7000 RA SHRA PROB30 TEMPO 2318/2319 3000 +RA +SHRA BECMG 2323/2402 26015G27KT BECMG 2404/2407 20010KT TEMPO 2409/2418 6000 RA BKN012 BECMG 2411/2414 20022G39KT PROB30 TEMPO 2411/2418 3000 +RA +SHRA BKN007",
