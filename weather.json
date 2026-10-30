@@ -1,21 +1,21 @@
 {
-  "generatedUtc": "2026-10-30T20:54:32.462138+00:00",
+  "generatedUtc": "2026-10-30T21:09:39.976223+00:00",
   "airports": {
     "EGJB": {
       "metar": {
-        "raw": "METAR EGJB 302020Z 09013KT CAVOK 12/09 Q1026",
+        "raw": "METAR EGJB 302050Z 09011KT CAVOK 12/09 Q1027",
         "category": "VFR",
         "windDirection": 90,
-        "windSpeedKt": 13,
+        "windSpeedKt": 11,
         "windGustKt": null,
         "visibilityText": "CAVOK",
         "ceilingFt": null,
         "temperatureC": 12,
         "dewpointC": 9,
-        "qnhHpa": 1026,
+        "qnhHpa": 1027,
         "cloudText": "SKC",
         "weather": "NOSIG",
-        "observedUtc": 1793391600
+        "observedUtc": 1793393400
       },
       "taf": {
         "raw": "TAF EGJB 301959Z 3021/3106 10010KT CAVOK",
@@ -37,19 +37,19 @@
     },
     "EGHI": {
       "metar": {
-        "raw": "METAR EGHI 302020Z 35001KT 9999 MIFG NSC 06/06 Q1029",
+        "raw": "METAR EGHI 302050Z 03001KT 9999 MIFG NSC 05/04 Q1029",
         "category": "VFR",
-        "windDirection": 350,
+        "windDirection": 30,
         "windSpeedKt": 1,
         "windGustKt": null,
         "visibilityText": "10 km+",
         "ceilingFt": null,
-        "temperatureC": 6,
-        "dewpointC": 6,
+        "temperatureC": 5,
+        "dewpointC": 4,
         "qnhHpa": 1029,
         "cloudText": "SKC",
         "weather": "MIFG",
-        "observedUtc": 1793391600
+        "observedUtc": 1793393400
       },
       "taf": {
         "raw": "TAF EGHI 302000Z 3021/3106 05005KT 9999 FEW045 PROB30 3021/3024 8000 TEMPO 3100/3106 4000 BR BKN008 PROB40 3102/3106 0300 FG VV///",
@@ -119,11 +119,11 @@
         "observedUtc": 1793393400
       },
       "taf": {
-        "raw": "TAF EGNX 301701Z 3018/3118 14007KT 9999 FEW040 BECMG 3018/3021 3000 BR BKN004 TEMPO 3020/3110 0300 FG VV/// BECMG 3110/3113 9999 NSW SCT020",
-        "issuedUtc": "2026-10-30T17:01:00.000Z",
+        "raw": "TAF AMD EGNX 302054Z 3020/3118 14007KT 9999 FEW040 BECMG 3020/3023 3000 BR MIFG TEMPO 3020/3110 0300 FG VV/// BECMG 3110/3113 9999 NSW SCT020",
+        "issuedUtc": "2026-10-30T20:54:00.000Z",
         "periods": [
           {
-            "timeLabel": "30/1800Z",
+            "timeLabel": "30/2000Z",
             "category": "VFR",
             "windDirection": 140,
             "windSpeedKt": 7,
@@ -134,14 +134,14 @@
             "change": null
           },
           {
-            "timeLabel": "30/1800Z",
-            "category": "LIFR",
+            "timeLabel": "30/2000Z",
+            "category": "IFR",
             "windDirection": 140,
             "windSpeedKt": 7,
             "windGustKt": null,
             "visibilityText": "3000 m",
-            "ceilingFt": 400,
-            "weather": "BR",
+            "ceilingFt": null,
+            "weather": "BR MIFG",
             "change": "BECMG"
           },
           {
