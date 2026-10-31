@@ -1,9 +1,9 @@
 {
-  "generatedUtc": "2026-10-31T20:22:11.765903+00:00",
+  "generatedUtc": "2026-10-31T20:37:19.797410+00:00",
   "airports": {
     "EGJB": {
       "metar": {
-        "raw": "METAR EGJB 311950Z 07010KT CAVOK 12/10 Q1029",
+        "raw": "METAR EGJB 312020Z 07010KT CAVOK 12/10 Q1029",
         "category": "VFR",
         "windDirection": 70,
         "windSpeedKt": 10,
@@ -15,7 +15,7 @@
         "qnhHpa": 1029,
         "cloudText": "SKC",
         "weather": "NOSIG",
-        "observedUtc": 1793476200
+        "observedUtc": 1793478000
       },
       "taf": {
         "raw": "TAF EGJB 311958Z 3121/0106 06009KT CAVOK",
@@ -37,19 +37,19 @@
     },
     "EGHI": {
       "metar": {
-        "raw": "METAR EGHI 311950Z 26001KT 9999 R20/0900D MIFG NSC 05/05 Q1031",
+        "raw": "METAR EGHI 312020Z 26001KT 9999 MIFG NSC 06/06 Q1031",
         "category": "VFR",
         "windDirection": 260,
         "windSpeedKt": 1,
         "windGustKt": null,
         "visibilityText": "10 km+",
         "ceilingFt": null,
-        "temperatureC": 5,
-        "dewpointC": 5,
+        "temperatureC": 6,
+        "dewpointC": 6,
         "qnhHpa": 1031,
         "cloudText": "SKC",
         "weather": "MIFG",
-        "observedUtc": 1793476200
+        "observedUtc": 1793478000
       },
       "taf": {
         "raw": "TAF EGHI 312000Z 3121/0106 VRB03KT 7000 FEW025 TEMPO 3121/0106 3000 BR MIFG PROB30 3123/0102 1400 BCFG PROB40 TEMPO 0102/0106 0300 FG VV///",
@@ -104,19 +104,19 @@
     },
     "EGNX": {
       "metar": {
-        "raw": "METAR EGNX 311950Z 23001KT 6000 MIFG NSC 07/07 Q1032",
-        "category": "MVFR",
-        "windDirection": 230,
-        "windSpeedKt": 1,
+        "raw": "METAR EGNX 312020Z 32004KT 4000 BR MIFG NSC 07/07 Q1032",
+        "category": "IFR",
+        "windDirection": 320,
+        "windSpeedKt": 4,
         "windGustKt": null,
-        "visibilityText": "6.0 km",
+        "visibilityText": "4000 m",
         "ceilingFt": null,
         "temperatureC": 7,
         "dewpointC": 7,
         "qnhHpa": 1032,
         "cloudText": "SKC",
-        "weather": "MIFG",
-        "observedUtc": 1793476200
+        "weather": "BR MIFG",
+        "observedUtc": 1793478000
       },
       "taf": {
         "raw": "TAF EGNX 311657Z 3118/0118 VRB02KT 9999 FEW018 BECMG 3118/3121 4000 BR TEMPO 3121/0111 1200 MIFG BKN002 PROB40 3123/0110 0300 FG VV/// BECMG 0110/0113 02010KT 9999 NSW TEMPO 0113/0117 6000 -RADZ BKN006 PROB40 TEMPO 0113/0117 BKN004",
