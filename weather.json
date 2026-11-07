@@ -1,9 +1,9 @@
 {
-  "generatedUtc": "2026-11-07T19:24:34.940813+00:00",
+  "generatedUtc": "2026-11-07T19:39:52.021128+00:00",
   "airports": {
     "EGJB": {
       "metar": {
-        "raw": "METAR EGJB 071850Z 21003KT 9999 FEW023 09/08 Q1022",
+        "raw": "METAR EGJB 071920Z 21003KT 9999 FEW023 09/08 Q1022",
         "category": "VFR",
         "windDirection": 210,
         "windSpeedKt": 3,
@@ -15,7 +15,7 @@
         "qnhHpa": 1022,
         "cloudText": "FEW023",
         "weather": "NOSIG",
-        "observedUtc": 1794077400
+        "observedUtc": 1794079200
       },
       "taf": {
         "raw": "TAF EGJB 071657Z 0718/0803 VRB03KT 9999 FEW014 SCT018 TEMPO 0718/0803 VRB10G20KT 9000 SHRA BKN020CB",
@@ -48,19 +48,19 @@
     },
     "EGHI": {
       "metar": {
-        "raw": "METAR EGHI 071850Z COR VRB02KT 1400 BR BCFG NSC 08/07 Q1021",
+        "raw": "METAR EGHI 071920Z 24001KT 1600 BR BCFG NSC 09/08 Q1021",
         "category": "LIFR",
-        "windDirection": "VRB",
-        "windSpeedKt": 2,
+        "windDirection": 240,
+        "windSpeedKt": 1,
         "windGustKt": null,
-        "visibilityText": "1400 m",
+        "visibilityText": "1600 m",
         "ceilingFt": null,
-        "temperatureC": 8,
-        "dewpointC": 7,
+        "temperatureC": 9,
+        "dewpointC": 8,
         "qnhHpa": 1021,
         "cloudText": "SKC",
         "weather": "BR BCFG",
-        "observedUtc": 1794077400
+        "observedUtc": 1794079200
       },
       "taf": {
         "raw": "TAF AMD EGHI 071904Z 0719/0803 VRB03KT 9999 SCT045 BECMG 0719/0721 1400 BR MIFG PROB40 0721/0803 0300 FG VV///",
@@ -104,19 +104,19 @@
     },
     "EGNX": {
       "metar": {
-        "raw": "METAR EGNX 071850Z 22004KT 0100 R27/0350N FG BKN001 06/06 Q1021",
+        "raw": "METAR EGNX 071920Z 28003KT 0400 R27/0700U FG BKN001 06/06 Q1021",
         "category": "LIFR",
-        "windDirection": 220,
-        "windSpeedKt": 4,
+        "windDirection": 280,
+        "windSpeedKt": 3,
         "windGustKt": null,
-        "visibilityText": "100 m",
+        "visibilityText": "400 m",
         "ceilingFt": 100,
         "temperatureC": 6,
         "dewpointC": 6,
         "qnhHpa": 1021,
         "cloudText": "BKN001",
         "weather": "FG",
-        "observedUtc": 1794077400
+        "observedUtc": 1794079200
       },
       "taf": {
         "raw": "TAF EGNX 071703Z 0718/0818 VRB03KT 2000 BR SCT004 BECMG 0718/0721 0300 FG VV/// BECMG 0812/0815 4000 BR PROB40 0815/0818 6000 NSW",
