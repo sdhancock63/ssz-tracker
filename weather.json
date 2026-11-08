@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-08T20:02:58.768225+00:00",
+  "generatedUtc": "2026-11-08T20:18:11.584097+00:00",
   "airports": {
     "EGJB": {
       "metar": {
@@ -18,11 +18,11 @@
         "observedUtc": 1794167400
       },
       "taf": {
-        "raw": "TAF EGJB 081655Z 0818/0903 10009KT 9999 FEW012",
-        "issuedUtc": "2026-11-08T16:55:00.000Z",
+        "raw": "TAF EGJB 081956Z 0821/0906 10009KT 9999 FEW012",
+        "issuedUtc": "2026-11-08T19:56:00.000Z",
         "periods": [
           {
-            "timeLabel": "08/1800Z",
+            "timeLabel": "08/2100Z",
             "category": "VFR",
             "windDirection": 100,
             "windSpeedKt": 9,
@@ -52,22 +52,11 @@
         "observedUtc": 1794167400
       },
       "taf": {
-        "raw": "TAF EGHI 081656Z 0818/0903 VRB03KT 8000 SCT006 BECMG 0818/0821 0100 FG VV///",
-        "issuedUtc": "2026-11-08T16:56:00.000Z",
+        "raw": "TAF EGHI 082002Z 0821/0906 VRB03KT 0100 FG VV/// PROB30 TEMPO 0821/0906 9999 NSW SCT002",
+        "issuedUtc": "2026-11-08T20:02:00.000Z",
         "periods": [
           {
-            "timeLabel": "08/1800Z",
-            "category": "MVFR",
-            "windDirection": "VRB",
-            "windSpeedKt": 3,
-            "windGustKt": null,
-            "visibilityText": "8.0 km",
-            "ceilingFt": null,
-            "weather": "SCT006",
-            "change": null
-          },
-          {
-            "timeLabel": "08/1800Z",
+            "timeLabel": "08/2100Z",
             "category": "LIFR",
             "windDirection": "VRB",
             "windSpeedKt": 3,
@@ -75,7 +64,18 @@
             "visibilityText": "100 m",
             "ceilingFt": null,
             "weather": "FG",
-            "change": "BECMG"
+            "change": null
+          },
+          {
+            "timeLabel": "08/2100Z",
+            "category": "VFR",
+            "windDirection": null,
+            "windSpeedKt": null,
+            "windGustKt": null,
+            "visibilityText": "10 km+",
+            "ceilingFt": null,
+            "weather": "NSW",
+            "change": "TEMPO"
           }
         ]
       }
