@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-08T08:07:21.618962+00:00",
+  "generatedUtc": "2026-11-08T08:22:42.632567+00:00",
   "airports": {
     "EGJB": {
       "metar": {
@@ -18,14 +18,14 @@
         "observedUtc": 1794124200
       },
       "taf": {
-        "raw": "TAF EGJB 080456Z 0806/0815 16008KT 9999 FEW022 PROB30 TEMPO 0806/0810 8000 SHRA BKN020TCU",
-        "issuedUtc": "2026-11-08T04:56:00.000Z",
+        "raw": "TAF EGJB 080758Z 0809/0818 12006KT 9999 FEW022 PROB30 TEMPO 0809/0811 8000 SHRA BKN020TCU",
+        "issuedUtc": "2026-11-08T07:58:00.000Z",
         "periods": [
           {
-            "timeLabel": "08/0600Z",
+            "timeLabel": "08/0900Z",
             "category": "VFR",
-            "windDirection": 160,
-            "windSpeedKt": 8,
+            "windDirection": 120,
+            "windSpeedKt": 6,
             "windGustKt": null,
             "visibilityText": "10 km+",
             "ceilingFt": null,
@@ -33,7 +33,7 @@
             "change": null
           },
           {
-            "timeLabel": "08/0600Z",
+            "timeLabel": "08/0900Z",
             "category": "MVFR",
             "windDirection": null,
             "windSpeedKt": null,
@@ -63,11 +63,11 @@
         "observedUtc": 1794124200
       },
       "taf": {
-        "raw": "TAF COR EGHI 080710Z 0807/0815 VRB03KT 0100 FG VV/// TEMPO 0807/0810 0800 NSC PROB40 TEMPO 0810/0812 2000 BR FEW004 BECMG 0812/0815 5000 BR FEW035",
-        "issuedUtc": "2026-11-08T07:10:00.000Z",
+        "raw": "TAF EGHI 080805Z 0809/0818 VRB03KT 0100 FG VV/// TEMPO 0809/0810 0800 NSC PROB40 TEMPO 0810/0812 2000 BR FEW004 BECMG 0812/0815 5000 BR FEW035 PROB30 0815/0818 1400",
+        "issuedUtc": "2026-11-08T08:05:00.000Z",
         "periods": [
           {
-            "timeLabel": "08/0700Z",
+            "timeLabel": "08/0900Z",
             "category": "LIFR",
             "windDirection": "VRB",
             "windSpeedKt": 3,
@@ -78,7 +78,7 @@
             "change": null
           },
           {
-            "timeLabel": "08/0700Z",
+            "timeLabel": "08/0900Z",
             "category": "LIFR",
             "windDirection": null,
             "windSpeedKt": null,
@@ -109,6 +109,17 @@
             "ceilingFt": null,
             "weather": "BR",
             "change": "BECMG"
+          },
+          {
+            "timeLabel": "08/1500Z",
+            "category": "LIFR",
+            "windDirection": null,
+            "windSpeedKt": null,
+            "windGustKt": null,
+            "visibilityText": "1400 m",
+            "ceilingFt": null,
+            "weather": "SKC",
+            "change": "PROB"
           }
         ]
       }
