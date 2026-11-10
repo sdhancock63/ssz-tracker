@@ -1,9 +1,9 @@
 {
-  "generatedUtc": "2026-11-10T11:19:07.453310+00:00",
+  "generatedUtc": "2026-11-10T11:34:15.294664+00:00",
   "airports": {
     "EGJB": {
       "metar": {
-        "raw": "METAR EGJB 101050Z 12010KT 0800 0350S R09/P1500N -DZ BCFG BKN000 BKN001 12/12 Q1004",
+        "raw": "METAR EGJB 101120Z 12010KT 0800 R09/P1500N BCFG VCSH BKN000 BKN001 12/12 Q1004",
         "category": "LIFR",
         "windDirection": 120,
         "windSpeedKt": 10,
@@ -14,8 +14,8 @@
         "dewpointC": 12,
         "qnhHpa": 1004,
         "cloudText": "BKN001",
-        "weather": "BCFG -DZ",
-        "observedUtc": 1794307800
+        "weather": "BCFG VCSH",
+        "observedUtc": 1794309600
       },
       "taf": {
         "raw": "TAF EGJB 101100Z 1012/1021 12013KT 8000 -RADZ BKN006 TEMPO 1012/1021 2000 RADZ BR FEW000 BKN002 PROB40 TEMPO 1012/1021 0200 RADZ FG BKN000 PROB30 TEMPO 1012/1016 9999 NSW FEW005 BKN014",
@@ -70,19 +70,19 @@
     },
     "EGHI": {
       "metar": {
-        "raw": "METAR EGHI 101050Z 06007KT 030V100 6000 BKN039 09/05 Q1008",
-        "category": "MVFR",
+        "raw": "METAR EGHI 101120Z 06007KT 9999 BKN039 10/05 Q1007",
+        "category": "VFR",
         "windDirection": 60,
         "windSpeedKt": 7,
         "windGustKt": null,
-        "visibilityText": "6.0 km",
+        "visibilityText": "10 km+",
         "ceilingFt": 3900,
-        "temperatureC": 9,
+        "temperatureC": 10,
         "dewpointC": 5,
-        "qnhHpa": 1008,
+        "qnhHpa": 1007,
         "cloudText": "BKN039",
         "weather": "NOSIG",
-        "observedUtc": 1794307800
+        "observedUtc": 1794309600
       },
       "taf": {
         "raw": "TAF EGHI 101101Z 1012/1021 06009KT 9999 BKN020 TEMPO 1012/1021 6000 -RADZ RA BKN005 PROB30 TEMPO 1012/1020 3000 +RA PROB30 TEMPO 1018/1021 BKN004",
@@ -137,19 +137,19 @@
     },
     "EGNX": {
       "metar": {
-        "raw": "METAR EGNX 101050Z 05007KT 0800 R27/P1500N FG OVC002 05/05 Q1012",
+        "raw": "METAR EGNX 101120Z 05007KT 0300 R27/0800N FG OVC001 05/05 Q1011",
         "category": "LIFR",
         "windDirection": 50,
         "windSpeedKt": 7,
         "windGustKt": null,
-        "visibilityText": "800 m",
-        "ceilingFt": 200,
+        "visibilityText": "300 m",
+        "ceilingFt": 100,
         "temperatureC": 5,
         "dewpointC": 5,
-        "qnhHpa": 1012,
-        "cloudText": "OVC002",
+        "qnhHpa": 1011,
+        "cloudText": "OVC001",
         "weather": "FG",
-        "observedUtc": 1794307800
+        "observedUtc": 1794309600
       },
       "taf": {
         "raw": "TAF EGNX 101055Z 1012/1112 08008KT 1400 BR BKN003 BECMG 1012/1015 9999 NSW SCT025 PROB30 TEMPO 1016/1108 8000 -RA PROB30 TEMPO 1103/1108 BKN009",
