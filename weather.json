@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-13T17:54:58.349171+00:00",
+  "generatedUtc": "2026-11-13T18:10:08.723691+00:00",
   "airports": {
     "EGJB": {
       "metar": {
@@ -93,19 +93,19 @@
     },
     "EGNX": {
       "metar": {
-        "raw": "METAR EGNX 131720Z 28005KT CAVOK 03/M01 Q1018",
+        "raw": "METAR EGNX 131750Z 28006KT CAVOK 01/M02 Q1018",
         "category": "VFR",
         "windDirection": 280,
-        "windSpeedKt": 5,
+        "windSpeedKt": 6,
         "windGustKt": null,
         "visibilityText": "CAVOK",
         "ceilingFt": null,
-        "temperatureC": 3,
-        "dewpointC": -1,
+        "temperatureC": 1,
+        "dewpointC": -2,
         "qnhHpa": 1018,
         "cloudText": "SKC",
         "weather": "NOSIG",
-        "observedUtc": 1794590400
+        "observedUtc": 1794592200
       },
       "taf": {
         "raw": "TAF EGNX 131704Z 1318/1418 24004KT 9999 FEW040 PROB30 1320/1408 8000 BECMG 1407/1410 18010KT",
