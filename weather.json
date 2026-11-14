@@ -1,21 +1,21 @@
 {
-  "generatedUtc": "2026-11-14T20:48:38.897212+00:00",
+  "generatedUtc": "2026-11-14T21:03:47.881710+00:00",
   "airports": {
     "EGJB": {
       "metar": {
-        "raw": "METAR EGJB 142020Z 14008KT 9999 FEW022 08/05 Q1008",
+        "raw": "METAR EGJB 142050Z 16008KT 120V190 9999 FEW022 09/03 Q1007",
         "category": "VFR",
-        "windDirection": 140,
+        "windDirection": 160,
         "windSpeedKt": 8,
         "windGustKt": null,
         "visibilityText": "10 km+",
         "ceilingFt": null,
-        "temperatureC": 8,
-        "dewpointC": 5,
-        "qnhHpa": 1008,
+        "temperatureC": 9,
+        "dewpointC": 3,
+        "qnhHpa": 1007,
         "cloudText": "FEW022",
         "weather": "NOSIG",
-        "observedUtc": 1794687600
+        "observedUtc": 1794689400
       },
       "taf": {
         "raw": "TAF EGJB 141958Z 1421/1506 19012KT 9999 FEW022 TEMPO 1502/1506 BKN012 PROB30 TEMPO 1504/1506 20016G26KT 8000 SHRA BKN008 BKN020CB",
@@ -59,9 +59,9 @@
     },
     "EGHI": {
       "metar": {
-        "raw": "METAR EGHI 142020Z 36001KT 9999 MIFG NSC 00/M00 Q1009",
+        "raw": "METAR EGHI 142050Z 33001KT 9999 MIFG NSC 00/00 Q1009",
         "category": "VFR",
-        "windDirection": 360,
+        "windDirection": 330,
         "windSpeedKt": 1,
         "windGustKt": null,
         "visibilityText": "10 km+",
@@ -71,7 +71,7 @@
         "qnhHpa": 1009,
         "cloudText": "SKC",
         "weather": "MIFG",
-        "observedUtc": 1794687600
+        "observedUtc": 1794689400
       },
       "taf": {
         "raw": "TAF EGHI 142004Z 1421/1506 VRB02KT 9999 FEW030 TEMPO 1421/1506 8000 PROB30 1421/1506 0300 FZFG BKN000",
@@ -115,19 +115,19 @@
     },
     "EGNX": {
       "metar": {
-        "raw": "METAR EGNX 142020Z 13006KT CAVOK 04/02 Q1009",
+        "raw": "METAR EGNX 142050Z 14005KT 100V170 CAVOK 03/01 Q1008",
         "category": "VFR",
-        "windDirection": 130,
-        "windSpeedKt": 6,
+        "windDirection": 140,
+        "windSpeedKt": 5,
         "windGustKt": null,
         "visibilityText": "CAVOK",
         "ceilingFt": null,
-        "temperatureC": 4,
-        "dewpointC": 2,
-        "qnhHpa": 1009,
+        "temperatureC": 3,
+        "dewpointC": 1,
+        "qnhHpa": 1008,
         "cloudText": "SKC",
         "weather": "NOSIG",
-        "observedUtc": 1794687600
+        "observedUtc": 1794689400
       },
       "taf": {
         "raw": "TAF AMD EGNX 141929Z 1419/1518 14005KT 9999 FEW040 PROB30 1500/1506 8000 PROB30 TEMPO 1506/1510 7000 -RADZ BKN009 TEMPO 1510/1515 5000 RA SHRA BKN007 PROB30 TEMPO 1511/1515 4000 +RA +SHRA BKN004 BECMG 1515/1518 27010KT TEMPO 1515/1518 3000 RADZ BKN003 PROB30 TEMPO 1516/1518 BKN001",
