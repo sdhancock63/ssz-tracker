@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-15T20:06:40.282042+00:00",
+  "generatedUtc": "2026-11-15T20:21:56.268281+00:00",
   "airports": {
     "EGJB": {
       "metar": {
@@ -18,30 +18,41 @@
         "observedUtc": 1794772200
       },
       "taf": {
-        "raw": "TAF EGJB 151701Z 1518/1603 27016KT 9999 FEW014 SCT016 BKN018 PROB40 TEMPO 1518/1602 28019G31KT 6000 SHRA BKN017CB",
-        "issuedUtc": "2026-11-15T17:01:00.000Z",
+        "raw": "TAF EGJB 151955Z 1521/1606 28020G35KT 9999 FEW012 SCT016 BKN033 PROB40 TEMPO 1521/1606 6000 SHRA BKN017CB BECMG 1601/1603 31014KT",
+        "issuedUtc": "2026-11-15T19:55:00.000Z",
         "periods": [
           {
-            "timeLabel": "15/1800Z",
-            "category": "MVFR",
-            "windDirection": 270,
-            "windSpeedKt": 16,
-            "windGustKt": null,
+            "timeLabel": "15/2100Z",
+            "category": "VFR",
+            "windDirection": 280,
+            "windSpeedKt": 20,
+            "windGustKt": 35,
             "visibilityText": "10 km+",
-            "ceilingFt": 1800,
-            "weather": "FEW014 SCT016 BKN018",
+            "ceilingFt": 3300,
+            "weather": "FEW012 SCT016 BKN033",
             "change": null
           },
           {
-            "timeLabel": "15/1800Z",
+            "timeLabel": "15/2100Z",
             "category": "MVFR",
-            "windDirection": 280,
-            "windSpeedKt": 19,
-            "windGustKt": 31,
+            "windDirection": null,
+            "windSpeedKt": null,
+            "windGustKt": null,
             "visibilityText": "6.0 km",
             "ceilingFt": 1700,
             "weather": "SHRA",
             "change": "TEMPO"
+          },
+          {
+            "timeLabel": "16/0100Z",
+            "category": "VFR",
+            "windDirection": 310,
+            "windSpeedKt": 14,
+            "windGustKt": null,
+            "visibilityText": "10 km+",
+            "ceilingFt": 3300,
+            "weather": "FEW012 SCT016 BKN033",
+            "change": "BECMG"
           }
         ]
       }
@@ -63,13 +74,13 @@
         "observedUtc": 1794772200
       },
       "taf": {
-        "raw": "TAF EGHI 151701Z 1518/1603 27008KT 9999 SCT025 PROB30 TEMPO 1518/1601 7000 RADZ BKN009",
-        "issuedUtc": "2026-11-15T17:01:00.000Z",
+        "raw": "TAF EGHI 152005Z 1521/1606 26008KT 9999 SCT025 PROB30 TEMPO 1521/1601 7000 RADZ BKN009",
+        "issuedUtc": "2026-11-15T20:05:00.000Z",
         "periods": [
           {
-            "timeLabel": "15/1800Z",
+            "timeLabel": "15/2100Z",
             "category": "VFR",
-            "windDirection": 270,
+            "windDirection": 260,
             "windSpeedKt": 8,
             "windGustKt": null,
             "visibilityText": "10 km+",
@@ -78,7 +89,7 @@
             "change": null
           },
           {
-            "timeLabel": "15/1800Z",
+            "timeLabel": "15/2100Z",
             "category": "IFR",
             "windDirection": null,
             "windSpeedKt": null,
