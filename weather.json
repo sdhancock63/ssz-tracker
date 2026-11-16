@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-16T21:17:47.046727+00:00",
+  "generatedUtc": "2026-11-16T21:32:56.096518+00:00",
   "airports": {
     "EGJB": {
       "metar": {
@@ -114,19 +114,19 @@
     },
     "EGHI": {
       "metar": {
-        "raw": "METAR EGHI 162050Z AUTO 11010KT 4800 -DZ BKN013 OVC049 06/05 Q0997 RESHRA",
+        "raw": "METAR EGHI 162120Z AUTO 10009KT 9999 BKN009 BKN013 07/06 Q0996",
         "category": "IFR",
-        "windDirection": 110,
-        "windSpeedKt": 10,
+        "windDirection": 100,
+        "windSpeedKt": 9,
         "windGustKt": null,
-        "visibilityText": "4800 m",
-        "ceilingFt": 1300,
-        "temperatureC": 6,
-        "dewpointC": 5,
-        "qnhHpa": 997,
-        "cloudText": "BKN013 OVC049",
-        "weather": "-DZ",
-        "observedUtc": 1794862200
+        "visibilityText": "10 km+",
+        "ceilingFt": 900,
+        "temperatureC": 7,
+        "dewpointC": 6,
+        "qnhHpa": 996,
+        "cloudText": "BKN009 BKN013",
+        "weather": "NOSIG",
+        "observedUtc": 1794864000
       },
       "taf": {
         "raw": "TAF EGHI 162001Z 1621/1706 09012KT 9999 SCT015 TEMPO 1621/1706 6000 RA -RADZ BKN007 PROB40 TEMPO 1621/1702 2000 +RA RADZ BKN003 PROB30 TEMPO 1621/1702 10015G25KT PROB30 TEMPO 1702/1705 1400 DZ BR BKN001",
@@ -192,19 +192,19 @@
     },
     "EGNX": {
       "metar": {
-        "raw": "METAR EGNX 162050Z 10007KT CAVOK 02/M00 Q0998",
+        "raw": "METAR EGNX 162120Z 11006KT CAVOK 02/M01 Q0997",
         "category": "VFR",
-        "windDirection": 100,
-        "windSpeedKt": 7,
+        "windDirection": 110,
+        "windSpeedKt": 6,
         "windGustKt": null,
         "visibilityText": "CAVOK",
         "ceilingFt": null,
         "temperatureC": 2,
-        "dewpointC": 0,
-        "qnhHpa": 998,
+        "dewpointC": -1,
+        "qnhHpa": 997,
         "cloudText": "SKC",
         "weather": "NOSIG",
-        "observedUtc": 1794862200
+        "observedUtc": 1794864000
       },
       "taf": {
         "raw": "TAF EGNX 161705Z 1618/1718 11004KT 9999 FEW025 PROB30 TEMPO 1622/1703 12015G25KT PROB30 TEMPO 1622/1624 6000 RA BKN010 BECMG 1623/1702 12014KT TEMPO 1700/1711 6000 RA RADZ BKN007 PROB30 TEMPO 1701/1704 3000 +RA +RADZ PROB30 TEMPO 1708/1710 1400 +RA BKN002 TEMPO 1711/1718 7000 SHRA PROB30 TEMPO 1715/1718 23015G25KT",
